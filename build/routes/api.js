@@ -30,7 +30,7 @@ scheduleRoute.post('/schedule/elder', passport_1.default.authenticate('jwt', { s
         return res.json({ success: false, msg: error });
     });
 });
-scheduleRoute.get('/schedule/junior/months1', passport_1.default.authenticate('jwt', { session: false }), function (req, res) {
+scheduleRoute.get('/schedule/junior/months', passport_1.default.authenticate('jwt', { session: false }), function (req, res) {
     schedule_yanger_1.ScheduleJunior.distinct('year_month')
         .then(function (dataInBase) {
         return res.json({ data: dataInBase });

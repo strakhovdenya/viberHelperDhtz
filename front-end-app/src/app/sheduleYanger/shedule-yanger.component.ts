@@ -1,8 +1,9 @@
-import {Component, ChangeDetectorRef} from '@angular/core';
+import {Component} from '@angular/core';
 import {ScheduleElement} from '../table/interface/sheduleElement';
 
 import * as _moment from 'moment';
 import {DateService} from "../services/date.service";
+import {ActivatedRoute} from "@angular/router";
 
 
 const moment = _moment;
@@ -21,17 +22,27 @@ export class SheduleYangerComponent {
   isTableDataExists: boolean;
   savedStatus: boolean;
   savedStatusAllData: boolean;
-  urlForRequest = 'api/schedule/junior/';
-  urlForSave = 'api/schedule/junior';
+  // urlForRequest = 'api/schedule/junior/';
+  // urlForSave = 'api/schedule/junior';
+  urlForRequest: string;
+  urlForSave: string;
 
 
-  constructor(
-    // private cd: ChangeDetectorRef,
-    private dateService: DateService) {
+  constructor(private dateService: DateService, private route: ActivatedRoute) {
+
     this.dateService.date.subscribe(value => {
       this.dateBase = value.format();
       this.date = value.format();
     })
+  }
+
+  ngOnInit() {
+    this.route
+      .data
+      .subscribe(data => {
+        this.urlForRequest = data.urlForRequest;
+        this.urlForSave = data.urlForSave;
+      });
   }
 
 

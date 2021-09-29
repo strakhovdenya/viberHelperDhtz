@@ -24,7 +24,7 @@
               aria-pressed="true">
         Рассписание старших
       </button>
-      <button [routerLink]="['/dashboard/month']"
+      <button [routerLink]="['/dashboard/month_juniors']"
 
               routerLinkActive #rla3="routerLinkActive"
               class="btn btn-lg active"
@@ -34,7 +34,22 @@
               aria-pressed="true">
         Месяцы младшие
       </button>
-      <button [routerLink]="['/dashboard/menu_settings']" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Настройка меню (не работает)</button>
+      <button [routerLink]="['/dashboard/month_elders']"
+
+              routerLinkActive #rla4="routerLinkActive"
+              class="btn btn-lg active"
+              [class.btn-secondary]="!rla4.isActive"
+              [class.btn-primary]="rla4.isActive"
+              role="button"
+              aria-pressed="true">
+        Месяцы старшие
+      </button>
+      <button [routerLink]="['/dashboard/menu_settings']"
+              class="btn btn-secondary btn-lg active"
+              role="button"
+              aria-pressed="true">
+        Настройка меню (не работает)
+      </button>
     </div>
   </div>
   <br>

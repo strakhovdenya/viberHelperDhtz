@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import {HttpClientModule} from '@angular/common/http';
 // import { TextMaskModule } from 'angular2-text-mask';
 
 import {AppRoutingModule} from './app-routing.module';
@@ -13,39 +13,46 @@ import {DashboardComponent} from './dashboard/dashboard.component';
 
 import {HomeComponent} from './home/home.component';
 import {SheduleYangerComponent} from './sheduleYanger/shedule-yanger.component';
-import { SheduleElderComponent } from './shedule-elder/shedule-elder.component';
-import { MonthsComponent } from './monthes/months.component';
+import {MonthsComponent} from './monthes/months.component';
 
 
 import {RouterModule, Routes} from '@angular/router';
-import { FooterComponent } from './footer/footer.component';
+import {FooterComponent} from './footer/footer.component';
 
-import { FormsModule } from '@angular/forms';
-import { FlashMessagesModule } from 'angular2-flash-messages';
-import { CheckFormService } from './services/check-form.service';
-import { MonthDataService } from './services/month-data.service';
-import { IsSavedCheckerService } from './services/is-saved-checker.service';
-import { AuthService } from './services/auth.service';
-import { IsLoggedIn } from './services/isLogged.guard';
-import {JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
+import {FormsModule} from '@angular/forms';
+import {FlashMessagesModule} from 'angular2-flash-messages';
+import {CheckFormService} from './services/check-form.service';
+import {MonthDataService} from './services/month-data.service';
+import {IsSavedCheckerService} from './services/is-saved-checker.service';
+import {AuthService} from './services/auth.service';
+import {IsLoggedIn} from './services/isLogged.guard';
+import {JwtHelperService, JWT_OPTIONS} from '@auth0/angular-jwt';
 
 import {MaterialModule} from './material/material.module';
-import { TableModule } from './table/table.module';
-import { DatepikerModule } from './datepiker/datepikerModule';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ButtonSaveScheduleComponent } from './button-save-schedule/button-save-schedule.component';
-import { IsSavedInfoComponent } from './is-saved-info/is-saved-info.component';
-import { IsSavedAllDataComponent } from './is-saved-all-data/is-saved-all-data.component';
+import {TableModule} from './table/table.module';
+import {DatepikerModule} from './datepiker/datepikerModule';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {ButtonSaveScheduleComponent} from './button-save-schedule/button-save-schedule.component';
+import {IsSavedInfoComponent} from './is-saved-info/is-saved-info.component';
+import {IsSavedAllDataComponent} from './is-saved-all-data/is-saved-all-data.component';
 import {DateService} from "./services/date.service";
-
 
 
 const DashboardRoute: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'juniors', component: SheduleYangerComponent},
-  {path: 'elders', component: SheduleElderComponent},
-  {path: 'month', component: MonthsComponent},
-  {path: 'menu_settings', component: DashboardComponent, canActivate:[IsLoggedIn]},
+  {
+    path: 'juniors',
+    component: SheduleYangerComponent,
+    data: {urlForRequest: 'api/schedule/junior/', urlForSave: 'api/schedule/junior/',}
+  },
+  {
+    path: 'elders',
+    component: SheduleYangerComponent,
+    data: {urlForRequest: 'api/schedule/elder/', urlForSave: 'api/schedule/elder/',}
+  },
+  {path: 'month_juniors', component: MonthsComponent, data: {urlForRequest: 'api/schedule/junior/months'}},
+  {path: 'month_elders', component: MonthsComponent,data: {urlForRequest: 'api/schedule/elder/months'}},
+  {path: 'menu_settings', component: DashboardComponent, canActivate: [IsLoggedIn]},
 ];
 
 const appRoute: Routes = [
@@ -53,7 +60,7 @@ const appRoute: Routes = [
   {path: 'reg', component: RegComponent},
   {path: 'auth', component: AuthComponent},
   // {path: 'dashboard', component: DashboardComponent, canActivate:[IsLoggedIn]},
-  {path: 'dashboard', component: DashboardComponent, canActivate:[IsLoggedIn],children:DashboardRoute},
+  {path: 'dashboard', component: DashboardComponent, canActivate: [IsLoggedIn], children: DashboardRoute},
 ];
 
 
@@ -69,7 +76,6 @@ const appRoute: Routes = [
     SheduleYangerComponent,
     ButtonSaveScheduleComponent,
     IsSavedInfoComponent,
-    SheduleElderComponent,
     IsSavedAllDataComponent,
     MonthsComponent,
 
@@ -97,8 +103,7 @@ const appRoute: Routes = [
     {provide: JWT_OPTIONS, useValue: JWT_OPTIONS},
     JwtHelperService
   ],
-  exports: [
-  ],
+  exports: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {
