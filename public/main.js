@@ -237,8 +237,11 @@ function TableComponent_td_14_mat_form_field_1_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "mat-option", 22);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5, "\u0421\u0430\u043B\u0442\u0456\u0432\u0441\u044C\u043A\u0438\u0439 \u043B\u0456\u0434");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "mat-option");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](7, "None");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "mat-option", 23);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](7, "\u041A\u0438\u0434\u043A\u043E\u0432\u0438\u0439 \u0446\u0435\u043D\u0442\u0440 (\u041E\u043B\u0435\u043A\u0441\u0456\u0457\u0432\u043A\u0430)");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "mat-option");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9, "None");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -260,7 +263,7 @@ function TableComponent_td_14_Template(rf, ctx) { if (rf & 1) {
     const _r39 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "td", 15);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function TableComponent_td_14_Template_td_click_0_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r39); const element_r28 = ctx.$implicit; const ctx_r38 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r38.setIcePlace($event, element_r28.id); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, TableComponent_td_14_mat_form_field_1_Template, 8, 2, "mat-form-field", 16);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, TableComponent_td_14_mat_form_field_1_Template, 10, 2, "mat-form-field", 16);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, TableComponent_td_14_span_2_Template, 2, 1, "span", 17);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
@@ -280,7 +283,7 @@ function TableComponent_th_16_Template(rf, ctx) { if (rf & 1) {
 function TableComponent_td_17_mat_form_field_1_Template(rf, ctx) { if (rf & 1) {
     const _r45 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-form-field", 18);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "input", 23);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "input", 24);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function TableComponent_td_17_mat_form_field_1_Template_input_ngModelChange_1_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r45); const element_r40 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit; return element_r40.time_ground = $event; })("ngModelChange", function TableComponent_td_17_mat_form_field_1_Template_input_ngModelChange_1_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r45); const element_r40 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit; const ctx_r46 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r46.onElementChange(element_r40.id); })("keydown", function TableComponent_td_17_mat_form_field_1_Template_input_keydown_1_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r45); const element_r40 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit; const ctx_r48 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r48.setEndOfTextGround($event, element_r40.id); });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -323,7 +326,7 @@ function TableComponent_th_19_Template(rf, ctx) { if (rf & 1) {
 function TableComponent_td_20_mat_form_field_1_Template(rf, ctx) { if (rf & 1) {
     const _r59 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-form-field", 18);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "input", 23);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "input", 24);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function TableComponent_td_20_mat_form_field_1_Template_input_ngModelChange_1_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r59); const element_r54 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit; return element_r54.gathering_time = $event; })("ngModelChange", function TableComponent_td_20_mat_form_field_1_Template_input_ngModelChange_1_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r59); const element_r54 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit; const ctx_r60 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r60.onElementChange(element_r54.id); })("keydown", function TableComponent_td_20_mat_form_field_1_Template_input_keydown_1_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r59); const element_r54 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit; const ctx_r62 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r62.setEndOfTextGathering($event, element_r54.id); });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -359,10 +362,10 @@ function TableComponent_td_20_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r10.gatheringList[element_r54.id]);
 } }
 function TableComponent_tr_21_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "tr", 24);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "tr", 25);
 } }
 function TableComponent_tr_22_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "tr", 25);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "tr", 26);
 } }
 const moment = moment__WEBPACK_IMPORTED_MODULE_4__;
 class TableComponent {
@@ -537,7 +540,7 @@ class TableComponent {
     }
 }
 TableComponent.ɵfac = function TableComponent_Factory(t) { return new (t || TableComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_days_generator_service__WEBPACK_IMPORTED_MODULE_2__["DaysGeneratorService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_table_data_generator_service__WEBPACK_IMPORTED_MODULE_3__["TableDataGeneratorService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_month_data_service__WEBPACK_IMPORTED_MODULE_5__["MonthDataService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_is_saved_checker_service__WEBPACK_IMPORTED_MODULE_6__["IsSavedCheckerService"])); };
-TableComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: TableComponent, selectors: [["app-table"]], inputs: { date: "date", url: "url", isSave: "isSave" }, outputs: { table: "table", isSaveStage: "isSaveStage", isSaveAllDataStage: "isSaveAllDataStage" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵProvidersFeature"]([_services_days_generator_service__WEBPACK_IMPORTED_MODULE_2__["DaysGeneratorService"], _services_table_data_generator_service__WEBPACK_IMPORTED_MODULE_3__["TableDataGeneratorService"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵNgOnChangesFeature"]], decls: 23, vars: 3, consts: [["matInput", "", "placeholder", "\u0441\u0442\u0440\u043E\u043A\u0430 \u0434\u043B\u044F \u043F\u043E\u0438\u0441\u043A\u0430", 3, "keyup"], ["input", ""], ["mat-table", "", 1, "mat-elevation-z8", 3, "dataSource"], ["matColumnDef", "data"], ["mat-header-cell", "", 4, "matHeaderCellDef"], ["mat-cell", "", 4, "matCellDef"], ["matColumnDef", "time_ice"], ["mat-cell", "", 3, "ngClass", "click", 4, "matCellDef"], ["matColumnDef", "ice_place"], ["matColumnDef", "time_ground"], ["matColumnDef", "gathering_time"], ["mat-header-row", "", 4, "matHeaderRowDef"], ["mat-row", "", 4, "matRowDef", "matRowDefColumns"], ["mat-header-cell", ""], ["mat-cell", ""], ["mat-cell", "", 3, "ngClass", "click"], ["class", "no-paddings", "floatLabel", "never", 4, "ngIf"], [4, "ngIf"], ["floatLabel", "never", 1, "no-paddings"], ["matInput", "", "placeholder", "\u0412\u0440\u0435\u043C\u044F \u043B\u044C\u0434\u0430", "type", "text", 3, "textMask", "value", "ngModel", "ngModelChange", "keydown"], ["placeholder", "\u041C\u0435\u0441\u0442\u043E \u043B\u044C\u0434\u0430", 3, "value", "ngModel", "ngModelChange"], ["value", "\u041F\u0430\u043B\u0430\u0446 \u0441\u043F\u043E\u0440\u0442\u0443"], ["value", "\u0421\u0430\u043B\u0442\u0456\u0432\u0441\u044C\u043A\u0438\u0439 \u043B\u0456\u0434"], ["matInput", "", "placeholder", "\u0412\u0440\u0435\u043C\u044F \u0437\u0435\u043C\u043B\u0438", 3, "textMask", "value", "ngModel", "ngModelChange", "keydown"], ["mat-header-row", ""], ["mat-row", ""]], template: function TableComponent_Template(rf, ctx) { if (rf & 1) {
+TableComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: TableComponent, selectors: [["app-table"]], inputs: { date: "date", url: "url", isSave: "isSave" }, outputs: { table: "table", isSaveStage: "isSaveStage", isSaveAllDataStage: "isSaveAllDataStage" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵProvidersFeature"]([_services_days_generator_service__WEBPACK_IMPORTED_MODULE_2__["DaysGeneratorService"], _services_table_data_generator_service__WEBPACK_IMPORTED_MODULE_3__["TableDataGeneratorService"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵNgOnChangesFeature"]], decls: 23, vars: 3, consts: [["matInput", "", "placeholder", "\u0441\u0442\u0440\u043E\u043A\u0430 \u0434\u043B\u044F \u043F\u043E\u0438\u0441\u043A\u0430", 3, "keyup"], ["input", ""], ["mat-table", "", 1, "mat-elevation-z8", 3, "dataSource"], ["matColumnDef", "data"], ["mat-header-cell", "", 4, "matHeaderCellDef"], ["mat-cell", "", 4, "matCellDef"], ["matColumnDef", "time_ice"], ["mat-cell", "", 3, "ngClass", "click", 4, "matCellDef"], ["matColumnDef", "ice_place"], ["matColumnDef", "time_ground"], ["matColumnDef", "gathering_time"], ["mat-header-row", "", 4, "matHeaderRowDef"], ["mat-row", "", 4, "matRowDef", "matRowDefColumns"], ["mat-header-cell", ""], ["mat-cell", ""], ["mat-cell", "", 3, "ngClass", "click"], ["class", "no-paddings", "floatLabel", "never", 4, "ngIf"], [4, "ngIf"], ["floatLabel", "never", 1, "no-paddings"], ["matInput", "", "placeholder", "\u0412\u0440\u0435\u043C\u044F \u043B\u044C\u0434\u0430", "type", "text", 3, "textMask", "value", "ngModel", "ngModelChange", "keydown"], ["placeholder", "\u041C\u0435\u0441\u0442\u043E \u043B\u044C\u0434\u0430", 3, "value", "ngModel", "ngModelChange"], ["value", "\u041F\u0430\u043B\u0430\u0446 \u0441\u043F\u043E\u0440\u0442\u0443"], ["value", "\u0421\u0430\u043B\u0442\u0456\u0432\u0441\u044C\u043A\u0438\u0439 \u043B\u0456\u0434"], ["value", "\u041A\u0438\u0434\u043A\u043E\u0432\u0438\u0439 \u0446\u0435\u043D\u0442\u0440 (\u041E\u043B\u0435\u043A\u0441\u0456\u0457\u0432\u043A\u0430)"], ["matInput", "", "placeholder", "\u0412\u0440\u0435\u043C\u044F \u0437\u0435\u043C\u043B\u0438", 3, "textMask", "value", "ngModel", "ngModelChange", "keydown"], ["mat-header-row", ""], ["mat-row", ""]], template: function TableComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-form-field");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-label");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "\u041F\u043E\u0438\u0441\u043A");
