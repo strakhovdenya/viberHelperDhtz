@@ -1,0 +1,24 @@
+<div class="mat-app-background basic-container">
+  <div
+    class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-1 mb-1 border-bottom">
+    <div class="col-md-6">
+      <datepiker (picker)="onChangedFromPicker($event)"></datepiker>
+    </div>
+    <div *ngIf="isTableDataExists" class="col-md-6">
+      <button-save-schedule
+        (isSaveStageButton)="onSaveData($event)"
+        [date]="tableData"
+        [url]="urlForSave"
+        class="mr-2">
+      </button-save-schedule>
+      <app-is-saved-info [savedStatusForButton]="savedStatus">
+      </app-is-saved-info>
+    </div>
+  </div>
+  <app-table
+    (table)="onChangedFromTable($event)"
+    (isSaveStage)="onChangedFromTableSavedStatus($event)"
+    [date]="dateBase"
+    [url]="urlForRequest">
+  </app-table>
+</div>

@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.custom-success
+{
+  position: fixed!important; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  right: 2%;
+  bottom: 3%;
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(95, 165, 95); /* Fallback color */
+  background-color: rgba(3, 252, 30, 0.5); /* Black w/ opacity */
+  color: #ffffff;
+}
+
+.alert-danger
+{
+  position: fixed!important; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  right: 2%;
+  bottom: 3%;
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(95, 165, 95); /* Fallback color */
+  background-color: rgba(252, 3, 111, 0.5); /* Black w/ opacity */
+  color: #ffffff;
+}

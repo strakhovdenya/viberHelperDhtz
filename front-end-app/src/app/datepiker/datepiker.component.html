@@ -1,0 +1,14 @@
+<mat-form-field class="mat-app-background" appearance="fill">
+  <!--  <mat-label>month</mat-label>-->
+  <!-- #docregion toggle -->
+  {{dateService.date | async | moment}}
+  <input matInput [matDatepicker]="picker" [formControl]="date" (dateInput)="addEvent('input', $event)"
+         (dateChange)="addEvent('change', $event)">
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker
+                  startView="year"
+                  (yearSelected)="chosenYearHandler($event)"
+                  (monthSelected)="chosenMonthHandler($event, picker)">
+  </mat-datepicker>
+  <!-- #enddocregion toggle -->
+</mat-form-field>

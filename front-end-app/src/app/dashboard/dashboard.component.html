@@ -1,0 +1,43 @@
+<div>
+  <h1 class="text-info">Кабинет пользователя</h1>
+  <div
+    class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between pb-3  border-bottom">
+    <div class="col-md-12 text-end btn-group" role="group">
+      <button [routerLink]="['/dashboard/juniors']"
+
+              class="btn btn-lg active"
+              routerLinkActive #rla="routerLinkActive"
+              [class.btn-secondary]="!rla.isActive"
+              [class.btn-primary]="rla.isActive"
+
+              role="button"
+              aria-pressed="true">
+        Рассписание младших
+      </button>
+      <button [routerLink]="['/dashboard/elders']"
+
+              routerLinkActive #rla2="routerLinkActive"
+              class="btn btn-lg active"
+              [class.btn-secondary]="!rla2.isActive"
+              [class.btn-primary]="rla2.isActive"
+              role="button"
+              aria-pressed="true">
+        Рассписание старших
+      </button>
+      <button [routerLink]="['/dashboard/month']"
+
+              routerLinkActive #rla3="routerLinkActive"
+              class="btn btn-lg active"
+              [class.btn-secondary]="!rla3.isActive"
+              [class.btn-primary]="rla3.isActive"
+              role="button"
+              aria-pressed="true">
+        Месяцы младшие
+      </button>
+      <button [routerLink]="['/dashboard/menu_settings']" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Настройка меню (не работает)</button>
+    </div>
+  </div>
+  <br>
+  <!--  <button class="btn btn-warning" (click)="logoutUser()">Выйти из кабинета!</button>-->
+</div>
+<router-outlet></router-outlet>
