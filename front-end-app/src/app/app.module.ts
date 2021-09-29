@@ -33,8 +33,6 @@ import {TableModule} from './table/table.module';
 import {DatepikerModule} from './datepiker/datepikerModule';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ButtonSaveScheduleComponent} from './button-save-schedule/button-save-schedule.component';
-import {IsSavedInfoComponent} from './is-saved-info/is-saved-info.component';
-import {IsSavedAllDataComponent} from './is-saved-all-data/is-saved-all-data.component';
 import {DateService} from "./services/date.service";
 
 
@@ -75,8 +73,6 @@ const appRoute: Routes = [
     FooterComponent,
     SheduleYangerComponent,
     ButtonSaveScheduleComponent,
-    IsSavedInfoComponent,
-    IsSavedAllDataComponent,
     MonthsComponent,
 
   ],

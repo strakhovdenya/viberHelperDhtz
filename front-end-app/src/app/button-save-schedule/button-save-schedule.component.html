@@ -1,5 +1,12 @@
 <button
+  *ngIf="savedStatusAllDataForButton && savedStatusForButton"
+  (click)="saveMonthData()"
+  mat-raised-button color="secondary">
+  Сохранить
+</button>
+<button
+  *ngIf="!savedStatusAllDataForButton || !savedStatusForButton"
   (click)="saveMonthData()"
   mat-raised-button color="primary">
-  Сохранить!
+  Сохранить
 </button>

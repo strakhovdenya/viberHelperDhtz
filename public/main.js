@@ -728,23 +728,33 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_month_data_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/month-data.service */ "C5QE");
 /* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! angular2-flash-messages */ "sriv");
 /* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(angular2_flash_messages__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material/button */ "bTqV");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "ofXK");
+/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material/button */ "bTqV");
 
 
 
 
 
+
+function ButtonSaveScheduleComponent_button_0_Template(rf, ctx) { if (rf & 1) {
+    const _r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ButtonSaveScheduleComponent_button_0_Template_button_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r3); const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r2.saveMonthData(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " \u0421\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C\n");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} }
+function ButtonSaveScheduleComponent_button_1_Template(rf, ctx) { if (rf & 1) {
+    const _r5 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ButtonSaveScheduleComponent_button_1_Template_button_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r5); const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r4.saveMonthData(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " \u0421\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C\n");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} }
 class ButtonSaveScheduleComponent {
     constructor(monthDataService, flashMessages) {
         this.monthDataService = monthDataService;
         this.flashMessages = flashMessages;
         this.isSaveStageButton = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
-    }
-    ngOnInit() {
-    }
-    ngOnChanges() {
-        // console.log('ButtonSaveScheduleComponent:ngOnChanges');
-        // console.log(this.date);
     }
     saveMonthData() {
         this.monthDataService.saveMonthData(this.date, this.url).subscribe(({ msg, success }) => {
@@ -767,58 +777,14 @@ class ButtonSaveScheduleComponent {
     }
 }
 ButtonSaveScheduleComponent.ɵfac = function ButtonSaveScheduleComponent_Factory(t) { return new (t || ButtonSaveScheduleComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_month_data_service__WEBPACK_IMPORTED_MODULE_1__["MonthDataService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](angular2_flash_messages__WEBPACK_IMPORTED_MODULE_2__["FlashMessagesService"])); };
-ButtonSaveScheduleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ButtonSaveScheduleComponent, selectors: [["button-save-schedule"]], inputs: { date: "date", url: "url" }, outputs: { isSaveStageButton: "isSaveStageButton" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵNgOnChangesFeature"]], decls: 2, vars: 0, consts: [["mat-raised-button", "", "color", "primary", 3, "click"]], template: function ButtonSaveScheduleComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ButtonSaveScheduleComponent_Template_button_click_0_listener() { return ctx.saveMonthData(); });
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " \u0421\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C!\n");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    } }, directives: [_angular_material_button__WEBPACK_IMPORTED_MODULE_3__["MatButton"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJidXR0b24tc2F2ZS1zY2hlZHVsZS5jb21wb25lbnQuY3NzIn0= */"] });
-
-
-/***/ }),
-
-/***/ "Hi+l":
-/*!******************************************************************!*\
-  !*** ./src/app/is-saved-all-data/is-saved-all-data.component.ts ***!
-  \******************************************************************/
-/*! exports provided: IsSavedAllDataComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IsSavedAllDataComponent", function() { return IsSavedAllDataComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "ofXK");
-/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/button */ "bTqV");
-
-
-
-function IsSavedAllDataComponent_button_0_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "input", 3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, " \u0438\u0437\u043C\u0435\u043D\u0435\u043D\n");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-} }
-function IsSavedAllDataComponent_button_1_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "input", 5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, " \u0438\u0437\u043C\u0435\u043D\u0435\u043D\n");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-} }
-class IsSavedAllDataComponent {
-    constructor() { }
-    ngOnInit() {
-    }
-}
-IsSavedAllDataComponent.ɵfac = function IsSavedAllDataComponent_Factory(t) { return new (t || IsSavedAllDataComponent)(); };
-IsSavedAllDataComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: IsSavedAllDataComponent, selectors: [["app-is-saved-all-data"]], inputs: { savedStatusAllDataForButton: "savedStatusAllDataForButton" }, decls: 2, vars: 2, consts: [["mat-raised-button", "", "color", "secondary", 4, "ngIf"], ["mat-raised-button", "", "color", "primary", 4, "ngIf"], ["mat-raised-button", "", "color", "secondary"], ["type", "checkbox"], ["mat-raised-button", "", "color", "primary"], ["type", "checkbox", "checked", ""]], template: function IsSavedAllDataComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, IsSavedAllDataComponent_button_0_Template, 3, 0, "button", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, IsSavedAllDataComponent_button_1_Template, 3, 0, "button", 1);
+ButtonSaveScheduleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ButtonSaveScheduleComponent, selectors: [["button-save-schedule"]], inputs: { date: "date", url: "url", savedStatusAllDataForButton: "savedStatusAllDataForButton", savedStatusForButton: "savedStatusForButton" }, outputs: { isSaveStageButton: "isSaveStageButton" }, decls: 2, vars: 2, consts: [["mat-raised-button", "", "color", "secondary", 3, "click", 4, "ngIf"], ["mat-raised-button", "", "color", "primary", 3, "click", 4, "ngIf"], ["mat-raised-button", "", "color", "secondary", 3, "click"], ["mat-raised-button", "", "color", "primary", 3, "click"]], template: function ButtonSaveScheduleComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, ButtonSaveScheduleComponent_button_0_Template, 2, 0, "button", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, ButtonSaveScheduleComponent_button_1_Template, 2, 0, "button", 1);
     } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.savedStatusAllDataForButton);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.savedStatusAllDataForButton && ctx.savedStatusForButton);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", !ctx.savedStatusAllDataForButton);
-    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["NgIf"], _angular_material_button__WEBPACK_IMPORTED_MODULE_2__["MatButton"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJpcy1zYXZlZC1hbGwtZGF0YS5jb21wb25lbnQuY3NzIn0= */"] });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", !ctx.savedStatusAllDataForButton || !ctx.savedStatusForButton);
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_3__["NgIf"], _angular_material_button__WEBPACK_IMPORTED_MODULE_4__["MatButton"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJidXR0b24tc2F2ZS1zY2hlZHVsZS5jb21wb25lbnQuY3NzIn0= */"] });
 
 
 /***/ }),
@@ -896,11 +862,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "tyNb");
 /* harmony import */ var _datepiker_datepiker_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../datepiker/datepiker.component */ "/SFn");
 /* harmony import */ var _button_save_schedule_button_save_schedule_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../button-save-schedule/button-save-schedule.component */ "Eeqs");
-/* harmony import */ var _is_saved_info_is_saved_info_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../is-saved-info/is-saved-info.component */ "sLSK");
-/* harmony import */ var _is_saved_all_data_is_saved_all_data_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../is-saved-all-data/is-saved-all-data.component */ "Hi+l");
-/* harmony import */ var _table_table_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../table/table.component */ "9Rdk");
-
-
+/* harmony import */ var _table_table_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../table/table.component */ "9Rdk");
 
 
 
@@ -944,7 +906,7 @@ class SheduleYangerComponent {
     }
 }
 SheduleYangerComponent.ɵfac = function SheduleYangerComponent_Factory(t) { return new (t || SheduleYangerComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_services_date_service__WEBPACK_IMPORTED_MODULE_2__["DateService"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"])); };
-SheduleYangerComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: SheduleYangerComponent, selectors: [["shedule-yanger"]], decls: 13, vars: 7, consts: [[1, "mat-app-background", "basic-container"], [1, "d-flex", "flex-wrap", "align-items-center", "justify-content-center", "justify-content-md-between", "py-1", "mb-1", "border-bottom"], [1, "col-md-3"], [1, "mr-2", 3, "date", "url", "isSaveStageButton"], [1, "content"], [1, "row", "mb-1"], [3, "savedStatusForButton"], [1, "row"], [3, "savedStatusAllDataForButton"], [3, "date", "url", "isSave", "table", "isSaveStage", "isSaveAllDataStage"]], template: function SheduleYangerComponent_Template(rf, ctx) { if (rf & 1) {
+SheduleYangerComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: SheduleYangerComponent, selectors: [["shedule-yanger"]], decls: 7, vars: 7, consts: [[1, "mat-app-background", "basic-container"], [1, "d-flex", "flex-wrap", "align-items-center", "justify-content-center", "justify-content-md-between", "py-1", "mb-1", "border-bottom"], [1, "col-md-6"], [1, "mr-2", 3, "savedStatusForButton", "savedStatusAllDataForButton", "date", "url", "isSaveStageButton"], [3, "date", "url", "isSave", "table", "isSaveStage", "isSaveAllDataStage"]], template: function SheduleYangerComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "div", 2);
@@ -955,31 +917,17 @@ SheduleYangerComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵd
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("isSaveStageButton", function SheduleYangerComponent_Template_button_save_schedule_isSaveStageButton_5_listener($event) { return ctx.onSaveData($event); });
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](6, "div", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](7, "div", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](8, "div", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](9, "app-is-saved-info", 6);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](10, "div", 7);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](11, "app-is-saved-all-data", 8);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](12, "app-table", 9);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("table", function SheduleYangerComponent_Template_app_table_table_12_listener($event) { return ctx.onChangedFromTable($event); })("isSaveStage", function SheduleYangerComponent_Template_app_table_isSaveStage_12_listener($event) { return ctx.onChangedFromTableSavedStatus($event); })("isSaveAllDataStage", function SheduleYangerComponent_Template_app_table_isSaveAllDataStage_12_listener($event) { return ctx.onChangedFromTableAllDataSavedStatus($event); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](6, "app-table", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("table", function SheduleYangerComponent_Template_app_table_table_6_listener($event) { return ctx.onChangedFromTable($event); })("isSaveStage", function SheduleYangerComponent_Template_app_table_isSaveStage_6_listener($event) { return ctx.onChangedFromTableSavedStatus($event); })("isSaveAllDataStage", function SheduleYangerComponent_Template_app_table_isSaveAllDataStage_6_listener($event) { return ctx.onChangedFromTableAllDataSavedStatus($event); });
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("date", ctx.tableData)("url", ctx.urlForSave);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("savedStatusForButton", ctx.savedStatus);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("savedStatusAllDataForButton", ctx.savedStatusAllData);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("savedStatusForButton", ctx.savedStatus)("savedStatusAllDataForButton", ctx.savedStatusAllData)("date", ctx.tableData)("url", ctx.urlForSave);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("date", ctx.dateBase)("url", ctx.urlForRequest)("isSave", ctx.savedStatusAllData);
-    } }, directives: [_datepiker_datepiker_component__WEBPACK_IMPORTED_MODULE_4__["Datepiker"], _button_save_schedule_button_save_schedule_component__WEBPACK_IMPORTED_MODULE_5__["ButtonSaveScheduleComponent"], _is_saved_info_is_saved_info_component__WEBPACK_IMPORTED_MODULE_6__["IsSavedInfoComponent"], _is_saved_all_data_is_saved_all_data_component__WEBPACK_IMPORTED_MODULE_7__["IsSavedAllDataComponent"], _table_table_component__WEBPACK_IMPORTED_MODULE_8__["TableComponent"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzaGVkdWxlLXlhbmdlci5jb21wb25lbnQuY3NzIn0= */"] });
+    } }, directives: [_datepiker_datepiker_component__WEBPACK_IMPORTED_MODULE_4__["Datepiker"], _button_save_schedule_button_save_schedule_component__WEBPACK_IMPORTED_MODULE_5__["ButtonSaveScheduleComponent"], _table_table_component__WEBPACK_IMPORTED_MODULE_6__["TableComponent"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzaGVkdWxlLXlhbmdlci5jb21wb25lbnQuY3NzIn0= */"] });
 
 
 /***/ }),
@@ -1626,15 +1574,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _datepiker_datepikerModule__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./datepiker/datepikerModule */ "cffG");
 /* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @angular/platform-browser/animations */ "R1ws");
 /* harmony import */ var _button_save_schedule_button_save_schedule_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./button-save-schedule/button-save-schedule.component */ "Eeqs");
-/* harmony import */ var _is_saved_info_is_saved_info_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./is-saved-info/is-saved-info.component */ "sLSK");
-/* harmony import */ var _is_saved_all_data_is_saved_all_data_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./is-saved-all-data/is-saved-all-data.component */ "Hi+l");
-/* harmony import */ var _services_date_service__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./services/date.service */ "Ig2y");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _services_date_service__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./services/date.service */ "Ig2y");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! @angular/core */ "fXoL");
 
 
 // import { TextMaskModule } from 'angular2-text-mask';
-
-
 
 
 
@@ -1689,9 +1633,9 @@ const appRoute = [
 class AppModule {
 }
 AppModule.ɵfac = function AppModule_Factory(t) { return new (t || AppModule)(); };
-AppModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_29__["ɵɵdefineNgModule"]({ type: AppModule, bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]] });
-AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_29__["ɵɵdefineInjector"]({ providers: [
-        _services_date_service__WEBPACK_IMPORTED_MODULE_28__["DateService"],
+AppModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_27__["ɵɵdefineNgModule"]({ type: AppModule, bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]] });
+AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_27__["ɵɵdefineInjector"]({ providers: [
+        _services_date_service__WEBPACK_IMPORTED_MODULE_26__["DateService"],
         _services_is_saved_checker_service__WEBPACK_IMPORTED_MODULE_17__["IsSavedCheckerService"],
         _services_month_data_service__WEBPACK_IMPORTED_MODULE_16__["MonthDataService"],
         _services_check_form_service__WEBPACK_IMPORTED_MODULE_15__["CheckFormService"],
@@ -1712,7 +1656,7 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_29__["ɵɵdefineInjecto
             _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_24__["BrowserAnimationsModule"]
             // TextMaskModule
         ]] });
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_29__["ɵɵsetNgModuleScope"](AppModule, { declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"],
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_27__["ɵɵsetNgModuleScope"](AppModule, { declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"],
         _header_header_component__WEBPACK_IMPORTED_MODULE_4__["HeaderComponent"],
         _reg_reg_component__WEBPACK_IMPORTED_MODULE_5__["RegComponent"],
         _auth_auth_component__WEBPACK_IMPORTED_MODULE_6__["AuthComponent"],
@@ -1721,8 +1665,6 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_29__["ɵɵdefineInjecto
         _footer_footer_component__WEBPACK_IMPORTED_MODULE_12__["FooterComponent"],
         _sheduleYanger_shedule_yanger_component__WEBPACK_IMPORTED_MODULE_9__["SheduleYangerComponent"],
         _button_save_schedule_button_save_schedule_component__WEBPACK_IMPORTED_MODULE_25__["ButtonSaveScheduleComponent"],
-        _is_saved_info_is_saved_info_component__WEBPACK_IMPORTED_MODULE_26__["IsSavedInfoComponent"],
-        _is_saved_all_data_is_saved_all_data_component__WEBPACK_IMPORTED_MODULE_27__["IsSavedAllDataComponent"],
         _monthes_months_component__WEBPACK_IMPORTED_MODULE_10__["MonthsComponent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
         _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"], _angular_router__WEBPACK_IMPORTED_MODULE_11__["RouterModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_13__["FormsModule"], angular2_flash_messages__WEBPACK_IMPORTED_MODULE_14__["FlashMessagesModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClientModule"],
         _material_material_module__WEBPACK_IMPORTED_MODULE_21__["MaterialModule"],
@@ -2661,53 +2603,6 @@ RegComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCompo
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngModel", ctx.password);
     } }, directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["ɵangular_packages_forms_forms_ba"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["NgForm"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["NgModel"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJyZWcuY29tcG9uZW50LmNzcyJ9 */"] });
-
-
-/***/ }),
-
-/***/ "sLSK":
-/*!**********************************************************!*\
-  !*** ./src/app/is-saved-info/is-saved-info.component.ts ***!
-  \**********************************************************/
-/*! exports provided: IsSavedInfoComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IsSavedInfoComponent", function() { return IsSavedInfoComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "ofXK");
-/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/button */ "bTqV");
-
-
-
-function IsSavedInfoComponent_button_0_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "input", 3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, " \u0441\u043E\u0445\u0440\u0430\u043D\u0435\u043D\n");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-} }
-function IsSavedInfoComponent_button_1_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "input", 5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, " \u043D\u0435 \u0441\u043E\u0445\u0440\u0430\u043D\u0435\u043D\n");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-} }
-class IsSavedInfoComponent {
-    constructor() {
-    }
-    ngOnInit() {
-    }
-}
-IsSavedInfoComponent.ɵfac = function IsSavedInfoComponent_Factory(t) { return new (t || IsSavedInfoComponent)(); };
-IsSavedInfoComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: IsSavedInfoComponent, selectors: [["app-is-saved-info"]], inputs: { savedStatusForButton: "savedStatusForButton" }, decls: 2, vars: 2, consts: [["mat-raised-button", "", "color", "secondary", 4, "ngIf"], ["mat-raised-button", "", "color", "primary", 4, "ngIf"], ["mat-raised-button", "", "color", "secondary"], ["type", "checkbox", "checked", ""], ["mat-raised-button", "", "color", "primary"], ["type", "checkbox"]], template: function IsSavedInfoComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, IsSavedInfoComponent_button_0_Template, 3, 0, "button", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, IsSavedInfoComponent_button_1_Template, 3, 0, "button", 1);
-    } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.savedStatusForButton);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", !ctx.savedStatusForButton);
-    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["NgIf"], _angular_material_button__WEBPACK_IMPORTED_MODULE_2__["MatButton"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJpcy1zYXZlZC1pbmZvLmNvbXBvbmVudC5jc3MifQ== */"] });
 
 
 /***/ }),

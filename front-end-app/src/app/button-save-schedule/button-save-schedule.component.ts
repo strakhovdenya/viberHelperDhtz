@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import {MonthDataService} from '../services/month-data.service';
 import {ScheduleElement} from "../table/interface/sheduleElement";
 import {FlashMessagesService} from "angular2-flash-messages";
@@ -9,10 +9,13 @@ import {FlashMessagesService} from "angular2-flash-messages";
   templateUrl: './button-save-schedule.component.html',
   styleUrls: ['./button-save-schedule.component.css']
 })
-export class ButtonSaveScheduleComponent implements OnChanges, OnInit {
+export class ButtonSaveScheduleComponent  {
 
   @Input() date: Array<ScheduleElement>;
   @Input() url: string;
+  @Input() savedStatusAllDataForButton;
+  @Input() savedStatusForButton;
+  isCanBeSaved: boolean
   @Output() isSaveStageButton = new EventEmitter<boolean>();
 
   constructor(
@@ -21,13 +24,6 @@ export class ButtonSaveScheduleComponent implements OnChanges, OnInit {
   ) {
   }
 
-  ngOnInit(): void {
-  }
-
-  ngOnChanges(): void {
-    // console.log('ButtonSaveScheduleComponent:ngOnChanges');
-    // console.log(this.date);
-  }
 
   saveMonthData() {
     this.monthDataService.saveMonthData(this.date, this.url).subscribe(({msg, success}) => {
