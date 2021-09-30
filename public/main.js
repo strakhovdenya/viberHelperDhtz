@@ -732,60 +732,78 @@ MonthDataService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefine
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MonthComponent", function() { return MonthComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var _services_month_data_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/month-data.service */ "C5QE");
-/* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! angular2-flash-messages */ "sriv");
-/* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(angular2_flash_messages__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material/icon */ "NFeN");
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _services_month_data_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/month-data.service */ "C5QE");
+/* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! angular2-flash-messages */ "sriv");
+/* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _confirmation_dialog_confirmation_dialog_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../confirmation-dialog/confirmation-dialog.service */ "P8gP");
+/* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material/icon */ "NFeN");
+
+
 
 
 
 
 
 class MonthComponent {
-    constructor(monthDataService, flashMessages) {
+    constructor(monthDataService, flashMessages, confirmationDialogService) {
         this.monthDataService = monthDataService;
         this.flashMessages = flashMessages;
-        this.isChanged = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        this.confirmationDialogService = confirmationDialogService;
+        this.isChanged = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
     }
     ngOnInit() {
     }
     deleteMonth(event, month) {
-        this.monthDataService.deleteMonth(this.urlBase + '/' + month).subscribe(({ msg, success }) => {
-            if (!success) {
-                this.flashMessages.show(msg, {
-                    cssClass: 'alert-danger',
-                    timeout: 2000
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            const modalParams = [
+                'Подтввердите удаление..',
+                `Удалить анные за период ${month}?`,
+                'УДАЛИТЬ',
+                'ОТМЕНИТЬ',
+                'lg'
+            ];
+            // @ts-ignore
+            const confirmed = yield this.confirmationDialogService.confirm(...modalParams);
+            if (confirmed) {
+                this.monthDataService.deleteMonth(this.urlBase + '/' + month).subscribe(({ msg, success }) => {
+                    if (!success) {
+                        this.flashMessages.show(msg, {
+                            cssClass: 'alert-danger',
+                            timeout: 2000
+                        });
+                    }
+                    else {
+                        this.flashMessages.show(msg, {
+                            cssClass: 'custom-success',
+                            timeout: 2000
+                        });
+                        this.isChanged.emit(true);
+                    }
                 });
             }
-            else {
-                this.flashMessages.show(msg, {
-                    cssClass: 'custom-success',
-                    timeout: 2000
-                });
-                this.isChanged.emit(true);
-            }
+            return;
         });
-        return;
     }
 }
-MonthComponent.ɵfac = function MonthComponent_Factory(t) { return new (t || MonthComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_month_data_service__WEBPACK_IMPORTED_MODULE_1__["MonthDataService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](angular2_flash_messages__WEBPACK_IMPORTED_MODULE_2__["FlashMessagesService"])); };
-MonthComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: MonthComponent, selectors: [["app-month"]], inputs: { monthDate: "monthDate", urlBase: "urlBase" }, outputs: { isChanged: "isChanged" }, decls: 6, vars: 1, consts: [[1, "d-flex", "flex-wrap", "align-items-center", "justify-content-center", "justify-content-md-between", "p-1", "oneMonth"], [1, "col-md-11"], [1, "col-md-1", "icon", 3, "click"], ["aria-hidden", "false", "aria-label", "Example home icon"]], template: function MonthComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function MonthComponent_Template_div_click_3_listener($event) { return ctx.deleteMonth($event, ctx.monthDate); });
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "mat-icon", 3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5, "delete_forever");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+MonthComponent.ɵfac = function MonthComponent_Factory(t) { return new (t || MonthComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_services_month_data_service__WEBPACK_IMPORTED_MODULE_2__["MonthDataService"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3__["FlashMessagesService"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_confirmation_dialog_confirmation_dialog_service__WEBPACK_IMPORTED_MODULE_4__["ConfirmationDialogService"])); };
+MonthComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: MonthComponent, selectors: [["app-month"]], inputs: { monthDate: "monthDate", urlBase: "urlBase" }, outputs: { isChanged: "isChanged" }, decls: 6, vars: 1, consts: [[1, "d-flex", "flex-wrap", "align-items-center", "justify-content-center", "justify-content-md-between", "p-1", "oneMonth"], [1, "col-md-11"], [1, "col-md-1", "icon", 3, "click"], ["aria-hidden", "false", "aria-label", "Example home icon"]], template: function MonthComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "div", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](3, "div", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function MonthComponent_Template_div_click_3_listener($event) { return ctx.deleteMonth($event, ctx.monthDate); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](4, "mat-icon", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](5, "delete_forever");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", ctx.monthDate, " ");
-    } }, directives: [_angular_material_icon__WEBPACK_IMPORTED_MODULE_3__["MatIcon"]], styles: [".icon[_ngcontent-%COMP%] {\r\n  cursor: pointer;\r\n}\r\n.icon[_ngcontent-%COMP%]:hover {\r\n  color: #46a35e;\r\n}\r\n.oneMonth[_ngcontent-%COMP%]:hover {\r\n  background-color: #6e6e6e;\r\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1vbnRoLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxlQUFlO0FBQ2pCO0FBQ0E7RUFDRSxjQUFjO0FBQ2hCO0FBRUE7RUFDRSx5QkFBeUI7QUFDM0IiLCJmaWxlIjoibW9udGguY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5pY29uIHtcclxuICBjdXJzb3I6IHBvaW50ZXI7XHJcbn1cclxuLmljb246aG92ZXIge1xyXG4gIGNvbG9yOiAjNDZhMzVlO1xyXG59XHJcblxyXG4ub25lTW9udGg6aG92ZXIge1xyXG4gIGJhY2tncm91bmQtY29sb3I6ICM2ZTZlNmU7XHJcbn1cclxuIl19 */"] });
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"](" ", ctx.monthDate, " ");
+    } }, directives: [_angular_material_icon__WEBPACK_IMPORTED_MODULE_5__["MatIcon"]], styles: [".icon[_ngcontent-%COMP%] {\r\n  cursor: pointer;\r\n}\r\n.icon[_ngcontent-%COMP%]:hover {\r\n  color: #46a35e;\r\n}\r\n.oneMonth[_ngcontent-%COMP%]:hover {\r\n  background-color: #6e6e6e;\r\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1vbnRoLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxlQUFlO0FBQ2pCO0FBQ0E7RUFDRSxjQUFjO0FBQ2hCO0FBRUE7RUFDRSx5QkFBeUI7QUFDM0IiLCJmaWxlIjoibW9udGguY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5pY29uIHtcclxuICBjdXJzb3I6IHBvaW50ZXI7XHJcbn1cclxuLmljb246aG92ZXIge1xyXG4gIGNvbG9yOiAjNDZhMzVlO1xyXG59XHJcblxyXG4ub25lTW9udGg6aG92ZXIge1xyXG4gIGJhY2tncm91bmQtY29sb3I6ICM2ZTZlNmU7XHJcbn1cclxuIl19 */"] });
 
 
 /***/ }),
@@ -1008,6 +1026,76 @@ SheduleYangerComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵd
 
 /***/ }),
 
+/***/ "JYil":
+/*!**********************************************************************!*\
+  !*** ./src/app/confirmation-dialog/confirmation-dialog.component.ts ***!
+  \**********************************************************************/
+/*! exports provided: ConfirmationDialogComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ConfirmationDialogComponent", function() { return ConfirmationDialogComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "1kSV");
+
+
+class ConfirmationDialogComponent {
+    constructor(activeModal) {
+        this.activeModal = activeModal;
+    }
+    ngOnInit() {
+    }
+    decline() {
+        this.activeModal.close(false);
+    }
+    accept() {
+        this.activeModal.close(true);
+    }
+    dismiss() {
+        this.activeModal.dismiss();
+    }
+}
+ConfirmationDialogComponent.ɵfac = function ConfirmationDialogComponent_Factory(t) { return new (t || ConfirmationDialogComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NgbActiveModal"])); };
+ConfirmationDialogComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ConfirmationDialogComponent, selectors: [["app-confirmation-dialog"]], inputs: { title: "title", message: "message", btnOkText: "btnOkText", btnCancelText: "btnCancelText" }, decls: 13, vars: 4, consts: [[1, "modal-header"], [1, "modal-title"], ["type", "button", "aria-label", "Close", 1, "close", 3, "click"], ["aria-hidden", "true"], [1, "modal-body"], [1, "modal-footer"], ["type", "button", 1, "btn", "btn-danger", 3, "click"], ["type", "button", 1, "btn", "btn-primary", 3, "click"]], template: function ConfirmationDialogComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "h4", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "button", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ConfirmationDialogComponent_Template_button_click_3_listener() { return ctx.dismiss(); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "span", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5, "\u00D7");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "div", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "div", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "button", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ConfirmationDialogComponent_Template_button_click_9_listener() { return ctx.decline(); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "button", 7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ConfirmationDialogComponent_Template_button_click_11_listener() { return ctx.accept(); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    } if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.title);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", ctx.message, "\n");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.btnCancelText);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.btnOkText);
+    } }, styles: [".modal-title[_ngcontent-%COMP%]{\r\n  color: #303030;\r\n}\r\n\r\n.modal-body[_ngcontent-%COMP%]{\r\n  color: #303030;\r\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbmZpcm1hdGlvbi1kaWFsb2cuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGNBQWM7QUFDaEI7O0FBRUE7RUFDRSxjQUFjO0FBQ2hCOztBQUVBLHVCQUF1Qjs7QUFDdkIsb0JBQW9COztBQUNwQixJQUFJIiwiZmlsZSI6ImNvbmZpcm1hdGlvbi1kaWFsb2cuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5tb2RhbC10aXRsZXtcclxuICBjb2xvcjogIzMwMzAzMDtcclxufVxyXG5cclxuLm1vZGFsLWJvZHl7XHJcbiAgY29sb3I6ICMzMDMwMzA7XHJcbn1cclxuXHJcbi8qLm1hdC1hcHAtYmFja2dyb3VuZHsqL1xyXG4vKiAgY29sb3I6ICMzMDMwMzA7Ki9cclxuLyp9Ki9cclxuIl19 */"] });
+
+
+/***/ }),
+
 /***/ "LS6v":
 /*!****************************************!*\
   !*** ./src/app/auth/auth.component.ts ***!
@@ -1093,6 +1181,41 @@ AuthComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComp
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngModel", ctx.password);
     } }, directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["ɵangular_packages_forms_forms_ba"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["NgForm"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["NgModel"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJhdXRoLmNvbXBvbmVudC5jc3MifQ== */"] });
+
+
+/***/ }),
+
+/***/ "P8gP":
+/*!********************************************************************!*\
+  !*** ./src/app/confirmation-dialog/confirmation-dialog.service.ts ***!
+  \********************************************************************/
+/*! exports provided: ConfirmationDialogService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ConfirmationDialogService", function() { return ConfirmationDialogService; });
+/* harmony import */ var _confirmation_dialog_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./confirmation-dialog.component */ "JYil");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "1kSV");
+
+
+
+class ConfirmationDialogService {
+    constructor(modalService) {
+        this.modalService = modalService;
+    }
+    confirm(title, message, btnOkText = 'OK', btnCancelText = 'Cancel', dialogSize = 'sm') {
+        const modalRef = this.modalService.open(_confirmation_dialog_component__WEBPACK_IMPORTED_MODULE_0__["ConfirmationDialogComponent"], { size: dialogSize });
+        modalRef.componentInstance.title = title;
+        modalRef.componentInstance.message = message;
+        modalRef.componentInstance.btnOkText = btnOkText;
+        modalRef.componentInstance.btnCancelText = btnCancelText;
+        return modalRef.result;
+    }
+}
+ConfirmationDialogService.ɵfac = function ConfirmationDialogService_Factory(t) { return new (t || ConfirmationDialogService)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__["NgbModal"])); };
+ConfirmationDialogService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({ token: ConfirmationDialogService, factory: ConfirmationDialogService.ɵfac });
 
 
 /***/ }),
@@ -1652,10 +1775,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_date_service__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./services/date.service */ "Ig2y");
 /* harmony import */ var _list_monthes_list_monthes_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./list-monthes/list-monthes.component */ "vZ5T");
 /* harmony import */ var _month_month_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./month/month.component */ "E/uY");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _confirmation_dialog_confirmation_dialog_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./confirmation-dialog/confirmation-dialog.component */ "JYil");
+/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "1kSV");
+/* harmony import */ var _confirmation_dialog_confirmation_dialog_service__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./confirmation-dialog/confirmation-dialog.service */ "P8gP");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! @angular/core */ "fXoL");
 
 
 // import { TextMaskModule } from 'angular2-text-mask';
+
+
+
 
 
 
@@ -1711,8 +1840,8 @@ const appRoute = [
 class AppModule {
 }
 AppModule.ɵfac = function AppModule_Factory(t) { return new (t || AppModule)(); };
-AppModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_28__["ɵɵdefineNgModule"]({ type: AppModule, bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]] });
-AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_28__["ɵɵdefineInjector"]({ providers: [
+AppModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_31__["ɵɵdefineNgModule"]({ type: AppModule, bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]] });
+AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_31__["ɵɵdefineInjector"]({ providers: [
         _services_date_service__WEBPACK_IMPORTED_MODULE_25__["DateService"],
         _services_is_saved_checker_service__WEBPACK_IMPORTED_MODULE_16__["IsSavedCheckerService"],
         _services_month_data_service__WEBPACK_IMPORTED_MODULE_15__["MonthDataService"],
@@ -1720,7 +1849,8 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_28__["ɵɵdefineInjecto
         _services_auth_service__WEBPACK_IMPORTED_MODULE_17__["AuthService"],
         _services_isLogged_guard__WEBPACK_IMPORTED_MODULE_18__["IsLoggedIn"],
         { provide: _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_19__["JWT_OPTIONS"], useValue: _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_19__["JWT_OPTIONS"] },
-        _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_19__["JwtHelperService"]
+        _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_19__["JwtHelperService"],
+        _confirmation_dialog_confirmation_dialog_service__WEBPACK_IMPORTED_MODULE_30__["ConfirmationDialogService"]
     ], imports: [[
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
             _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"],
@@ -1731,10 +1861,10 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_28__["ɵɵdefineInjecto
             _material_material_module__WEBPACK_IMPORTED_MODULE_20__["MaterialModule"],
             _datepiker_datepikerModule__WEBPACK_IMPORTED_MODULE_22__["DatepikerModule"],
             _table_table_module__WEBPACK_IMPORTED_MODULE_21__["TableModule"],
-            _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_23__["BrowserAnimationsModule"]
-            // TextMaskModule
+            _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_23__["BrowserAnimationsModule"],
+            _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_29__["NgbModule"],
         ]] });
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_28__["ɵɵsetNgModuleScope"](AppModule, { declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"],
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_31__["ɵɵsetNgModuleScope"](AppModule, { declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"],
         _header_header_component__WEBPACK_IMPORTED_MODULE_4__["HeaderComponent"],
         _reg_reg_component__WEBPACK_IMPORTED_MODULE_5__["RegComponent"],
         _auth_auth_component__WEBPACK_IMPORTED_MODULE_6__["AuthComponent"],
@@ -1744,14 +1874,14 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_28__["ɵɵdefineInjecto
         _sheduleYanger_shedule_yanger_component__WEBPACK_IMPORTED_MODULE_9__["SheduleYangerComponent"],
         _button_save_schedule_button_save_schedule_component__WEBPACK_IMPORTED_MODULE_24__["ButtonSaveScheduleComponent"],
         _list_monthes_list_monthes_component__WEBPACK_IMPORTED_MODULE_26__["ListMonthesComponent"],
-        _month_month_component__WEBPACK_IMPORTED_MODULE_27__["MonthComponent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
+        _month_month_component__WEBPACK_IMPORTED_MODULE_27__["MonthComponent"],
+        _confirmation_dialog_confirmation_dialog_component__WEBPACK_IMPORTED_MODULE_28__["ConfirmationDialogComponent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
         _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"], _angular_router__WEBPACK_IMPORTED_MODULE_10__["RouterModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_12__["FormsModule"], angular2_flash_messages__WEBPACK_IMPORTED_MODULE_13__["FlashMessagesModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClientModule"],
         _material_material_module__WEBPACK_IMPORTED_MODULE_20__["MaterialModule"],
         _datepiker_datepikerModule__WEBPACK_IMPORTED_MODULE_22__["DatepikerModule"],
         _table_table_module__WEBPACK_IMPORTED_MODULE_21__["TableModule"],
-        _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_23__["BrowserAnimationsModule"]
-        // TextMaskModule
-    ] }); })();
+        _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_23__["BrowserAnimationsModule"],
+        _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_29__["NgbModule"]] }); })();
 
 
 /***/ }),

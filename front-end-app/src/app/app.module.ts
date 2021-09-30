@@ -35,6 +35,9 @@ import {ButtonSaveScheduleComponent} from './button-save-schedule/button-save-sc
 import {DateService} from "./services/date.service";
 import { ListMonthesComponent } from './list-monthes/list-monthes.component';
 import { MonthComponent } from './month/month.component';
+import {ConfirmationDialogComponent} from "./confirmation-dialog/confirmation-dialog.component";
+import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
+import {ConfirmationDialogService} from "./confirmation-dialog/confirmation-dialog.service";
 
 
 const DashboardRoute: Routes = [
@@ -76,6 +79,7 @@ const appRoute: Routes = [
     ButtonSaveScheduleComponent,
     ListMonthesComponent,
     MonthComponent,
+    ConfirmationDialogComponent
 
   ],
   imports: [
@@ -88,7 +92,8 @@ const appRoute: Routes = [
     MaterialModule,
     DatepikerModule,
     TableModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgbModule,
     // TextMaskModule
   ],
   providers: [
@@ -99,10 +104,12 @@ const appRoute: Routes = [
     AuthService,
     IsLoggedIn,
     {provide: JWT_OPTIONS, useValue: JWT_OPTIONS},
-    JwtHelperService
+    JwtHelperService,
+    ConfirmationDialogService
   ],
   exports: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ ConfirmationDialogComponent ],
 })
 export class AppModule {
 }
