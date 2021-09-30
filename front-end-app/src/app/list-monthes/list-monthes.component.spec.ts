@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MonthsComponent } from './months.component';
+import { ListMonthesComponent } from './list-monthes.component';
 
-describe('MonthesComponent', () => {
-  let component: MonthsComponent;
-  let fixture: ComponentFixture<MonthsComponent>;
+describe('ListMonthesComponent', () => {
+  let component: ListMonthesComponent;
+  let fixture: ComponentFixture<ListMonthesComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MonthsComponent ]
+      declarations: [ ListMonthesComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MonthsComponent);
+    fixture = TestBed.createComponent(ListMonthesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

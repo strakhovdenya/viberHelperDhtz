@@ -1,0 +1,10 @@
+<div
+  class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between p-1 oneMonth">
+  <div class="col-md-11">
+    {{monthDate}}
+  </div>
+  <div class="col-md-1 icon"
+       (click)="deleteMonth($event,monthDate)">
+    <mat-icon aria-hidden="false" aria-label="Example home icon">delete_forever</mat-icon>
+  </div>
+</div>

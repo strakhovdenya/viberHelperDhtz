@@ -5,4 +5,5 @@ var Methods;
 (function (Methods) {
     Methods["get"] = "get";
     Methods["post"] = "post";
+    Methods["delete"] = "delete";
 })(Methods = exports.Methods || (exports.Methods = {}));

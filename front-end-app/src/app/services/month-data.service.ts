@@ -58,4 +58,18 @@ export class MonthDataService {
       this.authService.getUnauthorizedCatcher()
     );
   }
+
+  deleteMonth(url:string){
+    const token = this.authService.getToken();
+    let headers = new HttpHeaders().set('Content-Type', 'application/json').set('Authorization', 'Bearer ' + token);
+    return this.httpClient.delete(
+      url,
+      {
+        headers: headers,
+        params: {}
+      }).pipe(
+      map((res: any) => res),
+      this.authService.getUnauthorizedCatcher()
+    );
+  }
 }

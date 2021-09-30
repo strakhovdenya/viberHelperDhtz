@@ -1,5 +1,5 @@
 import {Request, Response} from "express";
-import {post, get, controller, use, bodyValidator} from "./decorators";
+import {post, get, del,controller, use, bodyValidator} from "./decorators";
 
 import jwt from 'jsonwebtoken';
 // @ts-ignore
@@ -7,6 +7,7 @@ import {} from 'dotenv/config'
 import passport from "passport";
 import {ScheduleElder} from "../models/schedule-elder";
 import {IScheduleElement} from "../config/interfaces/scheduleElement";
+import {ScheduleJunior} from "../models/schedule-yanger";
 
 
 @controller('/api/schedule')
@@ -69,6 +70,26 @@ class ScheduleJuniorController {
         } catch (e) {
             console.log(e);
             res.json({data: e});
+            return;
+        }
+    }
+
+    @del('/elder/months/:yearMonth')
+    @use(passport.authenticate('jwt', {session: false}))
+    async deleteMonth(req: Request, res: Response): Promise<void> {
+        const {yearMonth} = req.params;
+        try {
+            const result = await ScheduleElder.deleteMany({year_month: yearMonth});
+            if (result.ok === 1) {
+                res.json({success: true, msg: `Данные за ${yearMonth} удалены`});
+                return;
+            }else{
+                res.json({success: false, msg: `Данные за ${yearMonth} не удалены`});
+                return;
+            }
+        } catch (e) {
+            console.log(e);
+            res.json({success: false, msg: `Ошибка!!! Данные за ${yearMonth} не удалены`});
             return;
         }
     }

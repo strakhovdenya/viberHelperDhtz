@@ -15,7 +15,6 @@ export class ButtonSaveScheduleComponent  {
   @Input() url: string;
   @Input() savedStatusAllDataForButton;
   @Input() savedStatusForButton;
-  isCanBeSaved: boolean
   @Output() isSaveStageButton = new EventEmitter<boolean>();
 
   constructor(

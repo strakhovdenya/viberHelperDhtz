@@ -18,3 +18,4 @@ function routeBinder(method:string) {
 
 export const get = routeBinder(Methods.get);
 export const post = routeBinder(Methods.post);
+export const del = routeBinder(Methods.delete);

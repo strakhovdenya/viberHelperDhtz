@@ -1,0 +1,10 @@
+.icon {
+  cursor: pointer;
+}
+.icon:hover {
+  color: #46a35e;
+}
+
+.oneMonth:hover {
+  background-color: #6e6e6e;
+}

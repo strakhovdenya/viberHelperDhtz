@@ -115,9 +115,41 @@ var ScheduleJuniorController = /** @class */ (function () {
             });
         });
     };
-    ScheduleJuniorController.prototype.getOneMonth = function (req, res) {
+    ScheduleJuniorController.prototype.deleteMonth = function (req, res) {
         return __awaiter(this, void 0, void 0, function () {
             var yearMonth, result, e_3;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        yearMonth = req.params.yearMonth;
+                        _a.label = 1;
+                    case 1:
+                        _a.trys.push([1, 3, , 4]);
+                        return [4 /*yield*/, schedule_yanger_1.ScheduleJunior.deleteMany({ year_month: yearMonth })];
+                    case 2:
+                        result = _a.sent();
+                        if (result.ok === 1) {
+                            res.json({ success: true, msg: "\u0414\u0430\u043D\u043D\u044B\u0435 \u0437\u0430 " + yearMonth + " \u0443\u0434\u0430\u043B\u0435\u043D\u044B" });
+                            return [2 /*return*/];
+                        }
+                        else {
+                            res.json({ success: false, msg: "\u0414\u0430\u043D\u043D\u044B\u0435 \u0437\u0430 " + yearMonth + " \u043D\u0435 \u0443\u0434\u0430\u043B\u0435\u043D\u044B" });
+                            return [2 /*return*/];
+                        }
+                        return [3 /*break*/, 4];
+                    case 3:
+                        e_3 = _a.sent();
+                        console.log(e_3);
+                        res.json({ success: false, msg: "\u041E\u0448\u0438\u0431\u043A\u0430!!! \u0414\u0430\u043D\u043D\u044B\u0435 \u0437\u0430 " + yearMonth + " \u043D\u0435 \u0443\u0434\u0430\u043B\u0435\u043D\u044B" });
+                        return [2 /*return*/];
+                    case 4: return [2 /*return*/];
+                }
+            });
+        });
+    };
+    ScheduleJuniorController.prototype.getOneMonth = function (req, res) {
+        return __awaiter(this, void 0, void 0, function () {
+            var yearMonth, result, e_4;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
@@ -131,9 +163,9 @@ var ScheduleJuniorController = /** @class */ (function () {
                         res.json({ data: result });
                         return [3 /*break*/, 4];
                     case 3:
-                        e_3 = _a.sent();
-                        console.log(e_3);
-                        res.json({ data: e_3 });
+                        e_4 = _a.sent();
+                        console.log(e_4);
+                        res.json({ data: e_4 });
                         return [2 /*return*/];
                     case 4: return [2 /*return*/];
                 }
@@ -154,6 +186,13 @@ var ScheduleJuniorController = /** @class */ (function () {
         __metadata("design:paramtypes", [Object, Object]),
         __metadata("design:returntype", Promise)
     ], ScheduleJuniorController.prototype, "getMonths", null);
+    __decorate([
+        decorators_1.del('/junior/months/:yearMonth'),
+        decorators_1.use(passport_1.default.authenticate('jwt', { session: false })),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [Object, Object]),
+        __metadata("design:returntype", Promise)
+    ], ScheduleJuniorController.prototype, "deleteMonth", null);
     __decorate([
         decorators_1.get('/junior/:yearMonth'),
         decorators_1.use(passport_1.default.authenticate('jwt', { session: false })),

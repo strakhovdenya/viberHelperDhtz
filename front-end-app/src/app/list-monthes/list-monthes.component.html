@@ -1,0 +1,8 @@
+<ul>
+  <app-month
+    *ngFor="let month of months"
+    [monthDate]="month"
+    [urlBase]="urlForRequest"
+    (isChanged)="onChangedMonth($event)"
+  ></app-month>
+</ul>
