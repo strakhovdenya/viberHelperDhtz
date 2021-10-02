@@ -33,10 +33,12 @@ export class TableComponent implements OnChanges {
   public myModel = ''
   displayedColumns: string[] = [
     'data',
-    'time_ice',
+    'ice_time',
     'ice_place',
-    'time_ground',
-    'gathering_time',
+    'ice_gathering_time',
+    'ground_time',
+    'ground_place',
+    'ground_gathering_time',
   ];
   dataSource: MatTableDataSource<ScheduleElement>;
   dataSourceForChek: Array<ScheduleElement>;
@@ -47,10 +49,12 @@ export class TableComponent implements OnChanges {
   @Output() isSaveStage = new EventEmitter<boolean>();
   @Output() isSaveAllDataStage = new EventEmitter<boolean>();
 
-  numlist: boolean[];
-  groundList: boolean[];
-  gatheringList: boolean[];
-  icePlace: boolean[];
+  ice_time:boolean[];
+  ice_place:boolean[];
+  ice_gathering_time:boolean[];
+  ground_time:boolean[];
+  ground_place:boolean[];
+  ground_gathering_time:boolean[];
   dataForChanging: TableDataForChanges[]
 
   constructor(
@@ -63,53 +67,77 @@ export class TableComponent implements OnChanges {
 
   setInputIce(event, index): void {
     this.fillAllListToTrue();
-    this.numlist[index] = false;
+    this.ice_time[index] = false;
   }
 
   setEndOfTextIce(event, index): void {
     if (event.keyCode === 13 || event.keyCode === 27) {
-      this.numlist[index] = true;
+      this.ice_time[index] = true;
     }
   }
 
   setInputGround(event, index): void {
     this.fillAllListToTrue();
-    this.groundList[index] = false;
+    this.ground_time[index] = false;
   }
 
   setEndOfTextGround(event, index): void {
     if (event.keyCode === 13 || event.keyCode === 27) {
-      this.groundList[index] = true;
+      this.ground_time[index] = true;
     }
   }
 
-  setInputGathering(event, index): void {
+  setInputIceGatheringTime(event, index): void {
     this.fillAllListToTrue();
-    this.gatheringList[index] = false;
+    this.ice_gathering_time[index] = false;
   }
 
-  setEndOfTextGathering(event, index): void {
+  setEndOfTextIceGatheringTime(event, index): void {
     if (event.keyCode === 13 || event.keyCode === 27) {
-      this.gatheringList[index] = true;
+      this.ice_gathering_time[index] = true;
+    }
+  }
+
+  setInputGroundGatheringTime(event, index): void {
+    this.fillAllListToTrue();
+    this.ground_gathering_time[index] = false;
+  }
+
+  setEndOfTextGroundGatheringTime(event, index): void {
+    if (event.keyCode === 13 || event.keyCode === 27) {
+      this.ground_gathering_time[index] = true;
     }
   }
 
   setIcePlace(event, index): void {
     this.fillAllListToTrue();
-    this.icePlace[index] = false;
+    this.ice_place[index] = false;
   }
 
   setEndOfIcePlace(event, index): void {
     if (event.keyCode === 13 || event.keyCode === 27) {
-      this.icePlace[index] = true;
+      this.ice_place[index] = true;
+    }
+  }
+
+  setGroundPlace(event, index): void {
+    this.fillAllListToTrue();
+    this.ground_place[index] = false;
+  }
+
+  setEndOfGroundPlace(event, index): void {
+    if (event.keyCode === 13 || event.keyCode === 27) {
+      this.ground_place[index] = true;
     }
   }
 
   fillAllListToTrue(): void {
-    this.gatheringList.fill(true);
-    this.groundList.fill(true);
-    this.numlist.fill(true);
-    this.icePlace.fill(true);
+    this.ice_time.fill(true);
+    this.ice_place.fill(true);
+    this.ice_gathering_time.fill(true);
+    this.ground_time.fill(true);
+    this.ground_place.fill(true);
+    this.ground_gathering_time.fill(true);
   }
 
   onElementChange(elementId) {
@@ -148,7 +176,7 @@ export class TableComponent implements OnChanges {
     if (changes.hasOwnProperty('isSave') && changes.isSave.currentValue === true) {
       this.dataSourceForChek = this.dataSource.data.map(a => ({...a}));
 
-      this.setDataForChangingByNumlistArray(this.numlist);
+      this.setDataForChangingByNumlistArray(this.ice_time);
     }
 
     if (changes.hasOwnProperty('date')) {
@@ -200,35 +228,41 @@ export class TableComponent implements OnChanges {
 
   createTable(days: Array<Moment>): void {
     const tableData = this.tableDataGeneratorService.createTable(days);
-    this.numlist = tableData.numlist;
-    this.groundList = tableData.groundList;
-    this.gatheringList = tableData.gatheringList;
-    this.icePlace = tableData.icePlace;
+    this.ice_time = tableData.ice_time;
+    this.ice_place = tableData.ice_place;
+    this.ice_gathering_time = tableData.ice_gathering_time;
+    this.ground_time = tableData.ground_time;
+    this.ground_place = tableData.ground_place;
+    this.ground_gathering_time = tableData.ground_gathering_time;
     this.dataSource = tableData.dataSource;
     this.dataSourceForChek = tableData.dataSource.data.map(a => ({...a}));
-    this.setDataForChangingByNumlistArray(this.numlist);
+    this.setDataForChangingByNumlistArray(this.ice_time);
   }
 
   restoreTable(days: Array<any>): void {
     const tableData = this.tableDataGeneratorService.restoreTable(days);
-    this.numlist = tableData.numlist;
-    this.groundList = tableData.groundList;
-    this.gatheringList = tableData.gatheringList;
-    this.icePlace = tableData.icePlace;
+    this.ice_time = tableData.ice_time;
+    this.ice_place = tableData.ice_place;
+    this.ice_gathering_time = tableData.ice_gathering_time;
+    this.ground_time = tableData.ground_time;
+    this.ground_place = tableData.ground_place;
+    this.ground_gathering_time = tableData.ground_gathering_time;
     this.dataSource = tableData.dataSource;
     this.dataSourceForChek = tableData.dataSource.data.map(a => ({...a}));
     this.dataForChanging = [];
-    this.setDataForChangingByNumlistArray(this.numlist);
+    this.setDataForChangingByNumlistArray(this.ice_time);
   }
 
-  setDataForChangingByNumlistArray(numlist: Array<boolean>) {
+  setDataForChangingByNumlistArray(iceTime: Array<boolean>) {
     let arr = [];
-    for (let key in numlist) {
+    for (let key in iceTime) {
       arr[key] = {
-        time_ice: true,
-        ice_place: true,
-        time_ground: true,
-        gathering_time: true,
+        ice_time:true,
+        ice_place:true,
+        ice_gathering_time:true,
+        ground_time:true,
+        ground_place:true,
+        ground_gathering_time:true,
       };
     }
     this.dataForChanging = [...arr];

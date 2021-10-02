@@ -3,8 +3,10 @@ export interface ScheduleElement
   id: number;
   data: string;
   year_month: string;
-  time_ice: string;
+  ice_time: string;
   ice_place: string;
-  time_ground: string;
-  gathering_time: string;
+  ice_gathering_time: string;
+  ground_time: string;
+  ground_place: string;
+  ground_gathering_time: string;
 }

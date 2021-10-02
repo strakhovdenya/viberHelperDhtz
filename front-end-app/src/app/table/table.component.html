@@ -16,29 +16,29 @@
     <td mat-cell *matCellDef="let element"> {{element.data}}</td>
   </ng-container>
 
-  <!-- Name Column -->
-  <ng-container matColumnDef="time_ice">
+
+  <ng-container matColumnDef="ice_time">
     <th mat-header-cell *matHeaderCellDef> Время льда</th>
     <td
-      [ngClass]="{changed:dataForChanging[element.id]['time_ice']===false}"
+      [ngClass]="{changed:dataForChanging[element.id]['ice_time']===false}"
       mat-cell
       *matCellDef="let element"
       (click)="setInputIce($event,element.id)">
 
-      <mat-form-field class="no-paddings" *ngIf="!numlist[element.id]" floatLabel="never">
+      <mat-form-field class="no-paddings" *ngIf="!ice_time[element.id]" floatLabel="never">
         <input matInput
                [textMask]="{mask: timemask}"
                placeholder="Время льда"
-               [value]="element.time_ice"
-               [(ngModel)]="element.time_ice"
+               [value]="element.ice_time"
+               [(ngModel)]="element.ice_time"
                (ngModelChange)="onElementChange(element.id)"
                (keydown)="setEndOfTextIce($event, element.id)"
                type="text">
       </mat-form-field>
-      <span *ngIf="numlist[element.id]">{{element.time_ice}}</span>
+      <span *ngIf="ice_time[element.id]">{{element.ice_time}}</span>
     </td>
   </ng-container>
-  <!-- Weight Column -->
+
   <ng-container matColumnDef="ice_place">
     <th mat-header-cell *matHeaderCellDef> Место льда</th>
     <td
@@ -46,59 +46,97 @@
       mat-cell
       *matCellDef="let element"
       (click)="setIcePlace($event,element.id)">
-      <mat-form-field class="no-paddings" *ngIf="!icePlace[element.id]" floatLabel="never">
+      <mat-form-field class="no-paddings" *ngIf="!ice_place[element.id]" floatLabel="never">
         <mat-select [value]="element.ice_place" [(ngModel)]="element.ice_place"
                     (ngModelChange)="onElementChange(element.id)" placeholder="Место льда">
           <mat-option value="Палац спорту">Палац спорту</mat-option>
           <mat-option value="Салтівський лід">Салтівський лід</mat-option>
-          <mat-option value="Кидковий центр (Олексіївка)">Кидковий центр (Олексіївка)</mat-option>
           <mat-option>None</mat-option>
         </mat-select>
       </mat-form-field>
-      <span *ngIf="icePlace[element.id]">{{element.ice_place}}</span>
+      <span *ngIf="ice_place[element.id]">{{element.ice_place}}</span>
     </td>
   </ng-container>
 
-  <ng-container matColumnDef="time_ground">
+  <ng-container matColumnDef="ice_gathering_time">
+    <th mat-header-cell *matHeaderCellDef> Время сбора лед</th>
+    <td
+      [ngClass]="{changed:dataForChanging[element.id]['ice_gathering_time']===false}"
+      mat-cell
+      *matCellDef="let element"
+      (click)="setInputIceGatheringTime($event,element.id)">
+      <mat-form-field class="no-paddings" *ngIf="!ice_gathering_time[element.id]" floatLabel="never">
+        <input matInput
+               [textMask]="{mask: timemask}"
+               placeholder="Время сбора лед"
+               [value]="element.ice_gathering_time"
+               [(ngModel)]="element.ice_gathering_time"
+               (ngModelChange)="onElementChange(element.id)"
+               (keydown)="setEndOfTextIceGatheringTime($event, element.id)">
+
+      </mat-form-field>
+      <span *ngIf="ice_gathering_time[element.id]">{{element.ice_gathering_time}}</span>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="ground_time">
     <th mat-header-cell *matHeaderCellDef> Время земли</th>
     <td
-      [ngClass]="{changed:dataForChanging[element.id]['time_ground']===false}"
+      [ngClass]="{changed:dataForChanging[element.id]['ground_time']===false}"
       mat-cell
       *matCellDef="let element"
       (click)="setInputGround($event,element.id)">
-      <mat-form-field class="no-paddings" *ngIf="!groundList[element.id]" floatLabel="never">
+      <mat-form-field class="no-paddings" *ngIf="!ground_time[element.id]" floatLabel="never">
         <input matInput
                [textMask]="{mask: timemask}"
                placeholder="Время земли"
-               [value]="element.time_ground"
-               [(ngModel)]="element.time_ground"
+               [value]="element.ground_time"
+               [(ngModel)]="element.ground_time"
                (ngModelChange)="onElementChange(element.id)"
                (keydown)="setEndOfTextGround($event, element.id)">
 
       </mat-form-field>
-      <span *ngIf="groundList[element.id]">{{element.time_ground}}</span>
+      <span *ngIf="ground_time[element.id]">{{element.ground_time}}</span>
     </td>
   </ng-container>
 
-
-  <ng-container matColumnDef="gathering_time">
-    <th mat-header-cell *matHeaderCellDef> Время сбора</th>
+  <ng-container matColumnDef="ground_place">
+    <th mat-header-cell *matHeaderCellDef> Место земли</th>
     <td
-      [ngClass]="{changed:dataForChanging[element.id]['gathering_time']===false}"
+      [ngClass]="{changed:dataForChanging[element.id]['ground_place']===false}"
       mat-cell
       *matCellDef="let element"
-      (click)="setInputGathering($event,element.id)">
-      <mat-form-field class="no-paddings" *ngIf="!gatheringList[element.id]" floatLabel="never">
+      (click)="setGroundPlace($event,element.id)">
+      <mat-form-field class="no-paddings" *ngIf="!ground_place[element.id]" floatLabel="never">
+        <mat-select [value]="element.ice_place" [(ngModel)]="element.ground_place"
+                    (ngModelChange)="onElementChange(element.id)" placeholder="Место земли">
+          <mat-option value="Манеж">Манеж</mat-option>
+          <mat-option value="Кидковий центр (Олексіївка)">Кидковий центр (Олексіївка)</mat-option>
+          <mat-option>None</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <span *ngIf="ground_place[element.id]">{{element.ground_place}}</span>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="ground_gathering_time">
+    <th mat-header-cell *matHeaderCellDef> Время сбора земля</th>
+    <td
+      [ngClass]="{changed:dataForChanging[element.id]['ground_gathering_time']===false}"
+      mat-cell
+      *matCellDef="let element"
+      (click)="setInputGroundGatheringTime($event,element.id)">
+      <mat-form-field class="no-paddings" *ngIf="!ground_gathering_time[element.id]" floatLabel="never">
         <input matInput
                [textMask]="{mask: timemask}"
                placeholder="Время земли"
-               [value]="element.gathering_time"
-               [(ngModel)]="element.gathering_time"
+               [value]="element.ground_gathering_time"
+               [(ngModel)]="element.ground_gathering_time"
                (ngModelChange)="onElementChange(element.id)"
-               (keydown)="setEndOfTextGathering($event, element.id)">
+               (keydown)="setEndOfTextGroundGatheringTime($event, element.id)">
 
       </mat-form-field>
-      <span *ngIf="gatheringList[element.id]">{{element.gathering_time}}</span>
+      <span *ngIf="ground_gathering_time[element.id]">{{element.ground_gathering_time}}</span>
     </td>
   </ng-container>
 
