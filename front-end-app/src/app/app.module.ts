@@ -38,6 +38,8 @@ import { MonthComponent } from './month/month.component';
 import {ConfirmationDialogComponent} from "./confirmation-dialog/confirmation-dialog.component";
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import {ConfirmationDialogService} from "./confirmation-dialog/confirmation-dialog.service";
+import {ButtonImportScheduleComponent} from "./button-import-schedule/button-import-schedule.component";
+import {ImportToSiteService} from "./services/import-to-site.service";
 
 
 const DashboardRoute: Routes = [
@@ -77,6 +79,7 @@ const appRoute: Routes = [
     FooterComponent,
     SheduleYangerComponent,
     ButtonSaveScheduleComponent,
+    ButtonImportScheduleComponent,
     ListMonthesComponent,
     MonthComponent,
     ConfirmationDialogComponent
@@ -105,7 +108,8 @@ const appRoute: Routes = [
     IsLoggedIn,
     {provide: JWT_OPTIONS, useValue: JWT_OPTIONS},
     JwtHelperService,
-    ConfirmationDialogService
+    ConfirmationDialogService,
+    ImportToSiteService
   ],
   exports: [],
   bootstrap: [AppComponent],

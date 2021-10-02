@@ -1,10 +1,10 @@
 <div class="mat-app-background basic-container">
   <div
     class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-1 mb-1 border-bottom">
-    <div class="col-md-6">
+    <div class="col-md-3">
       <datepiker></datepiker>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-3">
       <button-save-schedule
         (isSaveStageButton)="onSaveData($event)"
         [savedStatusForButton]="savedStatus"
@@ -13,6 +13,15 @@
         [url]="urlForSave"
         class="mr-2">
       </button-save-schedule>
+    </div>
+    <div class="col-md-3">
+      <button-import-schedule
+        [savedStatusForButton]="savedStatus"
+        [savedStatusAllDataForButton]="savedStatusAllData"
+        [date]="tableData"
+        [url]="urlForSave"
+        class="mr-2">
+      </button-import-schedule>
     </div>
   </div>
   <app-table

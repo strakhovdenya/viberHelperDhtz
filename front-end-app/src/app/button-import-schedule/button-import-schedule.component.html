@@ -1,0 +1,11 @@
+<button
+  *ngIf="!savedStatusAllDataForButton || !savedStatusForButton"
+  mat-raised-button color="secondary">
+  Импорт
+</button>
+<button
+  *ngIf="savedStatusAllDataForButton && savedStatusForButton"
+  (click)="importMonthData()"
+  mat-raised-button color="primary">
+  Импорт
+</button>

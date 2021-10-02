@@ -1084,7 +1084,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "tyNb");
 /* harmony import */ var _datepiker_datepiker_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../datepiker/datepiker.component */ "/SFn");
 /* harmony import */ var _button_save_schedule_button_save_schedule_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../button-save-schedule/button-save-schedule.component */ "Eeqs");
-/* harmony import */ var _table_table_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../table/table.component */ "9Rdk");
+/* harmony import */ var _button_import_schedule_button_import_schedule_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../button-import-schedule/button-import-schedule.component */ "OCVG");
+/* harmony import */ var _table_table_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../table/table.component */ "9Rdk");
+
 
 
 
@@ -1128,7 +1130,7 @@ class SheduleYangerComponent {
     }
 }
 SheduleYangerComponent.ɵfac = function SheduleYangerComponent_Factory(t) { return new (t || SheduleYangerComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_services_date_service__WEBPACK_IMPORTED_MODULE_2__["DateService"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"])); };
-SheduleYangerComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: SheduleYangerComponent, selectors: [["shedule-yanger"]], decls: 7, vars: 7, consts: [[1, "mat-app-background", "basic-container"], [1, "d-flex", "flex-wrap", "align-items-center", "justify-content-center", "justify-content-md-between", "py-1", "mb-1", "border-bottom"], [1, "col-md-6"], [1, "mr-2", 3, "savedStatusForButton", "savedStatusAllDataForButton", "date", "url", "isSaveStageButton"], [3, "date", "url", "isSave", "table", "isSaveStage", "isSaveAllDataStage"]], template: function SheduleYangerComponent_Template(rf, ctx) { if (rf & 1) {
+SheduleYangerComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: SheduleYangerComponent, selectors: [["shedule-yanger"]], decls: 9, vars: 11, consts: [[1, "mat-app-background", "basic-container"], [1, "d-flex", "flex-wrap", "align-items-center", "justify-content-center", "justify-content-md-between", "py-1", "mb-1", "border-bottom"], [1, "col-md-3"], [1, "mr-2", 3, "savedStatusForButton", "savedStatusAllDataForButton", "date", "url", "isSaveStageButton"], [1, "mr-2", 3, "savedStatusForButton", "savedStatusAllDataForButton", "date", "url"], [3, "date", "url", "isSave", "table", "isSaveStage", "isSaveAllDataStage"]], template: function SheduleYangerComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "div", 2);
@@ -1139,17 +1141,22 @@ SheduleYangerComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵd
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("isSaveStageButton", function SheduleYangerComponent_Template_button_save_schedule_isSaveStageButton_5_listener($event) { return ctx.onSaveData($event); });
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](6, "div", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](7, "button-import-schedule", 4);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](6, "app-table", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("table", function SheduleYangerComponent_Template_app_table_table_6_listener($event) { return ctx.onChangedFromTable($event); })("isSaveStage", function SheduleYangerComponent_Template_app_table_isSaveStage_6_listener($event) { return ctx.onChangedFromTableSavedStatus($event); })("isSaveAllDataStage", function SheduleYangerComponent_Template_app_table_isSaveAllDataStage_6_listener($event) { return ctx.onChangedFromTableAllDataSavedStatus($event); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](8, "app-table", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("table", function SheduleYangerComponent_Template_app_table_table_8_listener($event) { return ctx.onChangedFromTable($event); })("isSaveStage", function SheduleYangerComponent_Template_app_table_isSaveStage_8_listener($event) { return ctx.onChangedFromTableSavedStatus($event); })("isSaveAllDataStage", function SheduleYangerComponent_Template_app_table_isSaveAllDataStage_8_listener($event) { return ctx.onChangedFromTableAllDataSavedStatus($event); });
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](5);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("savedStatusForButton", ctx.savedStatus)("savedStatusAllDataForButton", ctx.savedStatusAllData)("date", ctx.tableData)("url", ctx.urlForSave);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("savedStatusForButton", ctx.savedStatus)("savedStatusAllDataForButton", ctx.savedStatusAllData)("date", ctx.tableData)("url", ctx.urlForSave);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("date", ctx.dateBase)("url", ctx.urlForRequest)("isSave", ctx.savedStatusAllData);
-    } }, directives: [_datepiker_datepiker_component__WEBPACK_IMPORTED_MODULE_4__["Datepiker"], _button_save_schedule_button_save_schedule_component__WEBPACK_IMPORTED_MODULE_5__["ButtonSaveScheduleComponent"], _table_table_component__WEBPACK_IMPORTED_MODULE_6__["TableComponent"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzaGVkdWxlLXlhbmdlci5jb21wb25lbnQuY3NzIn0= */"] });
+    } }, directives: [_datepiker_datepiker_component__WEBPACK_IMPORTED_MODULE_4__["Datepiker"], _button_save_schedule_button_save_schedule_component__WEBPACK_IMPORTED_MODULE_5__["ButtonSaveScheduleComponent"], _button_import_schedule_button_import_schedule_component__WEBPACK_IMPORTED_MODULE_6__["ButtonImportScheduleComponent"], _table_table_component__WEBPACK_IMPORTED_MODULE_7__["TableComponent"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzaGVkdWxlLXlhbmdlci5jb21wb25lbnQuY3NzIn0= */"] });
 
 
 /***/ }),
@@ -1219,7 +1226,7 @@ ConfirmationDialogComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.btnCancelText);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.btnOkText);
-    } }, styles: [".modal-title[_ngcontent-%COMP%]{\r\n  color: #303030;\r\n}\r\n\r\n.modal-body[_ngcontent-%COMP%]{\r\n  color: #303030;\r\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbmZpcm1hdGlvbi1kaWFsb2cuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGNBQWM7QUFDaEI7O0FBRUE7RUFDRSxjQUFjO0FBQ2hCOztBQUVBLHVCQUF1Qjs7QUFDdkIsb0JBQW9COztBQUNwQixJQUFJIiwiZmlsZSI6ImNvbmZpcm1hdGlvbi1kaWFsb2cuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5tb2RhbC10aXRsZXtcclxuICBjb2xvcjogIzMwMzAzMDtcclxufVxyXG5cclxuLm1vZGFsLWJvZHl7XHJcbiAgY29sb3I6ICMzMDMwMzA7XHJcbn1cclxuXHJcbi8qLm1hdC1hcHAtYmFja2dyb3VuZHsqL1xyXG4vKiAgY29sb3I6ICMzMDMwMzA7Ki9cclxuLyp9Ki9cclxuIl19 */"] });
+    } }, styles: [".modal-title[_ngcontent-%COMP%]{\r\n  color: #303030;\r\n}\r\n\r\n.modal-body[_ngcontent-%COMP%]{\r\n  color: #303030;\r\n  max-height: 500px;\r\n  overflow-y: scroll;\r\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbmZpcm1hdGlvbi1kaWFsb2cuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGNBQWM7QUFDaEI7O0FBRUE7RUFDRSxjQUFjO0VBQ2QsaUJBQWlCO0VBQ2pCLGtCQUFrQjtBQUNwQjs7QUFFQSx1QkFBdUI7O0FBQ3ZCLG9CQUFvQjs7QUFDcEIsSUFBSSIsImZpbGUiOiJjb25maXJtYXRpb24tZGlhbG9nLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubW9kYWwtdGl0bGV7XHJcbiAgY29sb3I6ICMzMDMwMzA7XHJcbn1cclxuXHJcbi5tb2RhbC1ib2R5e1xyXG4gIGNvbG9yOiAjMzAzMDMwO1xyXG4gIG1heC1oZWlnaHQ6IDUwMHB4O1xyXG4gIG92ZXJmbG93LXk6IHNjcm9sbDtcclxufVxyXG5cclxuLyoubWF0LWFwcC1iYWNrZ3JvdW5keyovXHJcbi8qICBjb2xvcjogIzMwMzAzMDsqL1xyXG4vKn0qL1xyXG4iXX0= */"] });
 
 
 /***/ }),
@@ -1309,6 +1316,90 @@ AuthComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComp
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngModel", ctx.password);
     } }, directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["ɵangular_packages_forms_forms_ba"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["NgForm"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["NgModel"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJhdXRoLmNvbXBvbmVudC5jc3MifQ== */"] });
+
+
+/***/ }),
+
+/***/ "OCVG":
+/*!****************************************************************************!*\
+  !*** ./src/app/button-import-schedule/button-import-schedule.component.ts ***!
+  \****************************************************************************/
+/*! exports provided: ButtonImportScheduleComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ButtonImportScheduleComponent", function() { return ButtonImportScheduleComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _confirmation_dialog_confirmation_dialog_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../confirmation-dialog/confirmation-dialog.service */ "P8gP");
+/* harmony import */ var _services_import_to_site_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/import-to-site.service */ "WcHx");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ "ofXK");
+/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material/button */ "bTqV");
+
+
+
+
+
+
+
+function ButtonImportScheduleComponent_button_0_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "button", 2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1, " \u0418\u043C\u043F\u043E\u0440\u0442\n");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+} }
+function ButtonImportScheduleComponent_button_1_Template(rf, ctx) { if (rf & 1) {
+    const _r3 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "button", 3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function ButtonImportScheduleComponent_button_1_Template_button_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r3); const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](); return ctx_r2.importMonthData(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1, " \u0418\u043C\u043F\u043E\u0440\u0442\n");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+} }
+class ButtonImportScheduleComponent {
+    constructor(confirmationDialogService, importToSiteService) {
+        this.confirmationDialogService = confirmationDialogService;
+        this.importToSiteService = importToSiteService;
+        this.isSaveStageButton = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+    }
+    importMonthData() {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            const modalParams = [
+                'Импорт на сайт druzhba',
+                this.importToSiteService.import(this.date),
+                'КОПИРОВАТЬ В БУФЕР',
+                'ОТМЕНИТЬ',
+                'lg'
+            ];
+            // @ts-ignore
+            const confirmed = yield this.confirmationDialogService.confirm(...modalParams);
+            if (confirmed) {
+                this.copyMessage(this.importToSiteService.import(this.date));
+            }
+        });
+    }
+    copyMessage(val) {
+        const selBox = document.createElement('textarea');
+        selBox.style.position = 'fixed';
+        selBox.style.left = '0';
+        selBox.style.top = '0';
+        selBox.style.opacity = '0';
+        selBox.value = val;
+        document.body.appendChild(selBox);
+        selBox.focus();
+        selBox.select();
+        document.execCommand('copy');
+        document.body.removeChild(selBox);
+    }
+}
+ButtonImportScheduleComponent.ɵfac = function ButtonImportScheduleComponent_Factory(t) { return new (t || ButtonImportScheduleComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_confirmation_dialog_confirmation_dialog_service__WEBPACK_IMPORTED_MODULE_2__["ConfirmationDialogService"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_services_import_to_site_service__WEBPACK_IMPORTED_MODULE_3__["ImportToSiteService"])); };
+ButtonImportScheduleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: ButtonImportScheduleComponent, selectors: [["button-import-schedule"]], inputs: { date: "date", url: "url", savedStatusAllDataForButton: "savedStatusAllDataForButton", savedStatusForButton: "savedStatusForButton" }, outputs: { isSaveStageButton: "isSaveStageButton" }, decls: 2, vars: 2, consts: [["mat-raised-button", "", "color", "secondary", 4, "ngIf"], ["mat-raised-button", "", "color", "primary", 3, "click", 4, "ngIf"], ["mat-raised-button", "", "color", "secondary"], ["mat-raised-button", "", "color", "primary", 3, "click"]], template: function ButtonImportScheduleComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](0, ButtonImportScheduleComponent_button_0_Template, 2, 0, "button", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](1, ButtonImportScheduleComponent_button_1_Template, 2, 0, "button", 1);
+    } if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", !ctx.savedStatusAllDataForButton || !ctx.savedStatusForButton);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx.savedStatusAllDataForButton && ctx.savedStatusForButton);
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_4__["NgIf"], _angular_material_button__WEBPACK_IMPORTED_MODULE_5__["MatButton"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJidXR0b24taW1wb3J0LXNjaGVkdWxlLmNvbXBvbmVudC5jc3MifQ== */"] });
 
 
 /***/ }),
@@ -1841,6 +1932,78 @@ AppComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCompo
 
 /***/ }),
 
+/***/ "WcHx":
+/*!****************************************************!*\
+  !*** ./src/app/services/import-to-site.service.ts ***!
+  \****************************************************/
+/*! exports provided: ImportToSiteService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ImportToSiteService", function() { return ImportToSiteService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+
+class ImportToSiteService {
+    constructor() {
+    }
+    import(data) {
+        const html = this.getHeadPart('Вересень', '2021') + this.getRows(data) + this.getFooterPart();
+        return html;
+    }
+    dataEmptySanitize(param) {
+        if (param === "" || param === undefined) {
+            return '';
+        }
+        return param;
+    }
+    getRows(data) {
+        let result = ``;
+        for (let row of data) {
+            result += `
+      <tr>
+        <td align="center"><font style="background-color: #ffffff;" color="#000000">${this.dataEmptySanitize(row.data)}</font></td>
+        <td align="center"><font color="#000000">${this.dataEmptySanitize(row.ice_time)}</font></td>
+        <td align="center"><font color="#000000">${this.dataEmptySanitize(row.ice_place)}</font></td>
+        <td align="center"><font color="#000000">${this.dataEmptySanitize(row.ice_gathering_time)}</font></td>
+        <td align="center"><font color="#000000">${this.dataEmptySanitize(row.ground_time)}</font></td>
+        <td align="center"><font color="#000000">${this.dataEmptySanitize(row.ground_place)}</font></td>
+        <td align="center"><font color="#000000">${this.dataEmptySanitize(row.ground_gathering_time)}</font></td>
+      </tr>
+      `;
+        }
+        return result;
+    }
+    getHeadPart(month, yaer) {
+        return `<p><font color="#FFFFFF">&nbsp;&nbsp;<strong>Хоккей Харьков, хоккей Украина, харьковские хоккейные клубы.</strong></font></p>
+    <p align="center"><span style="font-size: 18px;"><strong><font style="background-color: #ffffff;" color="#000080"><u>${month}&nbsp;${yaer}р.</u></font></strong></span></p>
+    <table class="elder" style="height: 59px; width: 100%;" border="1" width="100%">
+      <tbody>
+        <tr>
+            <td style="width: 30px; height: 12px;" rowspan="2" align="center"><font color="#000000"><strong>ДАТА</strong></font></td>
+            <td style="width: 105px; height: 12px;" colspan="3" align="center"><font color="#000000"><strong>ЛІД</strong></font></td>
+            <td style="width: 110px; height: 12px;" colspan="3" align="center"><font color="#000000"><strong>ЗЕМЛЯ</strong></font></td>
+        </tr>
+        <tr>
+            <td style="width: 105px; height: 12px;" align="center"><font color="#000000"><strong>ЧАС</strong></font></td>
+            <td style="width: 110px; height: 12px;" align="center"><font color="#000000"><strong>MIСЦЕ</strong></font></td>
+            <td style="width: 110px; height: 12px;" align="center"><font color="#000000"><strong>ЗБIР</strong></font></td>
+            <td style="width: 105px; height: 12px;" align="center"><font color="#000000"><strong>ЧАС</strong></font></td>
+            <td style="width: 110px; height: 12px;" align="center"><font color="#000000"><strong>MIСЦЕ</strong></font></td>
+            <td style="width: 110px; height: 12px;" align="center"><font color="#000000"><strong>ЗБIР</strong></font></td>
+        </tr>`;
+    }
+    getFooterPart() {
+        return `</tbody>
+</table>`;
+    }
+}
+ImportToSiteService.ɵfac = function ImportToSiteService_Factory(t) { return new (t || ImportToSiteService)(); };
+ImportToSiteService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: ImportToSiteService, factory: ImportToSiteService.ɵfac, providedIn: 'root' });
+
+
+/***/ }),
+
 /***/ "X0Lh":
 /*!*****************************************!*\
   !*** ./src/app/services/moment.pipe.ts ***!
@@ -1906,10 +2069,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _confirmation_dialog_confirmation_dialog_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./confirmation-dialog/confirmation-dialog.component */ "JYil");
 /* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "1kSV");
 /* harmony import */ var _confirmation_dialog_confirmation_dialog_service__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./confirmation-dialog/confirmation-dialog.service */ "P8gP");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _button_import_schedule_button_import_schedule_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./button-import-schedule/button-import-schedule.component */ "OCVG");
+/* harmony import */ var _services_import_to_site_service__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./services/import-to-site.service */ "WcHx");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! @angular/core */ "fXoL");
 
 
 // import { TextMaskModule } from 'angular2-text-mask';
+
+
 
 
 
@@ -1968,8 +2135,8 @@ const appRoute = [
 class AppModule {
 }
 AppModule.ɵfac = function AppModule_Factory(t) { return new (t || AppModule)(); };
-AppModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_31__["ɵɵdefineNgModule"]({ type: AppModule, bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]] });
-AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_31__["ɵɵdefineInjector"]({ providers: [
+AppModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_33__["ɵɵdefineNgModule"]({ type: AppModule, bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]] });
+AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_33__["ɵɵdefineInjector"]({ providers: [
         _services_date_service__WEBPACK_IMPORTED_MODULE_25__["DateService"],
         _services_is_saved_checker_service__WEBPACK_IMPORTED_MODULE_16__["IsSavedCheckerService"],
         _services_month_data_service__WEBPACK_IMPORTED_MODULE_15__["MonthDataService"],
@@ -1978,7 +2145,8 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_31__["ɵɵdefineInjecto
         _services_isLogged_guard__WEBPACK_IMPORTED_MODULE_18__["IsLoggedIn"],
         { provide: _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_19__["JWT_OPTIONS"], useValue: _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_19__["JWT_OPTIONS"] },
         _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_19__["JwtHelperService"],
-        _confirmation_dialog_confirmation_dialog_service__WEBPACK_IMPORTED_MODULE_30__["ConfirmationDialogService"]
+        _confirmation_dialog_confirmation_dialog_service__WEBPACK_IMPORTED_MODULE_30__["ConfirmationDialogService"],
+        _services_import_to_site_service__WEBPACK_IMPORTED_MODULE_32__["ImportToSiteService"]
     ], imports: [[
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
             _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"],
@@ -1992,7 +2160,7 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_31__["ɵɵdefineInjecto
             _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_23__["BrowserAnimationsModule"],
             _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_29__["NgbModule"],
         ]] });
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_31__["ɵɵsetNgModuleScope"](AppModule, { declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"],
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_33__["ɵɵsetNgModuleScope"](AppModule, { declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"],
         _header_header_component__WEBPACK_IMPORTED_MODULE_4__["HeaderComponent"],
         _reg_reg_component__WEBPACK_IMPORTED_MODULE_5__["RegComponent"],
         _auth_auth_component__WEBPACK_IMPORTED_MODULE_6__["AuthComponent"],
@@ -2001,6 +2169,7 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_31__["ɵɵdefineInjecto
         _footer_footer_component__WEBPACK_IMPORTED_MODULE_11__["FooterComponent"],
         _sheduleYanger_shedule_yanger_component__WEBPACK_IMPORTED_MODULE_9__["SheduleYangerComponent"],
         _button_save_schedule_button_save_schedule_component__WEBPACK_IMPORTED_MODULE_24__["ButtonSaveScheduleComponent"],
+        _button_import_schedule_button_import_schedule_component__WEBPACK_IMPORTED_MODULE_31__["ButtonImportScheduleComponent"],
         _list_monthes_list_monthes_component__WEBPACK_IMPORTED_MODULE_26__["ListMonthesComponent"],
         _month_month_component__WEBPACK_IMPORTED_MODULE_27__["MonthComponent"],
         _confirmation_dialog_confirmation_dialog_component__WEBPACK_IMPORTED_MODULE_28__["ConfirmationDialogComponent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
