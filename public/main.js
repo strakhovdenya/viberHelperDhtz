@@ -184,7 +184,7 @@ function TableComponent_td_11_mat_form_field_1_Template(rf, ctx) { if (rf & 1) {
     const element_r18 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
     const ctx_r19 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("textMask", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction1"](3, _c0, ctx_r19.timemask))("value", element_r18.ice_time)("ngModel", element_r18.ice_time);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("textMask", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction1"](3, _c0, ctx_r19.timeIntervalMask))("value", element_r18.ice_time)("ngModel", element_r18.ice_time);
 } }
 function TableComponent_td_11_span_2_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "span");
@@ -458,6 +458,7 @@ class TableComponent {
         this.isSavedCheckerService = isSavedCheckerService;
         this.datemask = [/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/];
         this.timemask = [/[0-2]/, /\d/, ':', /[0-5]/, /\d/];
+        this.timeIntervalMask = [/[0-2]/, /\d/, ':', /[0-5]/, /\d/, '-', /[0-2]/, /\d/, ':', /[0-5]/, /\d/];
         this.myModel = '';
         this.displayedColumns = [
             'data',
@@ -2697,11 +2698,11 @@ class TableDataGeneratorService {
                 id: idIndex,
                 data: day.format('DD.MM.YYYY'),
                 year_month: day.format('YYYY-MM'),
-                ice_time: '18:30 - 19:30',
+                ice_time: '18:30-19:30',
                 ice_place: 'Палац спорту',
                 ice_gathering_time: '18:30',
-                ground_time: '18:30 - 19:30',
-                ground_place: 'Кидковий центр (Олексіївка)',
+                ground_time: '18:30-19:30',
+                ground_place: 'Манеж',
                 ground_gathering_time: '18:30',
             };
             this.fillIndices(arrDays, row, idIndex);

@@ -27,7 +27,7 @@
 
       <mat-form-field class="no-paddings" *ngIf="!ice_time[element.id]" floatLabel="never">
         <input matInput
-               [textMask]="{mask: timemask}"
+               [textMask]="{mask: timeIntervalMask}"
                placeholder="Время льда"
                [value]="element.ice_time"
                [(ngModel)]="element.ice_time"

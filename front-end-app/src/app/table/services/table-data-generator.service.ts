@@ -26,11 +26,11 @@ export class TableDataGeneratorService {
         id: idIndex,
         data: day.format('DD.MM.YYYY'),
         year_month: day.format('YYYY-MM'),
-        ice_time:'18:30 - 19:30',
+        ice_time:'18:30-19:30',
         ice_place:'Палац спорту',
         ice_gathering_time:'18:30',
-        ground_time:'18:30 - 19:30',
-        ground_place:'Кидковий центр (Олексіївка)',
+        ground_time:'18:30-19:30',
+        ground_place:'Манеж',
         ground_gathering_time:'18:30',
 
       };

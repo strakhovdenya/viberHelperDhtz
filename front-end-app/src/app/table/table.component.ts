@@ -30,6 +30,7 @@ const moment = _moment;
 export class TableComponent implements OnChanges {
   public datemask = [/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/];
   public timemask = [/[0-2]/, /\d/, ':', /[0-5]/, /\d/];
+  public timeIntervalMask = [/[0-2]/, /\d/, ':', /[0-5]/, /\d/,'-',/[0-2]/, /\d/, ':', /[0-5]/, /\d/];
   public myModel = ''
   displayedColumns: string[] = [
     'data',
