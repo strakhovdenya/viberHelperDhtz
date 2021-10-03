@@ -61,9 +61,8 @@ const DashboardRoute: Routes = [
 
 const appRoute: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'reg', component: RegComponent},
+  // {path: 'reg', component: RegComponent},
   {path: 'auth', component: AuthComponent},
-  // {path: 'dashboard', component: DashboardComponent, canActivate:[IsLoggedIn]},
   {path: 'dashboard', component: DashboardComponent, canActivate: [IsLoggedIn], children: DashboardRoute},
 ];
 

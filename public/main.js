@@ -363,7 +363,7 @@ function TableComponent_td_23_mat_form_field_1_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "\u041C\u0430\u043D\u0435\u0436");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "mat-option", 29);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5, "\u041A\u0438\u0434\u043A\u043E\u0432\u0438\u0439 \u0446\u0435\u043D\u0442\u0440 (\u041E\u043B\u0435\u043A\u0441\u0456\u0457\u0432\u043A\u0430)");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5, "\u041A\u0438\u0434\u043A\u043E\u0432\u0438\u0439 \u0446\u0435\u043D\u0442\u0440");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "mat-option");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](7, "None");
@@ -651,7 +651,7 @@ class TableComponent {
     }
 }
 TableComponent.ɵfac = function TableComponent_Factory(t) { return new (t || TableComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_days_generator_service__WEBPACK_IMPORTED_MODULE_2__["DaysGeneratorService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_table_data_generator_service__WEBPACK_IMPORTED_MODULE_3__["TableDataGeneratorService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_month_data_service__WEBPACK_IMPORTED_MODULE_5__["MonthDataService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_is_saved_checker_service__WEBPACK_IMPORTED_MODULE_6__["IsSavedCheckerService"])); };
-TableComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: TableComponent, selectors: [["app-table"]], inputs: { date: "date", url: "url", isSave: "isSave" }, outputs: { table: "table", isSaveStage: "isSaveStage", isSaveAllDataStage: "isSaveAllDataStage" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵProvidersFeature"]([_services_days_generator_service__WEBPACK_IMPORTED_MODULE_2__["DaysGeneratorService"], _services_table_data_generator_service__WEBPACK_IMPORTED_MODULE_3__["TableDataGeneratorService"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵNgOnChangesFeature"]], decls: 29, vars: 3, consts: [["matInput", "", "placeholder", "\u0441\u0442\u0440\u043E\u043A\u0430 \u0434\u043B\u044F \u043F\u043E\u0438\u0441\u043A\u0430", 3, "keyup"], ["input", ""], ["mat-table", "", 1, "mat-elevation-z8", 3, "dataSource"], ["matColumnDef", "data"], ["mat-header-cell", "", 4, "matHeaderCellDef"], ["mat-cell", "", 4, "matCellDef"], ["matColumnDef", "ice_time"], ["mat-cell", "", 3, "ngClass", "click", 4, "matCellDef"], ["matColumnDef", "ice_place"], ["matColumnDef", "ice_gathering_time"], ["matColumnDef", "ground_time"], ["matColumnDef", "ground_place"], ["matColumnDef", "ground_gathering_time"], ["mat-header-row", "", 4, "matHeaderRowDef"], ["mat-row", "", 4, "matRowDef", "matRowDefColumns"], ["mat-header-cell", ""], ["mat-cell", ""], ["mat-cell", "", 3, "ngClass", "click"], ["class", "no-paddings", "floatLabel", "never", 4, "ngIf"], [4, "ngIf"], ["floatLabel", "never", 1, "no-paddings"], ["matInput", "", "placeholder", "\u0412\u0440\u0435\u043C\u044F \u043B\u044C\u0434\u0430", "type", "text", 3, "textMask", "value", "ngModel", "ngModelChange", "keydown"], ["placeholder", "\u041C\u0435\u0441\u0442\u043E \u043B\u044C\u0434\u0430", 3, "value", "ngModel", "ngModelChange"], ["value", "\u041F\u0430\u043B\u0430\u0446 \u0441\u043F\u043E\u0440\u0442\u0443"], ["value", "\u0421\u0430\u043B\u0442\u0456\u0432\u0441\u044C\u043A\u0438\u0439 \u043B\u0456\u0434"], ["matInput", "", "placeholder", "\u0412\u0440\u0435\u043C\u044F \u0441\u0431\u043E\u0440\u0430 \u043B\u0435\u0434", 3, "textMask", "value", "ngModel", "ngModelChange", "keydown"], ["matInput", "", "placeholder", "\u0412\u0440\u0435\u043C\u044F \u0437\u0435\u043C\u043B\u0438", 3, "textMask", "value", "ngModel", "ngModelChange", "keydown"], ["placeholder", "\u041C\u0435\u0441\u0442\u043E \u0437\u0435\u043C\u043B\u0438", 3, "value", "ngModel", "ngModelChange"], ["value", "\u041C\u0430\u043D\u0435\u0436"], ["value", "\u041A\u0438\u0434\u043A\u043E\u0432\u0438\u0439 \u0446\u0435\u043D\u0442\u0440 (\u041E\u043B\u0435\u043A\u0441\u0456\u0457\u0432\u043A\u0430)"], ["mat-header-row", ""], ["mat-row", ""]], template: function TableComponent_Template(rf, ctx) { if (rf & 1) {
+TableComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: TableComponent, selectors: [["app-table"]], inputs: { date: "date", url: "url", isSave: "isSave" }, outputs: { table: "table", isSaveStage: "isSaveStage", isSaveAllDataStage: "isSaveAllDataStage" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵProvidersFeature"]([_services_days_generator_service__WEBPACK_IMPORTED_MODULE_2__["DaysGeneratorService"], _services_table_data_generator_service__WEBPACK_IMPORTED_MODULE_3__["TableDataGeneratorService"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵNgOnChangesFeature"]], decls: 29, vars: 3, consts: [["matInput", "", "placeholder", "\u0441\u0442\u0440\u043E\u043A\u0430 \u0434\u043B\u044F \u043F\u043E\u0438\u0441\u043A\u0430", 3, "keyup"], ["input", ""], ["mat-table", "", 1, "mat-elevation-z8", 3, "dataSource"], ["matColumnDef", "data"], ["mat-header-cell", "", 4, "matHeaderCellDef"], ["mat-cell", "", 4, "matCellDef"], ["matColumnDef", "ice_time"], ["mat-cell", "", 3, "ngClass", "click", 4, "matCellDef"], ["matColumnDef", "ice_place"], ["matColumnDef", "ice_gathering_time"], ["matColumnDef", "ground_time"], ["matColumnDef", "ground_place"], ["matColumnDef", "ground_gathering_time"], ["mat-header-row", "", 4, "matHeaderRowDef"], ["mat-row", "", 4, "matRowDef", "matRowDefColumns"], ["mat-header-cell", ""], ["mat-cell", ""], ["mat-cell", "", 3, "ngClass", "click"], ["class", "no-paddings", "floatLabel", "never", 4, "ngIf"], [4, "ngIf"], ["floatLabel", "never", 1, "no-paddings"], ["matInput", "", "placeholder", "\u0412\u0440\u0435\u043C\u044F \u043B\u044C\u0434\u0430", "type", "text", 3, "textMask", "value", "ngModel", "ngModelChange", "keydown"], ["placeholder", "\u041C\u0435\u0441\u0442\u043E \u043B\u044C\u0434\u0430", 3, "value", "ngModel", "ngModelChange"], ["value", "\u041F\u0430\u043B\u0430\u0446 \u0441\u043F\u043E\u0440\u0442\u0443"], ["value", "\u0421\u0430\u043B\u0442\u0456\u0432\u0441\u044C\u043A\u0438\u0439 \u043B\u0456\u0434"], ["matInput", "", "placeholder", "\u0412\u0440\u0435\u043C\u044F \u0441\u0431\u043E\u0440\u0430 \u043B\u0435\u0434", 3, "textMask", "value", "ngModel", "ngModelChange", "keydown"], ["matInput", "", "placeholder", "\u0412\u0440\u0435\u043C\u044F \u0437\u0435\u043C\u043B\u0438", 3, "textMask", "value", "ngModel", "ngModelChange", "keydown"], ["placeholder", "\u041C\u0435\u0441\u0442\u043E \u0437\u0435\u043C\u043B\u0438", 3, "value", "ngModel", "ngModelChange"], ["value", "\u041C\u0430\u043D\u0435\u0436"], ["value", "\u041A\u0438\u0434\u043A\u043E\u0432\u0438\u0439 \u0446\u0435\u043D\u0442\u0440"], ["mat-header-row", ""], ["mat-row", ""]], template: function TableComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-form-field");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-label");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "\u041F\u043E\u0438\u0441\u043A");
@@ -1414,9 +1414,11 @@ ButtonImportScheduleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ConfirmationDialogService", function() { return ConfirmationDialogService; });
-/* harmony import */ var _confirmation_dialog_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./confirmation-dialog.component */ "JYil");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "1kSV");
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _confirmation_dialog_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./confirmation-dialog.component */ "JYil");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "1kSV");
+
 
 
 
@@ -1425,16 +1427,25 @@ class ConfirmationDialogService {
         this.modalService = modalService;
     }
     confirm(title, message, btnOkText = 'OK', btnCancelText = 'Cancel', dialogSize = 'sm') {
-        const modalRef = this.modalService.open(_confirmation_dialog_component__WEBPACK_IMPORTED_MODULE_0__["ConfirmationDialogComponent"], { size: dialogSize });
-        modalRef.componentInstance.title = title;
-        modalRef.componentInstance.message = message;
-        modalRef.componentInstance.btnOkText = btnOkText;
-        modalRef.componentInstance.btnCancelText = btnCancelText;
-        return modalRef.result;
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            const modalRef = yield this.modalService.open(_confirmation_dialog_component__WEBPACK_IMPORTED_MODULE_1__["ConfirmationDialogComponent"], { size: dialogSize });
+            modalRef.componentInstance.title = title;
+            modalRef.componentInstance.message = message;
+            modalRef.componentInstance.btnOkText = btnOkText;
+            modalRef.componentInstance.btnCancelText = btnCancelText;
+            let result;
+            try {
+                result = yield modalRef.result;
+            }
+            catch (e) {
+                result = false;
+            }
+            return result;
+        });
     }
 }
-ConfirmationDialogService.ɵfac = function ConfirmationDialogService_Factory(t) { return new (t || ConfirmationDialogService)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__["NgbModal"])); };
-ConfirmationDialogService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({ token: ConfirmationDialogService, factory: ConfirmationDialogService.ɵfac });
+ConfirmationDialogService.ɵfac = function ConfirmationDialogService_Factory(t) { return new (t || ConfirmationDialogService)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinject"](_ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_3__["NgbModal"])); };
+ConfirmationDialogService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjectable"]({ token: ConfirmationDialogService, factory: ConfirmationDialogService.ɵfac });
 
 
 /***/ }),
@@ -1948,7 +1959,15 @@ class ImportToSiteService {
     constructor() {
     }
     import(data) {
-        const html = this.getHeadPart('Вересень', '2021') + this.getRows(data) + this.getFooterPart();
+        let month, year = '';
+        if (data[0]) {
+            const date = data[0].year_month;
+            let [yearNum, monthNum] = date.split('-');
+            const months = ['Січень', 'Лютий', 'Березень', 'Квітень', 'Травень', 'Червень', 'Липень', 'Серпень', 'Вересень', 'Жовтень', 'Листопад', 'Грудень'];
+            month = months[Number(monthNum) - 1];
+            year = yearNum;
+        }
+        const html = this.getHeadPart(month, year) + this.getRows(data) + this.getFooterPart();
         return html;
     }
     dataEmptySanitize(param) {
@@ -1960,9 +1979,18 @@ class ImportToSiteService {
     getRows(data) {
         let result = ``;
         for (let row of data) {
+            let textColor = '#000000';
+            let backGroundColor = '#ffffff';
+            let [day, month, year] = row.data.split('.');
+            let date = new Date(Number(year), Number(month) - 1, Number(day));
+            let dayOfWeek = date.getDay();
+            if (dayOfWeek === 6 || dayOfWeek === 0) {
+                textColor = '#FF0000';
+                backGroundColor = '#ccffcc';
+            }
             result += `
       <tr>
-        <td align="center"><font style="background-color: #ffffff;" color="#000000">${this.dataEmptySanitize(row.data)}</font></td>
+        <td align="center"><font style="background-color: ${backGroundColor};" color="${textColor}">${this.dataEmptySanitize(row.data)}</font></td>
         <td align="center"><font color="#000000">${this.dataEmptySanitize(row.ice_time)}</font></td>
         <td align="center"><font color="#000000">${this.dataEmptySanitize(row.ice_place)}</font></td>
         <td align="center"><font color="#000000">${this.dataEmptySanitize(row.ice_gathering_time)}</font></td>
@@ -1975,8 +2003,8 @@ class ImportToSiteService {
         return result;
     }
     getHeadPart(month, yaer) {
-        return `<p><font color="#FFFFFF">&nbsp;&nbsp;<strong>Хоккей Харьков, хоккей Украина, харьковские хоккейные клубы.</strong></font></p>
-    <p align="center"><span style="font-size: 18px;"><strong><font style="background-color: #ffffff;" color="#000080"><u>${month}&nbsp;${yaer}р.</u></font></strong></span></p>
+        return `
+     <p align="center"><span style="font-size: 18px;"><strong><font style="background-color: #ffffff;" color="#000080"><u>${month}&nbsp;${yaer}р.</u></font></strong></span></p>
     <table class="elder" style="height: 59px; width: 100%;" border="1" width="100%">
       <tbody>
         <tr>
@@ -2127,9 +2155,8 @@ const DashboardRoute = [
 ];
 const appRoute = [
     { path: '', component: _home_home_component__WEBPACK_IMPORTED_MODULE_8__["HomeComponent"] },
-    { path: 'reg', component: _reg_reg_component__WEBPACK_IMPORTED_MODULE_5__["RegComponent"] },
+    // {path: 'reg', component: RegComponent},
     { path: 'auth', component: _auth_auth_component__WEBPACK_IMPORTED_MODULE_6__["AuthComponent"] },
-    // {path: 'dashboard', component: DashboardComponent, canActivate:[IsLoggedIn]},
     { path: 'dashboard', component: _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_7__["DashboardComponent"], canActivate: [_services_isLogged_guard__WEBPACK_IMPORTED_MODULE_18__["IsLoggedIn"]], children: DashboardRoute },
 ];
 class AppModule {
@@ -2304,7 +2331,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const _c0 = function () { return ["/dashboard"]; };
 function HeaderComponent_a_9_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "a", 11);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "a", 10);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
@@ -2314,29 +2341,21 @@ function HeaderComponent_a_9_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" \u041A\u0430\u0431\u0438\u043D\u0435\u0442 \u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044F ", ctx_r0.authService.isLoggedUserName(), "");
 } }
 function HeaderComponent_button_10_Template(rf, ctx) { if (rf & 1) {
-    const _r5 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function HeaderComponent_button_10_Template_button_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r5); const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r4.logoutUser(); });
+    const _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 11);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function HeaderComponent_button_10_Template_button_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r4); const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r3.logoutUser(); });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " \u0412\u044B\u0439\u0442\u0438 \u0438\u0437 \u043A\u0430\u0431\u0438\u043D\u0435\u0442\u0430 ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } }
 const _c1 = function () { return ["/auth"]; };
 function HeaderComponent_a_11_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "a", 13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "a", 12);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "\u0412\u0445\u043E\u0434");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](1, _c1));
 } }
-const _c2 = function () { return ["/reg"]; };
-function HeaderComponent_a_12_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "a", 14);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "\u0420\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044F");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](1, _c2));
-} }
-const _c3 = function () { return ["/"]; };
+const _c2 = function () { return ["/"]; };
 class HeaderComponent {
     constructor(authService, flashMessages, router) {
         this.authService = authService;
@@ -2356,7 +2375,7 @@ class HeaderComponent {
     }
 }
 HeaderComponent.ɵfac = function HeaderComponent_Factory(t) { return new (t || HeaderComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_auth_service__WEBPACK_IMPORTED_MODULE_1__["AuthService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](angular2_flash_messages__WEBPACK_IMPORTED_MODULE_2__["FlashMessagesService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"])); };
-HeaderComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: HeaderComponent, selectors: [["app-header"]], decls: 13, vars: 6, consts: [[1, "d-flex", "flex-wrap", "align-items-center", "justify-content-center", "justify-content-md-between", "py-3", "mb-4", "border-bottom"], ["href", "/", 1, "d-flex", "align-items-center", "col-md-3", "mb-2", "mb-md-0", "text-dark", "text-decoration-none"], ["width", "40", "height", "32", 1, "bi", "me-2"], [0, "xlink", "href", "#bootstrap"], [1, "nav", "col-12", "col-md-auto", "mb-2", "justify-content-center", "mb-md-0"], [1, "nav-link", "px-2", "link-secondary", 3, "routerLink"], [1, "col-md-3", "text-end"], ["class", "btn btn-outline-warning me-2 mr-2", 3, "routerLink", 4, "ngIf"], ["class", "btn btn-warning me-2 mr-2", 3, "click", 4, "ngIf"], ["class", "btn btn-outline-primary me-2 mr-2", 3, "routerLink", 4, "ngIf"], ["class", "btn btn-primary", 3, "routerLink", 4, "ngIf"], [1, "btn", "btn-outline-warning", "me-2", "mr-2", 3, "routerLink"], [1, "btn", "btn-warning", "me-2", "mr-2", 3, "click"], [1, "btn", "btn-outline-primary", "me-2", "mr-2", 3, "routerLink"], [1, "btn", "btn-primary", 3, "routerLink"]], template: function HeaderComponent_Template(rf, ctx) { if (rf & 1) {
+HeaderComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: HeaderComponent, selectors: [["app-header"]], decls: 12, vars: 5, consts: [[1, "d-flex", "flex-wrap", "align-items-center", "justify-content-center", "justify-content-md-between", "py-3", "mb-4", "border-bottom"], ["href", "/", 1, "d-flex", "align-items-center", "col-md-3", "mb-2", "mb-md-0", "text-dark", "text-decoration-none"], ["width", "40", "height", "32", 1, "bi", "me-2"], [0, "xlink", "href", "#bootstrap"], [1, "nav", "col-12", "col-md-auto", "mb-2", "justify-content-center", "mb-md-0"], [1, "nav-link", "px-2", "link-secondary", 3, "routerLink"], [1, "col-md-3", "text-end"], ["class", "btn btn-outline-warning me-2 mr-2", 3, "routerLink", 4, "ngIf"], ["class", "btn btn-warning me-2 mr-2", 3, "click", 4, "ngIf"], ["class", "btn btn-outline-primary me-2 mr-2", 3, "routerLink", 4, "ngIf"], [1, "btn", "btn-outline-warning", "me-2", "mr-2", 3, "routerLink"], [1, "btn", "btn-warning", "me-2", "mr-2", 3, "click"], [1, "btn", "btn-outline-primary", "me-2", "mr-2", 3, "routerLink"]], template: function HeaderComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "header", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "a", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnamespaceSVG"]();
@@ -2376,18 +2395,15 @@ HeaderComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCo
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](9, HeaderComponent_a_9_Template, 2, 3, "a", 7);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](10, HeaderComponent_button_10_Template, 2, 0, "button", 8);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](11, HeaderComponent_a_11_Template, 2, 2, "a", 9);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](12, HeaderComponent_a_12_Template, 2, 2, "a", 10);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](5, _c3));
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](4, _c2));
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.authService.isLoggedIn());
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.authService.isLoggedIn());
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", !ctx.authService.isLoggedIn());
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", !ctx.authService.isLoggedIn());
     } }, directives: [_angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterLinkWithHref"], _angular_common__WEBPACK_IMPORTED_MODULE_4__["NgIf"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJoZWFkZXIuY29tcG9uZW50LmNzcyJ9 */"] });

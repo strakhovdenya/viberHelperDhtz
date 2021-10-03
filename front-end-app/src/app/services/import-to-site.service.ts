@@ -10,7 +10,17 @@ export class ImportToSiteService {
   }
 
   import(data: Array<ScheduleElement>): string {
-    const html = this.getHeadPart('Вересень', '2021') + this.getRows(data) + this.getFooterPart();
+    let month, year = '';
+    if (data[0]) {
+      const date = data[0].year_month;
+
+      let [yearNum, monthNum] = date.split('-');
+      const months = ['Січень', 'Лютий', 'Березень', 'Квітень', 'Травень', 'Червень', 'Липень', 'Серпень', 'Вересень', 'Жовтень', 'Листопад', 'Грудень'];
+      month = months[Number(monthNum) - 1];
+      year = yearNum;
+    }
+
+    const html = this.getHeadPart(month, year) + this.getRows(data) + this.getFooterPart();
 
     return html;
   }
@@ -25,9 +35,19 @@ export class ImportToSiteService {
   getRows(data: Array<ScheduleElement>): string {
     let result = ``;
     for (let row of data) {
-      result += `
+      let textColor = '#000000';
+      let backGroundColor = '#ffffff';
+      let [day, month, year] = row.data.split('.')
+      let date = new Date(Number(year), Number(month) - 1, Number(day));
+      let dayOfWeek = date.getDay();
+      if (dayOfWeek === 6 || dayOfWeek === 0){
+        textColor = '#FF0000'
+        backGroundColor = '#ccffcc'
+      }
+
+        result += `
       <tr>
-        <td align="center"><font style="background-color: #ffffff;" color="#000000">${this.dataEmptySanitize(row.data)}</font></td>
+        <td align="center"><font style="background-color: ${backGroundColor};" color="${textColor}">${this.dataEmptySanitize(row.data)}</font></td>
         <td align="center"><font color="#000000">${this.dataEmptySanitize(row.ice_time)}</font></td>
         <td align="center"><font color="#000000">${this.dataEmptySanitize(row.ice_place)}</font></td>
         <td align="center"><font color="#000000">${this.dataEmptySanitize(row.ice_gathering_time)}</font></td>
@@ -42,8 +62,8 @@ export class ImportToSiteService {
   }
 
   getHeadPart(month: string, yaer: string): string {
-    return `<p><font color="#FFFFFF">&nbsp;&nbsp;<strong>Хоккей Харьков, хоккей Украина, харьковские хоккейные клубы.</strong></font></p>
-    <p align="center"><span style="font-size: 18px;"><strong><font style="background-color: #ffffff;" color="#000080"><u>${month}&nbsp;${yaer}р.</u></font></strong></span></p>
+    return `
+     <p align="center"><span style="font-size: 18px;"><strong><font style="background-color: #ffffff;" color="#000080"><u>${month}&nbsp;${yaer}р.</u></font></strong></span></p>
     <table class="elder" style="height: 59px; width: 100%;" border="1" width="100%">
       <tbody>
         <tr>
