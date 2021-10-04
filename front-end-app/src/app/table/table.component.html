@@ -88,7 +88,7 @@
       (click)="setInputGround($event,element.id)">
       <mat-form-field class="no-paddings" *ngIf="!ground_time[element.id]" floatLabel="never">
         <input matInput
-               [textMask]="{mask: timemask}"
+               [textMask]="{mask: timeIntervalMask}"
                placeholder="Время земли"
                [value]="element.ground_time"
                [(ngModel)]="element.ground_time"

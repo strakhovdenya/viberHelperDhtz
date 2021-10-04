@@ -40,6 +40,8 @@ import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import {ConfirmationDialogService} from "./confirmation-dialog/confirmation-dialog.service";
 import {ButtonImportScheduleComponent} from "./button-import-schedule/button-import-schedule.component";
 import {ImportToSiteService} from "./services/import-to-site.service";
+import { MenuListComponent } from './menu-list/menu-list.component';
+import { MenuItemComponent } from './menu-item/menu-item.component';
 
 
 const DashboardRoute: Routes = [
@@ -62,7 +64,8 @@ const DashboardRoute: Routes = [
   {path: 'month_juniors', component: ListMonthesComponent, data: {urlForRequest: 'api/schedule/junior/months'}},
   {path: 'month_middles', component: ListMonthesComponent, data: {urlForRequest: 'api/schedule/middle/months'}},
   {path: 'month_elders', component: ListMonthesComponent,data: {urlForRequest: 'api/schedule/elder/months'}},
-  {path: 'menu_settings', component: DashboardComponent, canActivate: [IsLoggedIn]},
+  {path: 'menu_settings', component: MenuListComponent, canActivate: [IsLoggedIn]},
+  {path: 'menu_settings/menu_item/:level', component: MenuItemComponent, canActivate: [IsLoggedIn]},
 ];
 
 const appRoute: Routes = [
@@ -87,7 +90,9 @@ const appRoute: Routes = [
     ButtonImportScheduleComponent,
     ListMonthesComponent,
     MonthComponent,
-    ConfirmationDialogComponent
+    ConfirmationDialogComponent,
+    MenuListComponent,
+    MenuItemComponent
 
   ],
   imports: [
