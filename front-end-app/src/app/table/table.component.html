@@ -13,7 +13,12 @@
   <!-- Position Column -->
   <ng-container matColumnDef="data">
     <th mat-header-cell *matHeaderCellDef> День</th>
-    <td mat-cell *matCellDef="let element"> {{element.data}}</td>
+    <td
+      [ngClass]="{weekEnd:isWeekEndDay(element.data)}"
+      mat-cell *matCellDef="let element"
+    >
+      {{element.data}}
+    </td>
   </ng-container>
 
 

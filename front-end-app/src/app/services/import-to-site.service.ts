@@ -32,20 +32,28 @@ export class ImportToSiteService {
     return param;
   }
 
+  isWeekEndDay(data: string): boolean {
+    let [day, month, year] = data.split('.')
+    let date = new Date(Number(year), Number(month) - 1, Number(day));
+    let dayOfWeek = date.getDay();
+    if (dayOfWeek === 6 || dayOfWeek === 0) {
+      return true
+    }
+
+    return false;
+  }
+
   getRows(data: Array<ScheduleElement>): string {
     let result = ``;
     for (let row of data) {
       let textColor = '#000000';
       let backGroundColor = '#ffffff';
-      let [day, month, year] = row.data.split('.')
-      let date = new Date(Number(year), Number(month) - 1, Number(day));
-      let dayOfWeek = date.getDay();
-      if (dayOfWeek === 6 || dayOfWeek === 0){
+      if (this.isWeekEndDay(row.data)) {
         textColor = '#FF0000'
         backGroundColor = '#ffcc99'
       }
 
-        result += `
+      result += `
       <tr>
         <td align="center"><font style="background-color: ${backGroundColor};" color="${textColor}">${this.dataEmptySanitize(row.data)}</font></td>
         <td align="center"><font color="#000000">${this.dataEmptySanitize(row.ice_time)}</font></td>

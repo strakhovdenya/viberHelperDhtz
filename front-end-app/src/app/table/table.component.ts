@@ -18,6 +18,7 @@ import {IsSavedCheckerService} from '../services/is-saved-checker.service';
 import {Moment} from 'moment';
 import * as _moment from 'moment';
 import {TableDataForChanges} from "./interface/tableDataForChanges";
+import {ImportToSiteService} from "../services/import-to-site.service";
 
 const moment = _moment;
 
@@ -30,7 +31,7 @@ const moment = _moment;
 export class TableComponent implements OnChanges {
   public datemask = [/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/];
   public timemask = [/[0-2]/, /\d/, ':', /[0-5]/, /\d/];
-  public timeIntervalMask = [/[0-2]/, /\d/, ':', /[0-5]/, /\d/,'-',/[0-2]/, /\d/, ':', /[0-5]/, /\d/];
+  public timeIntervalMask = [/[0-2]/, /\d/, ':', /[0-5]/, /\d/, '-', /[0-2]/, /\d/, ':', /[0-5]/, /\d/];
   public myModel = ''
   displayedColumns: string[] = [
     'data',
@@ -50,20 +51,25 @@ export class TableComponent implements OnChanges {
   @Output() isSaveStage = new EventEmitter<boolean>();
   @Output() isSaveAllDataStage = new EventEmitter<boolean>();
 
-  ice_time:boolean[];
-  ice_place:boolean[];
-  ice_gathering_time:boolean[];
-  ground_time:boolean[];
-  ground_place:boolean[];
-  ground_gathering_time:boolean[];
+  ice_time: boolean[];
+  ice_place: boolean[];
+  ice_gathering_time: boolean[];
+  ground_time: boolean[];
+  ground_place: boolean[];
+  ground_gathering_time: boolean[];
   dataForChanging: TableDataForChanges[]
 
   constructor(
     private daysGeneratorService: DaysGeneratorService,
     private tableDataGeneratorService: TableDataGeneratorService,
     private monthDataService: MonthDataService,
+    private importToSiteService: ImportToSiteService,
     public isSavedCheckerService: IsSavedCheckerService
   ) {
+  }
+
+  isWeekEndDay(data:string) {
+      return this.importToSiteService.isWeekEndDay(data);
   }
 
   setInputIce(event, index): void {
@@ -258,12 +264,12 @@ export class TableComponent implements OnChanges {
     let arr = [];
     for (let key in iceTime) {
       arr[key] = {
-        ice_time:true,
-        ice_place:true,
-        ice_gathering_time:true,
-        ground_time:true,
-        ground_place:true,
-        ground_gathering_time:true,
+        ice_time: true,
+        ice_place: true,
+        ice_gathering_time: true,
+        ground_time: true,
+        ground_place: true,
+        ground_gathering_time: true,
       };
     }
     this.dataForChanging = [...arr];

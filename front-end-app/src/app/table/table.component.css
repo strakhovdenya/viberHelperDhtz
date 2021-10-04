@@ -38,6 +38,11 @@ table td, table th {
   background-color: #46a35e;
 }
 
+.weekEnd{
+  /*background-color: #f85a68;*/
+  color: #f6051a;
+}
+
 
 :host ::ng-deep .no-paddings .mat-form-field-wrapper{
   padding-bottom: 0!important;
