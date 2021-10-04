@@ -42,7 +42,7 @@ export class ImportToSiteService {
       let dayOfWeek = date.getDay();
       if (dayOfWeek === 6 || dayOfWeek === 0){
         textColor = '#FF0000'
-        backGroundColor = '#ccffcc'
+        backGroundColor = '#ffcc99'
       }
 
         result += `
