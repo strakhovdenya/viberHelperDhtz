@@ -12,7 +12,7 @@ import {DashboardComponent} from './dashboard/dashboard.component';
 
 
 import {HomeComponent} from './home/home.component';
-import {SheduleYangerComponent} from './sheduleYanger/shedule-yanger.component';
+import {ScheduleComponent} from './sheduleYanger/schedule.component';
 
 
 import {RouterModule, Routes} from '@angular/router';
@@ -46,15 +46,21 @@ const DashboardRoute: Routes = [
   {path: '', component: HomeComponent},
   {
     path: 'juniors',
-    component: SheduleYangerComponent,
+    component: ScheduleComponent,
     data: {urlForRequest: 'api/schedule/junior/', urlForSave: 'api/schedule/junior/',}
   },
   {
+    path: 'middles',
+    component: ScheduleComponent,
+    data: {urlForRequest: 'api/schedule/middle/', urlForSave: 'api/schedule/middle/',}
+  },
+  {
     path: 'elders',
-    component: SheduleYangerComponent,
+    component: ScheduleComponent,
     data: {urlForRequest: 'api/schedule/elder/', urlForSave: 'api/schedule/elder/',}
   },
   {path: 'month_juniors', component: ListMonthesComponent, data: {urlForRequest: 'api/schedule/junior/months'}},
+  {path: 'month_middles', component: ListMonthesComponent, data: {urlForRequest: 'api/schedule/middle/months'}},
   {path: 'month_elders', component: ListMonthesComponent,data: {urlForRequest: 'api/schedule/elder/months'}},
   {path: 'menu_settings', component: DashboardComponent, canActivate: [IsLoggedIn]},
 ];
@@ -76,7 +82,7 @@ const appRoute: Routes = [
     DashboardComponent,
     HomeComponent,
     FooterComponent,
-    SheduleYangerComponent,
+    ScheduleComponent,
     ButtonSaveScheduleComponent,
     ButtonImportScheduleComponent,
     ListMonthesComponent,

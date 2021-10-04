@@ -5,7 +5,7 @@
     <div class="col-md-12 text-end btn-group" role="group">
       <button [routerLink]="['/dashboard/juniors']"
 
-              class="btn btn-lg active"
+              class="btn btn-sm active"
               routerLinkActive #rla="routerLinkActive"
               [class.btn-secondary]="!rla.isActive"
               [class.btn-primary]="rla.isActive"
@@ -14,10 +14,20 @@
               aria-pressed="true">
         Рассписание младших
       </button>
+      <button [routerLink]="['/dashboard/middles']"
+
+              routerLinkActive #rla6="routerLinkActive"
+              class="btn btn-sm active"
+              [class.btn-secondary]="!rla6.isActive"
+              [class.btn-primary]="rla6.isActive"
+              role="button"
+              aria-pressed="true">
+        Рассписание средних
+      </button>
       <button [routerLink]="['/dashboard/elders']"
 
               routerLinkActive #rla2="routerLinkActive"
-              class="btn btn-lg active"
+              class="btn btn-sm active"
               [class.btn-secondary]="!rla2.isActive"
               [class.btn-primary]="rla2.isActive"
               role="button"
@@ -27,17 +37,27 @@
       <button [routerLink]="['/dashboard/month_juniors']"
 
               routerLinkActive #rla3="routerLinkActive"
-              class="btn btn-lg active"
+              class="btn btn-sm active"
               [class.btn-secondary]="!rla3.isActive"
               [class.btn-primary]="rla3.isActive"
               role="button"
               aria-pressed="true">
         Месяцы младшие
       </button>
+      <button [routerLink]="['/dashboard/month_middles']"
+
+              routerLinkActive #rla5="routerLinkActive"
+              class="btn btn-sm active"
+              [class.btn-secondary]="!rla5.isActive"
+              [class.btn-primary]="rla5.isActive"
+              role="button"
+              aria-pressed="true">
+        Месяцы средние
+      </button>
       <button [routerLink]="['/dashboard/month_elders']"
 
               routerLinkActive #rla4="routerLinkActive"
-              class="btn btn-lg active"
+              class="btn btn-sm active"
               [class.btn-secondary]="!rla4.isActive"
               [class.btn-primary]="rla4.isActive"
               role="button"
@@ -45,7 +65,7 @@
         Месяцы старшие
       </button>
       <button [routerLink]="['/dashboard/menu_settings']"
-              class="btn btn-secondary btn-lg active"
+              class="btn btn-secondary btn-sm active"
               role="button"
               aria-pressed="true">
         Настройка меню (не работает)

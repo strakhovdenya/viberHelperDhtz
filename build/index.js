@@ -58,6 +58,7 @@ console.log(path_1.default.join(__dirname, '../public/index.html'));
 require("./controllers/LoginController");
 require("./controllers/ScheduleJuniorController");
 require("./controllers/ScheduleElderController");
+require("./controllers/ScheduleMiddleController");
 // app.use('/account', accountRouter);
 // app.use('/api', scheduleRoute);
 app.use(AppRouter_1.AppRouter.getInstance());

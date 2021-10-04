@@ -9,11 +9,11 @@ import {ActivatedRoute} from "@angular/router";
 const moment = _moment;
 
 @Component({
-  selector: 'shedule-yanger',
-  templateUrl: './shedule-yanger.component.html',
-  styleUrls: ['./shedule-yanger.component.css']
+  selector: 'schedule',
+  templateUrl: './schedule.component.html',
+  styleUrls: ['./schedule.component.css']
 })
-export class SheduleYangerComponent {
+export class ScheduleComponent {
 
   title = 'vibermonth';
   date: string;

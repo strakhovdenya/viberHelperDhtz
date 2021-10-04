@@ -26,6 +26,7 @@ console.log(path.join(__dirname, '../public/index.html'));
 import './controllers/LoginController';
 import './controllers/ScheduleJuniorController';
 import './controllers/ScheduleElderController';
+import './controllers/ScheduleMiddleController';
 
 // app.use('/account', accountRouter);
 // app.use('/api', scheduleRoute);
