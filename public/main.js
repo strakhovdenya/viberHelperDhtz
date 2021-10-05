@@ -2068,7 +2068,7 @@ class MenuItemPreviewComponent {
                         return Number(rowIndex);
                     }
                     else {
-                        result = Number(rowIndex + 1);
+                        result = Number(rowIndex) + 1;
                     }
                 }
                 return result;
@@ -2095,13 +2095,12 @@ class MenuItemPreviewComponent {
                     }
                 }
             }
-            console.log(table);
             this.tablePreview = table;
         }
     }
 }
 MenuItemPreviewComponent.ɵfac = function MenuItemPreviewComponent_Factory(t) { return new (t || MenuItemPreviewComponent)(); };
-MenuItemPreviewComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: MenuItemPreviewComponent, selectors: [["app-menu-item-preview"]], inputs: { menu: "menu" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵNgOnChangesFeature"]], decls: 6, vars: 2, consts: [[1, "d-flex", "flex-wrap", "align-items-top", "justify-content-center", "justify-content-md-between", "p-1"], [1, "col-md-12"], [4, "ngFor", "ngForOf"], [3, "ngClass", "height", "ngStyle", 4, "ngFor", "ngForOf"], [3, "ngClass", "ngStyle"]], template: function MenuItemPreviewComponent_Template(rf, ctx) { if (rf & 1) {
+MenuItemPreviewComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: MenuItemPreviewComponent, selectors: [["app-menu-item-preview"]], inputs: { menu: "menu" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵNgOnChangesFeature"]], decls: 6, vars: 2, consts: [[1, "d-flex", "flex-wrap", "align-items-top", "justify-content-center", "justify-content-md-between", "p-1"], [1, "col-md-12"], [4, "ngFor", "ngForOf"], ["class", "text-center", 3, "ngClass", "height", "ngStyle", 4, "ngFor", "ngForOf"], [1, "text-center", 3, "ngClass", "ngStyle"]], template: function MenuItemPreviewComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
@@ -2117,7 +2116,7 @@ MenuItemPreviewComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵ�
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("We look on ", ctx.menu.level, "");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.tablePreview);
-    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["NgForOf"], _angular_common__WEBPACK_IMPORTED_MODULE_1__["NgClass"], _angular_common__WEBPACK_IMPORTED_MODULE_1__["NgStyle"]], styles: [".disableTd[_ngcontent-%COMP%]{\r\n  display: none;\r\n}\r\n\r\ntable[_ngcontent-%COMP%] {\r\n  border-collapse:separate;\r\n  border-spacing:5px 5px;\r\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1lbnUtaXRlbS1wcmV2aWV3LmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxhQUFhO0FBQ2Y7O0FBRUE7RUFDRSx3QkFBd0I7RUFDeEIsc0JBQXNCO0FBQ3hCIiwiZmlsZSI6Im1lbnUtaXRlbS1wcmV2aWV3LmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZGlzYWJsZVRke1xyXG4gIGRpc3BsYXk6IG5vbmU7XHJcbn1cclxuXHJcbnRhYmxlIHtcclxuICBib3JkZXItY29sbGFwc2U6c2VwYXJhdGU7XHJcbiAgYm9yZGVyLXNwYWNpbmc6NXB4IDVweDtcclxufVxyXG4iXX0= */"] });
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["NgForOf"], _angular_common__WEBPACK_IMPORTED_MODULE_1__["NgClass"], _angular_common__WEBPACK_IMPORTED_MODULE_1__["NgStyle"]], styles: [".disableTd[_ngcontent-%COMP%]{\r\n  display: none;\r\n}\r\n\r\ntable[_ngcontent-%COMP%] {\r\n  width: 100%;\r\n  border-collapse:separate;\r\n  border-spacing:5px 5px;\r\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1lbnUtaXRlbS1wcmV2aWV3LmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxhQUFhO0FBQ2Y7O0FBRUE7RUFDRSxXQUFXO0VBQ1gsd0JBQXdCO0VBQ3hCLHNCQUFzQjtBQUN4QiIsImZpbGUiOiJtZW51LWl0ZW0tcHJldmlldy5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmRpc2FibGVUZHtcclxuICBkaXNwbGF5OiBub25lO1xyXG59XHJcblxyXG50YWJsZSB7XHJcbiAgd2lkdGg6IDEwMCU7XHJcbiAgYm9yZGVyLWNvbGxhcHNlOnNlcGFyYXRlO1xyXG4gIGJvcmRlci1zcGFjaW5nOjVweCA1cHg7XHJcbn1cclxuIl19 */"] });
 
 
 /***/ }),

@@ -4,7 +4,9 @@
   <div class="col-md-12">
     <table>
       <tr *ngFor="let row of tablePreview">
-        <td *ngFor="let col of row"
+        <td
+          class="text-center"
+          *ngFor="let col of row"
             [ngClass]="{disableTd:col.rez!==0}"
             [attr.rowspan]="col.row"
             [attr.colspan]="col.col"

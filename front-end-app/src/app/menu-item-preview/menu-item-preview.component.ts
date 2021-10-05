@@ -48,7 +48,7 @@ export class MenuItemPreviewComponent implements OnInit, OnChanges {
           if (sumCol < 6) {
             return Number(rowIndex);
           } else {
-            result = Number(rowIndex + 1);
+            result = Number(rowIndex) + 1;
           }
         }
 
@@ -79,7 +79,7 @@ export class MenuItemPreviewComponent implements OnInit, OnChanges {
 
         }
       }
-      console.log(table);
+
       this.tablePreview = table;
 
     }
