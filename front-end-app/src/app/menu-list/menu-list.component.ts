@@ -11,7 +11,12 @@ import {BehaviorSubject} from "rxjs";
 export class MenuListComponent implements OnInit {
 
   menus: IMenu[] = [];
-  activeLevel: string;
+  activeMenu: IMenu = {
+    level: '',
+    Type: '',
+    Buttons: [],
+    Revision: 0
+  };
 
 
   constructor(private menuService: MenuService) {
@@ -24,13 +29,13 @@ export class MenuListComponent implements OnInit {
 
       this.menuService.data = new BehaviorSubject(menus);
       this.menus = this.menuService.data.value;
-      this.activeLevel = this.menus[0].level;
+      this.activeMenu = this.menus[0];
     });
 
   }
 
-  mouseEnter(level) {
-    this.activeLevel = level;
+  mouseEnter(menu: IMenu) {
+    this.activeMenu = menu;
   }
 
 }

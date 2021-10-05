@@ -1,4 +1,4 @@
-interface IButton {
+export interface IButton {
   Columns:number,
   Rows:number,
   BgColor:string,

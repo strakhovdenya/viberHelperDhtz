@@ -43,6 +43,7 @@ import {ImportToSiteService} from "./services/import-to-site.service";
 import { MenuListComponent } from './menu-list/menu-list.component';
 import { MenuItemComponent } from './menu-item/menu-item.component';
 import {MenuService} from "./services/menu.service";
+import { MenuItemPreviewComponent } from './menu-item-preview/menu-item-preview.component';
 
 
 const DashboardRoute: Routes = [
@@ -93,7 +94,8 @@ const appRoute: Routes = [
     MonthComponent,
     ConfirmationDialogComponent,
     MenuListComponent,
-    MenuItemComponent
+    MenuItemComponent,
+    MenuItemPreviewComponent
 
   ],
   imports: [

@@ -1,0 +1,8 @@
+.disableTd{
+  display: none;
+}
+
+table {
+  border-collapse:separate;
+  border-spacing:5px 5px;
+}
