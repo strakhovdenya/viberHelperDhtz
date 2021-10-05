@@ -7,7 +7,6 @@ import {} from 'dotenv/config'
 import passport from "passport";
 import {ScheduleElder} from "../models/schedule-elder";
 import {IScheduleElement} from "../config/interfaces/scheduleElement";
-import {ScheduleJunior} from "../models/schedule-yanger";
 
 
 @controller('/api/schedule')

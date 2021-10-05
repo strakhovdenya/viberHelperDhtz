@@ -27,6 +27,7 @@ import './controllers/LoginController';
 import './controllers/ScheduleJuniorController';
 import './controllers/ScheduleElderController';
 import './controllers/ScheduleMiddleController';
+import './controllers/MenuController';
 
 // app.use('/account', accountRouter);
 // app.use('/api', scheduleRoute);

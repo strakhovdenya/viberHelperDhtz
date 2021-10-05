@@ -1,4 +1,13 @@
 "use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -39,47 +48,43 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-require("dotenv/config");
-var express_1 = __importDefault(require("express"));
-var mongo_1 = require("./config/mongo");
+var decorators_1 = require("./decorators");
 var passport_1 = __importDefault(require("passport"));
-var passport_2 = __importDefault(require("./config/passport"));
-var path_1 = __importDefault(require("path"));
-var AppRouter_1 = require("./routes/AppRouter");
-var app = express_1.default();
-var port = process.env.PORT || 8080;
-passport_2.default(passport_1.default);
-app.set("etag", false);
-app.use(express_1.default.json());
-app.use(express_1.default.urlencoded({ extended: true }));
-// app.use(cors());
-app.use(express_1.default.static(path_1.default.join(__dirname, '../public')));
-console.log(path_1.default.join(__dirname, '../public/index.html'));
-require("./controllers/LoginController");
-require("./controllers/ScheduleJuniorController");
-require("./controllers/ScheduleElderController");
-require("./controllers/ScheduleMiddleController");
-require("./controllers/MenuController");
-// app.use('/account', accountRouter);
-// app.use('/api', scheduleRoute);
-app.use(AppRouter_1.AppRouter.getInstance());
-app.get('*', function (req, res) {
-    res.sendFile(path_1.default.join(__dirname, '../public/index.html'));
-});
-/*
-!!!!!!!!
-*/
-var init = function () { return __awaiter(void 0, void 0, void 0, function () {
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0: return [4 /*yield*/, mongo_1.runMongo()];
-            case 1:
-                _a.sent();
-                app.listen(port, function () {
-                    console.log("Example app listening at http://localhost:" + port);
-                });
-                return [2 /*return*/];
-        }
-    });
-}); };
-init();
+var menu_1 = require("../models/menu");
+var MenuController = /** @class */ (function () {
+    function MenuController() {
+    }
+    MenuController.prototype.getMonths = function (req, res) {
+        return __awaiter(this, void 0, void 0, function () {
+            var result, e_1;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        _a.trys.push([0, 2, , 3]);
+                        return [4 /*yield*/, menu_1.MenuModel.find()];
+                    case 1:
+                        result = _a.sent();
+                        res.json(result);
+                        return [3 /*break*/, 3];
+                    case 2:
+                        e_1 = _a.sent();
+                        console.log(e_1);
+                        res.json({ data: e_1 });
+                        return [2 /*return*/];
+                    case 3: return [2 /*return*/];
+                }
+            });
+        });
+    };
+    __decorate([
+        decorators_1.get('/menus'),
+        decorators_1.use(passport_1.default.authenticate('jwt', { session: false })),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [Object, Object]),
+        __metadata("design:returntype", Promise)
+    ], MenuController.prototype, "getMonths", null);
+    MenuController = __decorate([
+        decorators_1.controller('/api')
+    ], MenuController);
+    return MenuController;
+}());
