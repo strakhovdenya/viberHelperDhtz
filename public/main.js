@@ -2095,6 +2095,7 @@ class MenuItemPreviewComponent {
                     }
                 }
             }
+            console.log(table);
             this.tablePreview = table;
         }
     }

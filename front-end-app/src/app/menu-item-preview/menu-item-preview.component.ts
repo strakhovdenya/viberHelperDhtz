@@ -79,7 +79,7 @@ export class MenuItemPreviewComponent implements OnInit, OnChanges {
 
         }
       }
-
+      console.log(table);
       this.tablePreview = table;
 
     }
