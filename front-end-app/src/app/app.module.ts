@@ -42,6 +42,7 @@ import {ButtonImportScheduleComponent} from "./button-import-schedule/button-imp
 import {ImportToSiteService} from "./services/import-to-site.service";
 import { MenuListComponent } from './menu-list/menu-list.component';
 import { MenuItemComponent } from './menu-item/menu-item.component';
+import {MenuService} from "./services/menu.service";
 
 
 const DashboardRoute: Routes = [
@@ -111,6 +112,7 @@ const appRoute: Routes = [
   ],
   providers: [
     DateService,
+    MenuService,
     IsSavedCheckerService,
     MonthDataService,
     CheckFormService,

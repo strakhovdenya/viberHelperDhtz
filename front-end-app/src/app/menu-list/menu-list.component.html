@@ -1,5 +1,6 @@
 <p>menu-list works!</p>
-<ul>
-  <li [routerLink]="['/dashboard/menu_settings/menu_item/junior']"> junior</li>
-  <li [routerLink]="['/dashboard/menu_settings/menu_item/middle']"> middle</li>
+<ul >
+  <li *ngFor="let menu of menus">
+    {{menu.level}}
+  </li>
 </ul>
