@@ -1,6 +1,30 @@
-<p>menu-list works!</p>
-<ul >
-  <li *ngFor="let menu of menus">
-    {{menu.level}}
-  </li>
-</ul>
+<div
+  class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between p-1 oneMonth">
+
+  <div class="col-md-6">
+    <ul>
+      <div
+        *ngFor="let menu of menus"
+        (mouseenter) ="mouseEnter(menu.level)"
+        class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between p-1 oneMenu">
+        <div class="col-md-11">
+          {{menu.level}}
+        </div>
+        <div class="col-md-1 icon"
+             [routerLink]="['/dashboard/menu_settings/menu_item/'+menu.level]"
+        >
+          <mat-icon aria-hidden="false" aria-label="Example home icon">delete_forever</mat-icon>
+        </div>
+      </div>
+    </ul>
+
+
+  </div>
+  <div class="col-md-6">
+
+    <p>menu-list preview works!</p>
+    <p>We look on {{activeLevel}}</p>
+  </div>
+</div>
+
+

@@ -11,19 +11,26 @@ import {BehaviorSubject} from "rxjs";
 export class MenuListComponent implements OnInit {
 
   menus: IMenu[] = [];
+  activeLevel: string;
+
 
   constructor(private menuService: MenuService) {
-    this.menuService.getMenu('/api/menus').subscribe((menus: IMenu[]) => {
 
-      this.menuService.data = new BehaviorSubject(menus);
-      this.menus = this.menuService.data.value;
-    });
   }
 
 
   ngOnInit(): void {
+    this.menuService.getMenu('/api/menus').subscribe((menus: IMenu[]) => {
 
+      this.menuService.data = new BehaviorSubject(menus);
+      this.menus = this.menuService.data.value;
+      this.activeLevel = this.menus[0].level;
+    });
 
+  }
+
+  mouseEnter(level) {
+    this.activeLevel = level;
   }
 
 }
