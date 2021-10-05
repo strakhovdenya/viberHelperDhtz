@@ -13,9 +13,8 @@ export class MenuListComponent implements OnInit {
   menus: IMenu[] = [];
 
   constructor(private menuService: MenuService) {
-    this.menuService.getMenu('/api/menus').subscribe((menus) => {
+    this.menuService.getMenu('/api/menus').subscribe((menus: IMenu[]) => {
 
-      console.log(menus);
       this.menuService.data = new BehaviorSubject(menus);
       this.menus = this.menuService.data.value;
     });
