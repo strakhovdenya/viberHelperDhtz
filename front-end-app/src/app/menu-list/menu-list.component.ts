@@ -6,7 +6,7 @@ import {BehaviorSubject} from "rxjs";
 @Component({
   selector: 'app-menu-list',
   templateUrl: './menu-list.component.html',
-  styleUrls: ['./menu-list.component.css']
+  styleUrls: ['./menu-list.component.css'],
 })
 export class MenuListComponent implements OnInit {
 
@@ -15,7 +15,7 @@ export class MenuListComponent implements OnInit {
     level: '',
     Type: '',
     Buttons: [],
-    Revision: 0
+    Revision: 0,
   };
 
 
@@ -25,12 +25,17 @@ export class MenuListComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.menuService.getMenu('/api/menus').subscribe((menus: IMenu[]) => {
-
-      this.menuService.data = new BehaviorSubject(menus);
+    if (this.menuService.data) {
       this.menus = this.menuService.data.value;
       this.activeMenu = this.menus[0];
-    });
+    } else {
+      this.menuService.getMenu('/api/menus').subscribe((menus: IMenu[]) => {
+
+        this.menuService.data = new BehaviorSubject(menus);
+        this.menus = this.menuService.data.value;
+        this.activeMenu = this.menus[0];
+      });
+    }
 
   }
 

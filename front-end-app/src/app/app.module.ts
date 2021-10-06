@@ -44,6 +44,8 @@ import { MenuListComponent } from './menu-list/menu-list.component';
 import { MenuItemComponent } from './menu-item/menu-item.component';
 import {MenuService} from "./services/menu.service";
 import { MenuItemPreviewComponent } from './menu-item-preview/menu-item-preview.component';
+import { MenuItemPreviewEditComponent } from './menu-item-preview-edit/menu-item-preview-edit.component';
+import {PreviewMenuService} from './services/preview-menu.service';
 
 
 const DashboardRoute: Routes = [
@@ -95,7 +97,8 @@ const appRoute: Routes = [
     ConfirmationDialogComponent,
     MenuListComponent,
     MenuItemComponent,
-    MenuItemPreviewComponent
+    MenuItemPreviewComponent,
+    MenuItemPreviewEditComponent
 
   ],
   imports: [
@@ -123,7 +126,8 @@ const appRoute: Routes = [
     {provide: JWT_OPTIONS, useValue: JWT_OPTIONS},
     JwtHelperService,
     ConfirmationDialogService,
-    ImportToSiteService
+    ImportToSiteService,
+    PreviewMenuService
   ],
   exports: [],
   bootstrap: [AppComponent],

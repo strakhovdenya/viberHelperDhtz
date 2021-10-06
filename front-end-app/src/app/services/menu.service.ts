@@ -1,5 +1,5 @@
 import {Injectable} from "@angular/core";
-import {BehaviorSubject} from "rxjs";
+import {BehaviorSubject, Observable} from "rxjs";
 import * as moment from "moment";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {map} from "rxjs/operators";
@@ -7,7 +7,7 @@ import {AuthService} from "./auth.service";
 import {IMenu} from "./interfaces/IMenu";
 
 @Injectable({
-  providedIn: "root"
+  providedIn: "root",
 })
 
 export class MenuService {
@@ -17,8 +17,6 @@ export class MenuService {
     private httpClient: HttpClient,
     private authService: AuthService,
   ) {
-    // this.getMenu('/api/menus').subscribe((menus: { data: IMenu[] }) =>this.data = new BehaviorSubject(menus.data));
-
   }
 
   changeDate(menus: any) {
@@ -30,10 +28,11 @@ export class MenuService {
     const headers = new HttpHeaders().set('Content-Type', 'application/json').set('Authorization', 'Bearer ' + token);
     return this.httpClient.get(
       url,
-      {headers: headers}
+      {headers: headers},
     ).pipe(
       map((res) => res),
-      this.authService.getUnauthorizedCatcher()
+      this.authService.getUnauthorizedCatcher(),
     );
   }
+
 }
