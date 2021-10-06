@@ -42,7 +42,6 @@ export class MenuItemPreviewEditComponent implements OnInit, OnChanges {
   }
 
   setButtonForEdit(indexInMenu): void {
-    console.log('setButtonForEdit');
     const data: IDtoForEditButton = {
       level: this.activeMenu.level,
       button: this.menu.Buttons[indexInMenu],

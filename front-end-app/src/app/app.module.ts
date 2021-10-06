@@ -33,21 +33,23 @@ import {DatepikerModule} from './datepiker/datepikerModule';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ButtonSaveScheduleComponent} from './button-save-schedule/button-save-schedule.component';
 import {DateService} from "./services/date.service";
-import { ListMonthesComponent } from './list-monthes/list-monthes.component';
-import { MonthComponent } from './month/month.component';
+import {ListMonthesComponent} from './list-monthes/list-monthes.component';
+import {MonthComponent} from './month/month.component';
 import {ConfirmationDialogComponent} from "./confirmation-dialog/confirmation-dialog.component";
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import {ConfirmationDialogService} from "./confirmation-dialog/confirmation-dialog.service";
 import {ButtonImportScheduleComponent} from "./button-import-schedule/button-import-schedule.component";
 import {ImportToSiteService} from "./services/import-to-site.service";
-import { MenuListComponent } from './menu-list/menu-list.component';
-import { MenuItemComponent } from './menu-item/menu-item.component';
+import {MenuListComponent} from './menu-list/menu-list.component';
+import {MenuItemComponent} from './menu-item/menu-item.component';
 import {MenuService} from "./services/menu.service";
-import { MenuItemPreviewComponent } from './menu-item-preview/menu-item-preview.component';
-import { MenuItemPreviewEditComponent } from './menu-item-preview-edit/menu-item-preview-edit.component';
+import {MenuItemPreviewComponent} from './menu-item-preview/menu-item-preview.component';
+import {MenuItemPreviewEditComponent} from './menu-item-preview-edit/menu-item-preview-edit.component';
 import {PreviewMenuService} from './services/preview-menu.service';
-import { MenuItemEditButtonComponent } from './menu-item-edit-button/menu-item-edit-button.component';
+import {MenuItemEditButtonComponent} from './menu-item-edit-button/menu-item-edit-button.component';
 import {EditButtonService} from './services/edit-button.service';
+import {MenuButtonPropertyEditComponent} from './menu-button-property-edit/menu-button-property-edit.component';
+
 
 
 const DashboardRoute: Routes = [
@@ -55,21 +57,21 @@ const DashboardRoute: Routes = [
   {
     path: 'juniors',
     component: ScheduleComponent,
-    data: {urlForRequest: 'api/schedule/junior/', urlForSave: 'api/schedule/junior/',}
+    data: {urlForRequest: 'api/schedule/junior/', urlForSave: 'api/schedule/junior/'},
   },
   {
     path: 'middles',
     component: ScheduleComponent,
-    data: {urlForRequest: 'api/schedule/middle/', urlForSave: 'api/schedule/middle/',}
+    data: {urlForRequest: 'api/schedule/middle/', urlForSave: 'api/schedule/middle/'},
   },
   {
     path: 'elders',
     component: ScheduleComponent,
-    data: {urlForRequest: 'api/schedule/elder/', urlForSave: 'api/schedule/elder/',}
+    data: {urlForRequest: 'api/schedule/elder/', urlForSave: 'api/schedule/elder/'},
   },
   {path: 'month_juniors', component: ListMonthesComponent, data: {urlForRequest: 'api/schedule/junior/months'}},
   {path: 'month_middles', component: ListMonthesComponent, data: {urlForRequest: 'api/schedule/middle/months'}},
-  {path: 'month_elders', component: ListMonthesComponent,data: {urlForRequest: 'api/schedule/elder/months'}},
+  {path: 'month_elders', component: ListMonthesComponent, data: {urlForRequest: 'api/schedule/elder/months'}},
   {path: 'menu_settings', component: MenuListComponent, canActivate: [IsLoggedIn]},
   {path: 'menu_settings/menu_item/:level', component: MenuItemComponent, canActivate: [IsLoggedIn]},
 ];
@@ -101,8 +103,8 @@ const appRoute: Routes = [
     MenuItemComponent,
     MenuItemPreviewComponent,
     MenuItemPreviewEditComponent,
-    MenuItemEditButtonComponent
-
+    MenuItemEditButtonComponent,
+    MenuButtonPropertyEditComponent,
   ],
   imports: [
     BrowserModule,
@@ -131,11 +133,11 @@ const appRoute: Routes = [
     ConfirmationDialogService,
     ImportToSiteService,
     PreviewMenuService,
-    EditButtonService
+    EditButtonService,
   ],
   exports: [],
   bootstrap: [AppComponent],
-  entryComponents: [ ConfirmationDialogComponent ],
+  entryComponents: [ConfirmationDialogComponent],
 })
 export class AppModule {
 }

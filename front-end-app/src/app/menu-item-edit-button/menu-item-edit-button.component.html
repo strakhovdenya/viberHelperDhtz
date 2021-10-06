@@ -4,17 +4,45 @@
   </div>
 </div>
 <div *ngIf="isButtonSelected"
-     class="d-flex flex-wrap align-items-top justify-content-center justify-content-md-between p-1">
-  <div class="col-md-12">
+     class="container">
+  <app-menu-button-property-edit
+    [name]="'columns'"
+    [value]="columns"
+  >
+  </app-menu-button-property-edit>
+  <app-menu-button-property-edit
+    [name]="'rows'"
+    [value]="rows"
+  >
+  </app-menu-button-property-edit>
+  <app-menu-button-property-edit
+    [name]="'bgColor'"
+    [value]="bgColor"
+  >
+  </app-menu-button-property-edit>
+  <app-menu-button-property-edit
+    [name]="'text'"
+    [value]="text"
+  >
+  </app-menu-button-property-edit>
+  <app-menu-button-property-edit
+    [name]="'textSize'"
+    [value]="textSize"
+  >
+  </app-menu-button-property-edit>
+  <app-menu-button-property-edit
+    [name]="'actionType'"
+    [value]="actionType"
+  >
+  </app-menu-button-property-edit>
+  <app-menu-button-property-edit
+    [name]="'actionBody'"
+    [value]="actionBody"
+  >
+  </app-menu-button-property-edit>
 
-  </div>
 
-  <div class="col-md-12">{{columns}}</div>
-  <div class="col-md-12">{{rows}}</div>
-  <div class="col-md-12">{{bgColor}}</div>
-  <div class="col-md-12">{{text}}</div>
-  <div class="col-md-12">{{textSize}}</div>
-  <div class="col-md-12">{{actionType}}</div>
-  <div class="col-md-12">{{actionBody}}</div>
+  <button class="col-md-6 btn btn-primary mt-2">Сохранить</button>
+  <button class="col-md-6 btn btn-warning mt-2">Отменить</button>
 
 </div>
