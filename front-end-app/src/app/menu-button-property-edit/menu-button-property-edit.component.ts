@@ -49,12 +49,15 @@ export class MenuButtonPropertyEditComponent implements OnInit, AfterContentChec
 
   setEndOfText(event): void {
     if (event.keyCode === 13 || event.keyCode === 27) {
+      console.log('setEndOfText');
       this.isInput = false;
+      this.newValue.emit(this.value);
     }
   }
 
   blur(event): void {
     this.isInput = false;
+    this.newValue.emit(this.value);
   }
 
   ngAfterContentChecked(): void {

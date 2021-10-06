@@ -264,11 +264,14 @@ class MenuButtonPropertyEditComponent {
     }
     setEndOfText(event) {
         if (event.keyCode === 13 || event.keyCode === 27) {
+            console.log('setEndOfText');
             this.isInput = false;
+            this.newValue.emit(this.value);
         }
     }
     blur(event) {
         this.isInput = false;
+        this.newValue.emit(this.value);
     }
     ngAfterContentChecked() {
         this.element.nativeElement.focus();
@@ -1119,12 +1122,21 @@ class MenuItemPreviewEditComponent {
         }
     }
     setButtonForEdit(indexInMenu) {
-        const data = {
-            level: this.activeMenu.level,
-            button: this.menu.Buttons[indexInMenu],
-            buttonIndex: indexInMenu,
-        };
-        this.editButtonService.changeDate(data);
+        this.editButtonService.changeCurrentButtonIndex(indexInMenu);
+        console.log('setButtonForEdit');
+        const data = [];
+        const existData = this.editButtonService.data.value;
+        if (existData[indexInMenu] === undefined) {
+            data[indexInMenu] = this.editButtonService.startValue;
+            data[indexInMenu].old.level = this.activeMenu.level;
+            data[indexInMenu].old.button = this.menu.Buttons[indexInMenu];
+            data[indexInMenu].old.buttonIndex = indexInMenu;
+            this.editButtonService.changeDate(data);
+            return;
+        }
+        else {
+            this.editButtonService.changeDate(data);
+        }
     }
 }
 MenuItemPreviewEditComponent.ɵfac = function MenuItemPreviewEditComponent_Factory(t) { return new (t || MenuItemPreviewEditComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_preview_menu_service__WEBPACK_IMPORTED_MODULE_1__["PreviewMenuService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_edit_button_service__WEBPACK_IMPORTED_MODULE_2__["EditButtonService"])); };
@@ -1395,22 +1407,41 @@ __webpack_require__.r(__webpack_exports__);
 class EditButtonService {
     constructor() {
         this.startValue = {
-            level: '',
-            button: {
-                Columns: 0,
-                Rows: 0,
-                BgColor: '',
-                Text: '',
-                TextSize: '',
-                ActionType: '',
-                ActionBody: '',
+            old: {
+                level: '',
+                button: {
+                    Columns: 0,
+                    Rows: 0,
+                    BgColor: '',
+                    Text: '',
+                    TextSize: '',
+                    ActionType: '',
+                    ActionBody: '',
+                },
+                buttonIndex: 0,
             },
-            buttonIndex: 0,
+            new: {
+                level: '',
+                button: {
+                    Columns: 0,
+                    Rows: 0,
+                    BgColor: '',
+                    Text: '',
+                    TextSize: '',
+                    ActionType: '',
+                    ActionBody: '',
+                },
+                buttonIndex: 0,
+            },
         };
-        this.data = new rxjs__WEBPACK_IMPORTED_MODULE_0__["BehaviorSubject"](this.startValue);
+        this.data = new rxjs__WEBPACK_IMPORTED_MODULE_0__["BehaviorSubject"]([]);
+        this.currentButtonIndex = new rxjs__WEBPACK_IMPORTED_MODULE_0__["BehaviorSubject"]('');
     }
     changeDate(date) {
         this.data.next(date);
+    }
+    changeCurrentButtonIndex(date) {
+        this.currentButtonIndex.next(date);
     }
 }
 EditButtonService.ɵfac = function EditButtonService_Factory(t) { return new (t || EditButtonService)(); };
@@ -1699,6 +1730,7 @@ function MenuItemEditButtonComponent_div_0_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } }
 function MenuItemEditButtonComponent_div_1_Template(rf, ctx) { if (rf & 1) {
+    const _r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 3);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "app-menu-button-property-edit", 4);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "app-menu-button-property-edit", 4);
@@ -1706,11 +1738,13 @@ function MenuItemEditButtonComponent_div_1_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](4, "app-menu-button-property-edit", 4);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](5, "app-menu-button-property-edit", 4);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](6, "app-menu-button-property-edit", 4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](7, "app-menu-button-property-edit", 4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "button", 5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "app-menu-button-property-edit", 5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("newValue", function MenuItemEditButtonComponent_div_1_Template_app_menu_button_property_edit_newValue_7_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r3); const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r2.onChangeProperty($event, "actionBody"); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "button", 6);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9, "\u0421\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "button", 6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "button", 7);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11, "\u041E\u0442\u043C\u0435\u043D\u0438\u0442\u044C");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -1744,25 +1778,30 @@ class MenuItemEditButtonComponent {
         this.isButtonSelected = false;
     }
     ngOnInit() {
-        this.editButtonService.data.subscribe((value) => {
-            if (value.level !== '') {
+        this.editButtonService.currentButtonIndex.subscribe((value) => {
+            if (value !== '') {
+                const oneButton = this.editButtonService.data.value[value];
                 this.isButtonSelected = true;
-                this.columns = value.button.Columns;
-                this.rows = value.button.Rows;
-                this.bgColor = value.button.BgColor;
-                this.text = value.button.Text;
-                this.textSize = value.button.TextSize;
-                this.actionType = value.button.ActionType;
-                this.actionBody = value.button.ActionBody;
+                this.columns = oneButton.old.button.Columns;
+                this.rows = oneButton.old.button.Rows;
+                this.bgColor = oneButton.old.button.BgColor;
+                this.text = oneButton.old.button.Text;
+                this.textSize = oneButton.old.button.TextSize;
+                this.actionType = oneButton.old.button.ActionType;
+                this.actionBody = oneButton.new.button.ActionBody === '' ? oneButton.old.button.ActionBody : oneButton.new.button.ActionBody;
             }
         });
     }
     ngOnDestroy() {
-        this.editButtonService.changeDate(this.editButtonService.startValue);
+        // this.editButtonService.changeDate(this.editButtonService.startValue);
+    }
+    onChangeProperty(data, type) {
+        const currIndexButton = this.editButtonService.currentButtonIndex.value;
+        this.editButtonService.data.value[currIndexButton].new[type] = data;
     }
 }
 MenuItemEditButtonComponent.ɵfac = function MenuItemEditButtonComponent_Factory(t) { return new (t || MenuItemEditButtonComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_edit_button_service__WEBPACK_IMPORTED_MODULE_1__["EditButtonService"])); };
-MenuItemEditButtonComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: MenuItemEditButtonComponent, selectors: [["app-menu-item-edit-button"]], decls: 2, vars: 2, consts: [[4, "ngIf"], ["class", "container", 4, "ngIf"], [1, "col-md-12", "text-center"], [1, "container"], [3, "name", "value"], [1, "col-md-6", "btn", "btn-primary", "mt-2"], [1, "col-md-6", "btn", "btn-warning", "mt-2"]], template: function MenuItemEditButtonComponent_Template(rf, ctx) { if (rf & 1) {
+MenuItemEditButtonComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: MenuItemEditButtonComponent, selectors: [["app-menu-item-edit-button"]], decls: 2, vars: 2, consts: [[4, "ngIf"], ["class", "container", 4, "ngIf"], [1, "col-md-12", "text-center"], [1, "container"], [3, "name", "value"], [3, "name", "value", "newValue"], [1, "col-md-6", "btn", "btn-primary", "mt-2"], [1, "col-md-6", "btn", "btn-warning", "mt-2"]], template: function MenuItemEditButtonComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, MenuItemEditButtonComponent_div_0_Template, 3, 0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, MenuItemEditButtonComponent_div_1_Template, 12, 14, "div", 1);
     } if (rf & 2) {

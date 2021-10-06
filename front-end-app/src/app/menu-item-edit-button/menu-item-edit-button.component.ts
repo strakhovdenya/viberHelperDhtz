@@ -22,23 +22,30 @@ export class MenuItemEditButtonComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.editButtonService.data.subscribe((value: IDtoForEditButton) => {
-      if (value.level !== '') {
+    this.editButtonService.currentButtonIndex.subscribe((value: number | string) => {
+
+      if (value !== '') {
+        const oneButton = this.editButtonService.data.value[value];
         this.isButtonSelected = true;
-        this.columns = value.button.Columns;
-        this.rows = value.button.Rows;
-        this.bgColor = value.button.BgColor;
-        this.text = value.button.Text;
-        this.textSize = value.button.TextSize;
-        this.actionType = value.button.ActionType;
-        this.actionBody = value.button.ActionBody;
+        this.columns = oneButton.old.button.Columns;
+        this.rows = oneButton.old.button.Rows;
+        this.bgColor = oneButton.old.button.BgColor;
+        this.text = oneButton.old.button.Text;
+        this.textSize = oneButton.old.button.TextSize;
+        this.actionType = oneButton.old.button.ActionType;
+        this.actionBody = oneButton.new.button.ActionBody === '' ? oneButton.old.button.ActionBody : oneButton.new.button.ActionBody;
 
       }
     });
   }
 
   ngOnDestroy(): void {
-    this.editButtonService.changeDate(this.editButtonService.startValue);
+    // this.editButtonService.changeDate(this.editButtonService.startValue);
+  }
+
+  onChangeProperty(data, type): void {
+    const currIndexButton = this.editButtonService.currentButtonIndex.value;
+    this.editButtonService.data.value[currIndexButton].new[type] = data;
   }
 
 }

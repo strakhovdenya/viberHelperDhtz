@@ -15,8 +15,13 @@ export interface IMenu {
   Revision: number;
 }
 
-export interface IDtoForEditButton {
+export interface IDtoForEditButtonPart {
   level: string;
   button: IButton;
   buttonIndex: number;
+}
+
+export interface IDtoForEditButton {
+  old: IDtoForEditButtonPart;
+  new: IDtoForEditButtonPart;
 }

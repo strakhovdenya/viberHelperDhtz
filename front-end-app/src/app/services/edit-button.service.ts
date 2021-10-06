@@ -8,22 +8,43 @@ import {IDtoForEditButton} from './interfaces/IMenu';
 
 export class EditButtonService {
   public startValue: IDtoForEditButton = {
-    level: '',
-    button: {
-      Columns: 0,
-      Rows: 0,
-      BgColor: '',
-      Text: '',
-      TextSize: '',
-      ActionType: '',
-      ActionBody: '',
+    old: {
+      level: '',
+      button: {
+        Columns: 0,
+        Rows: 0,
+        BgColor: '',
+        Text: '',
+        TextSize: '',
+        ActionType: '',
+        ActionBody: '',
+      },
+      buttonIndex: 0,
     },
-    buttonIndex: 0,
+    new: {
+      level: '',
+      button: {
+        Columns: 0,
+        Rows: 0,
+        BgColor: '',
+        Text: '',
+        TextSize: '',
+        ActionType: '',
+        ActionBody: '',
+      },
+      buttonIndex: 0,
+    },
   };
 
-  public data: BehaviorSubject<IDtoForEditButton> = new BehaviorSubject<IDtoForEditButton>(this.startValue);
 
-  changeDate(date: IDtoForEditButton): void {
+  public data: BehaviorSubject<Array<IDtoForEditButton>> = new BehaviorSubject<Array<IDtoForEditButton>>([]);
+  public currentButtonIndex: BehaviorSubject<number | string> = new BehaviorSubject<number | string>('');
+
+  changeDate(date: IDtoForEditButton[]): void {
     this.data.next(date);
+  }
+
+  changeCurrentButtonIndex(date: number | string): void {
+    this.currentButtonIndex.next(date);
   }
 }

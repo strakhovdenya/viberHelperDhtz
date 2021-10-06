@@ -5,7 +5,6 @@ import {TableTR} from '../services/interfaces/IPreviewTable';
 import {EditButtonService} from '../services/edit-button.service';
 
 
-
 @Component({
   selector: 'app-menu-item-preview-edit',
   templateUrl: './menu-item-preview-edit.component.html',
@@ -20,6 +19,8 @@ export class MenuItemPreviewEditComponent implements OnInit, OnChanges {
     Buttons: [],
     Revision: 0,
   };
+
+  currentButtonIndex: number | string;
 
 
   tablePreview: TableTR[] = [];
@@ -42,12 +43,21 @@ export class MenuItemPreviewEditComponent implements OnInit, OnChanges {
   }
 
   setButtonForEdit(indexInMenu): void {
-    const data: IDtoForEditButton = {
-      level: this.activeMenu.level,
-      button: this.menu.Buttons[indexInMenu],
-      buttonIndex: indexInMenu,
-    };
+    this.editButtonService.changeCurrentButtonIndex(indexInMenu);
+    console.log('setButtonForEdit');
+    const data: IDtoForEditButton[] = [];
+    const existData = this.editButtonService.data.value;
+    if (existData[indexInMenu] === undefined) {
+      data[indexInMenu] = this.editButtonService.startValue;
 
-    this.editButtonService.changeDate(data);
+      data[indexInMenu].old.level = this.activeMenu.level;
+      data[indexInMenu].old.button = this.menu.Buttons[indexInMenu];
+      data[indexInMenu].old.buttonIndex = indexInMenu;
+      this.editButtonService.changeDate(data);
+      return;
+    } else{
+      this.editButtonService.changeDate(data);
+    }
+
   }
 }
