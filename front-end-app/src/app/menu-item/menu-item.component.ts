@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {MenuService} from '../services/menu.service';
 import {IMenu} from '../services/interfaces/IMenu';
-import {element} from 'protractor';
 import {BehaviorSubject} from 'rxjs';
 
 @Component({
@@ -25,11 +24,11 @@ export class MenuItemComponent implements OnInit {
     this.route.params.subscribe(async (params: { level: string }) => {
       this.level = params.level;
       if (this.menuService.data) {
-        this.menu = this.menuService.data.value.filter((el: IMenu) => el.level === this.level);
+        this.menu = this.menuService.data.value.find((el: IMenu) => el.level === this.level);
       } else {
         this.menuService.getMenu('/api/menus').subscribe((menus: IMenu[]) => {
           this.menuService.data = new BehaviorSubject(menus);
-          this.menu = this.menuService.data.value.filter((el: IMenu) => el.level === this.level);
+          this.menu = this.menuService.data.value.find((el: IMenu) => el.level === this.level);
         });
       }
     });

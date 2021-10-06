@@ -1,5 +1,5 @@
 import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
-import {IButton, IMenu} from "../services/interfaces/IMenu";
+import {IMenu} from "../services/interfaces/IMenu";
 import {PreviewMenuService} from '../services/preview-menu.service';
 
 interface ITableTD {
@@ -7,7 +7,7 @@ interface ITableTD {
   col: number;
   row: number;
   text: string;
-  bgColor: string
+  bgColor: string;
 }
 
 type TableTR = ITableTD[];

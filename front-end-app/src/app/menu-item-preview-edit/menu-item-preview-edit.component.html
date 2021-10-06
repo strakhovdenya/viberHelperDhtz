@@ -1,1 +1,23 @@
-<p>menu-item-preview-edit works!</p>
+<div
+  class="d-flex flex-wrap align-items-top justify-content-center justify-content-md-between p-1">
+  <div class="col-md-12 text-center">Меню: {{activeMenu.level}}</div>
+  <div class="col-md-12">
+    <table>
+      <tr *ngFor="let row of tablePreview">
+        <td
+          class="text-center"
+          *ngFor="let col of row"
+          [ngClass]="{disableTd:col.rez!==0}"
+          [attr.rowspan]="col.row"
+          [attr.colspan]="col.col"
+          [style.height.px]="col.row*30"
+          [ngStyle] = "{'background-color': col.bgColor}"
+        >
+          {{col.text}}
+        </td>
+      </tr>
+    </table>
+  </div>
+
+
+</div>

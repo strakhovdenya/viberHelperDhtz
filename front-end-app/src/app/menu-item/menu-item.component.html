@@ -1,7 +1,19 @@
-<p>menu-item works!</p>
-
-<p>{{level}}</p>
-
+<p class="text-center">{{level}}</p>
+<div
+  class="d-flex flex-wrap align-items-top justify-content-center justify-content-md-between p-1">
+  <div class="col-md-6">
+    <app-menu-item-preview-edit
+      [menu]="menu"
+    >
+    </app-menu-item-preview-edit>
+  </div>
+  <div class="col-md-6">
+    <app-menu-item-preview-edit
+      [menu]="menu"
+    >
+    </app-menu-item-preview-edit>
+  </div>
+</div>
 <button
   class="btn btn-primary"
   [routerLink]="['/dashboard/menu_settings']"
