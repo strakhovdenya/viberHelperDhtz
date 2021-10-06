@@ -1,16 +1,10 @@
 import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {PreviewMenuService} from '../services/preview-menu.service';
-import {IMenu} from '../services/interfaces/IMenu';
+import {IDtoForEditButton, IMenu} from '../services/interfaces/IMenu';
+import {TableTR} from '../services/interfaces/IPreviewTable';
+import {EditButtonService} from '../services/edit-button.service';
 
-interface ITableTD {
-  rez: number;
-  col: number;
-  row: number;
-  text: string;
-  bgColor: string;
-}
 
-type TableTR = ITableTD[];
 
 @Component({
   selector: 'app-menu-item-preview-edit',
@@ -27,9 +21,12 @@ export class MenuItemPreviewEditComponent implements OnInit, OnChanges {
     Revision: 0,
   };
 
+
   tablePreview: TableTR[] = [];
 
-  constructor(private previewMenuService: PreviewMenuService) {
+  constructor(
+    private previewMenuService: PreviewMenuService,
+    private editButtonService: EditButtonService) {
   }
 
   ngOnInit(): void {
@@ -42,5 +39,16 @@ export class MenuItemPreviewEditComponent implements OnInit, OnChanges {
       this.activeMenu = changes.menu.currentValue;
       this.tablePreview = this.previewMenuService.getDataForPreviewTable(changes.menu.currentValue);
     }
+  }
+
+  setButtonForEdit(indexInMenu): void {
+    console.log('setButtonForEdit');
+    const data: IDtoForEditButton = {
+      level: this.activeMenu.level,
+      button: this.menu.Buttons[indexInMenu],
+      buttonIndex: indexInMenu,
+    };
+
+    this.editButtonService.changeDate(data);
   }
 }

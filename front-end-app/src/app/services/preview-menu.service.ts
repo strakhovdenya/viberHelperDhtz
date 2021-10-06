@@ -1,15 +1,6 @@
 import {Injectable} from '@angular/core';
 import {IButton, IMenu} from './interfaces/IMenu';
-
-interface ITableTD {
-  rez: number;
-  col: number;
-  row: number;
-  text: string;
-  bgColor: string;
-}
-
-type TableTR = ITableTD[];
+import {ITableTD, TableTR} from './interfaces/IPreviewTable';
 
 @Injectable({
   providedIn: 'root',
@@ -42,8 +33,8 @@ export class PreviewMenuService {
 
   getDataForPreviewTable(menu: IMenu): TableTR[] {
     const table = [];
-    for (const button of menu.Buttons) {
-      const currentButton: IButton = button;
+    for (const buttonIndex in menu.Buttons) {
+      const currentButton: IButton = menu.Buttons[buttonIndex];
       const rowForAdd = this.getRowLessMax(table);
 
       for (let i = 0; i < currentButton.Rows; i++) {
@@ -56,8 +47,9 @@ export class PreviewMenuService {
             col: currentButton.Columns,
             row: currentButton.Rows,
             rez: 0,
-            text: button.Text,
-            bgColor: button.BgColor,
+            text: currentButton.Text,
+            bgColor: currentButton.BgColor,
+            indexInMenu: buttonIndex,
           });
         } else {
           table[rowForAdd + i].push({rez: currentButton.Columns, col: 0});

@@ -1,16 +1,7 @@
 import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {IMenu} from "../services/interfaces/IMenu";
 import {PreviewMenuService} from '../services/preview-menu.service';
-
-interface ITableTD {
-  rez: number;
-  col: number;
-  row: number;
-  text: string;
-  bgColor: string;
-}
-
-type TableTR = ITableTD[];
+import {TableTR} from '../services/interfaces/IPreviewTable';
 
 @Component({
   selector: 'app-menu-item-preview',

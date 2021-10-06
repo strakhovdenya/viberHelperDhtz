@@ -7,3 +7,8 @@ table {
   border-collapse:separate;
   border-spacing:5px 5px;
 }
+
+.border_hover:hover {
+  opacity:.8;
+  cursor: pointer;
+}

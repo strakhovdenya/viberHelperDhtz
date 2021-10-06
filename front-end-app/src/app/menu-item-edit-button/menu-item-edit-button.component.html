@@ -1,0 +1,20 @@
+<div *ngIf="!isButtonSelected">
+  <div class="col-md-12 text-center">
+    Кнорка не выбрана
+  </div>
+</div>
+<div *ngIf="isButtonSelected"
+     class="d-flex flex-wrap align-items-top justify-content-center justify-content-md-between p-1">
+  <div class="col-md-12">
+
+  </div>
+
+  <div class="col-md-12">{{columns}}</div>
+  <div class="col-md-12">{{rows}}</div>
+  <div class="col-md-12">{{bgColor}}</div>
+  <div class="col-md-12">{{text}}</div>
+  <div class="col-md-12">{{textSize}}</div>
+  <div class="col-md-12">{{actionType}}</div>
+  <div class="col-md-12">{{actionBody}}</div>
+
+</div>

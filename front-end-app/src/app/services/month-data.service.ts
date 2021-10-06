@@ -1,10 +1,9 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {map, catchError} from "rxjs/operators";
-import {throwError} from "rxjs";
+import {map} from "rxjs/operators";
 import {ScheduleElement} from "../table/interface/sheduleElement";
 import {AuthService} from "./auth.service";
-import {Router} from "@angular/router";
+
 
 
 @Injectable({
