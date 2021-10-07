@@ -23,9 +23,10 @@ export class MenuItemEditButtonComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.editButtonService.currentButtonIndex.subscribe((value: number | string) => {
-
+      console.log('butt index',value);
       if (value !== '') {
         const oneButton = this.editButtonService.data.value[value];
+        console.log('oneButton',oneButton);
         this.isButtonSelected = true;
         this.columns = oneButton.old.button.Columns;
         this.rows = oneButton.old.button.Rows;
@@ -45,7 +46,7 @@ export class MenuItemEditButtonComponent implements OnInit, OnDestroy {
 
   onChangeProperty(data, type): void {
     const currIndexButton = this.editButtonService.currentButtonIndex.value;
-    this.editButtonService.data.value[currIndexButton].new[type] = data;
+    this.editButtonService.data.value[currIndexButton].new.button[type] = data;
   }
 
 }

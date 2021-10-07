@@ -1,20 +1,22 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {MenuService} from '../services/menu.service';
 import {IMenu} from '../services/interfaces/IMenu';
 import {BehaviorSubject} from 'rxjs';
+import {EditButtonService} from "../services/edit-button.service";
 
 @Component({
   selector: 'app-menu-item',
   templateUrl: './menu-item.component.html',
   styleUrls: ['./menu-item.component.css'],
 })
-export class MenuItemComponent implements OnInit {
+export class MenuItemComponent implements OnInit, OnDestroy {
 
   public level: string;
   public menu: IMenu;
 
   constructor(
+    private editButtonService: EditButtonService,
     private route: ActivatedRoute,
     private menuService: MenuService) {
 
@@ -32,6 +34,12 @@ export class MenuItemComponent implements OnInit {
         });
       }
     });
+  }
+
+  ngOnDestroy(): void {
+    console.log('MenuItemComponent destroy')
+    this.editButtonService.changeDate([]);
+    this.editButtonService.changeCurrentButtonIndex('');
   }
 
 }

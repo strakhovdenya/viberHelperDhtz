@@ -47,4 +47,35 @@ export class EditButtonService {
   changeCurrentButtonIndex(date: number | string): void {
     this.currentButtonIndex.next(date);
   }
+
+  getStartValue(): IDtoForEditButton {
+    return {
+      old: {
+        level: '',
+        button: {
+          Columns: 0,
+          Rows: 0,
+          BgColor: '',
+          Text: '',
+          TextSize: '',
+          ActionType: '',
+          ActionBody: '',
+        },
+        buttonIndex: 0,
+      },
+      new: {
+        level: '',
+        button: {
+          Columns: 0,
+          Rows: 0,
+          BgColor: '',
+          Text: '',
+          TextSize: '',
+          ActionType: '',
+          ActionBody: '',
+        },
+        buttonIndex: 0,
+      },
+    };
+  }
 }

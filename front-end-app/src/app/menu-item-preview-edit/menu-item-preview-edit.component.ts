@@ -43,21 +43,16 @@ export class MenuItemPreviewEditComponent implements OnInit, OnChanges {
   }
 
   setButtonForEdit(indexInMenu): void {
-    this.editButtonService.changeCurrentButtonIndex(indexInMenu);
-    console.log('setButtonForEdit');
-    const data: IDtoForEditButton[] = [];
     const existData = this.editButtonService.data.value;
     if (existData[indexInMenu] === undefined) {
-      data[indexInMenu] = this.editButtonService.startValue;
+      existData[indexInMenu] = this.editButtonService.getStartValue();
 
-      data[indexInMenu].old.level = this.activeMenu.level;
-      data[indexInMenu].old.button = this.menu.Buttons[indexInMenu];
-      data[indexInMenu].old.buttonIndex = indexInMenu;
-      this.editButtonService.changeDate(data);
-      return;
-    } else{
-      this.editButtonService.changeDate(data);
+      existData[indexInMenu].old.level = this.activeMenu.level;
+      existData[indexInMenu].old.button = this.menu.Buttons[indexInMenu];
+      existData[indexInMenu].old.buttonIndex = indexInMenu;
     }
 
+    this.editButtonService.changeDate(existData);
+    this.editButtonService.changeCurrentButtonIndex(indexInMenu);
   }
 }
