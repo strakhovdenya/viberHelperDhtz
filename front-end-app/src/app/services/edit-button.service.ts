@@ -7,36 +7,6 @@ import {IDtoForEditButton} from './interfaces/IMenu';
 })
 
 export class EditButtonService {
-  public startValue: IDtoForEditButton = {
-    old: {
-      level: '',
-      button: {
-        Columns: 0,
-        Rows: 0,
-        BgColor: '',
-        Text: '',
-        TextSize: '',
-        ActionType: '',
-        ActionBody: '',
-      },
-      buttonIndex: 0,
-    },
-    new: {
-      level: '',
-      button: {
-        Columns: 0,
-        Rows: 0,
-        BgColor: '',
-        Text: '',
-        TextSize: '',
-        ActionType: '',
-        ActionBody: '',
-      },
-      buttonIndex: 0,
-    },
-  };
-
-
   public data: BehaviorSubject<Array<IDtoForEditButton>> = new BehaviorSubject<Array<IDtoForEditButton>>([]);
   public currentButtonIndex: BehaviorSubject<number | string> = new BehaviorSubject<number | string>('');
 
@@ -50,8 +20,8 @@ export class EditButtonService {
 
   getStartValue(): IDtoForEditButton {
     return {
+      level: '',
       old: {
-        level: '',
         button: {
           Columns: 0,
           Rows: 0,
@@ -64,7 +34,6 @@ export class EditButtonService {
         buttonIndex: 0,
       },
       new: {
-        level: '',
         button: {
           Columns: 0,
           Rows: 0,

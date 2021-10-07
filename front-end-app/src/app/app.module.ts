@@ -49,6 +49,7 @@ import {PreviewMenuService} from './services/preview-menu.service';
 import {MenuItemEditButtonComponent} from './menu-item-edit-button/menu-item-edit-button.component';
 import {EditButtonService} from './services/edit-button.service';
 import {MenuButtonPropertyEditComponent} from './menu-button-property-edit/menu-button-property-edit.component';
+import {EditButtonChangedPreviewService} from "./services/edit-button-changed-preview.service";
 
 
 
@@ -134,6 +135,7 @@ const appRoute: Routes = [
     ImportToSiteService,
     PreviewMenuService,
     EditButtonService,
+    EditButtonChangedPreviewService,
   ],
   exports: [],
   bootstrap: [AppComponent],

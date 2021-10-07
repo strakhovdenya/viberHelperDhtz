@@ -17,12 +17,12 @@ export interface IMenu {
 }
 
 export interface IDtoForEditButtonPart {
-  level: string;
   button: IButton;
   buttonIndex: number;
 }
 
 export interface IDtoForEditButton {
+  level: string;
   old: IDtoForEditButtonPart;
   new: IDtoForEditButtonPart;
 }

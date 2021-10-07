@@ -6,16 +6,9 @@
 <div *ngIf="isButtonSelected"
      class="container">
   <app-menu-button-property-edit
-    [name]="'actionBody'"
-    [value]="actionBody"
-    [isInputDisable]="false"
-    (newValue)="onChangeProperty($event, 'ActionBody')"
-  >
-  </app-menu-button-property-edit>
-
-  <app-menu-button-property-edit
     [name]="'text'"
     [value]="text"
+    [valueOld]="textOld"
     [isInputDisable]="false"
     (newValue)="onChangeProperty($event, 'Text')"
   >
@@ -24,6 +17,7 @@
   <app-menu-button-property-edit
     [name]="'columns'"
     [value]="columns"
+    [valueOld]="columnsOld"
     [isInputDisable]="false"
     (newValue)="onChangeProperty($event, 'Columns')"
   >
@@ -32,6 +26,7 @@
   <app-menu-button-property-edit
     [name]="'rows'"
     [value]="rows"
+    [valueOld]="rowsOld"
     [isInputDisable]="false"
     (newValue)="onChangeProperty($event, 'Rows')"
   >
@@ -40,6 +35,7 @@
   <app-menu-button-property-edit
     [name]="'bgColor'"
     [value]="bgColor"
+    [valueOld]="bgColorOld"
     [isInputDisable]="false"
     (newValue)="onChangeProperty($event, 'BgColor')"
   >
@@ -48,6 +44,7 @@
   <app-menu-button-property-edit
     [name]="'textSize'"
     [value]="textSize"
+    [valueOld]="textSizeOld"
     [isInputDisable]="false"
     (newValue)="onChangeProperty($event, 'TextSize')"
   >
@@ -56,13 +53,26 @@
   <app-menu-button-property-edit
     [name]="'actionType'"
     [value]="actionType"
+    [valueOld]="actionTypeOld"
     [isInputDisable]="false"
     (newValue)="onChangeProperty($event, 'ActionType')"
   >
   </app-menu-button-property-edit>
 
+  <app-menu-button-property-edit
+    [name]="'actionBody'"
+    [value]="actionBody"
+    [valueOld]="actionBodyOld"
+    [isInputDisable]="false"
+    (newValue)="onChangeProperty($event, 'ActionBody')"
+  >
+  </app-menu-button-property-edit>
+
 
   <button class="col-md-6 btn btn-primary mt-2">Сохранить</button>
-  <button class="col-md-6 btn btn-warning mt-2">Отменить</button>
+  <button
+    class="col-md-6 btn btn-warning mt-2"
+    (click)="clearMenuChanges()"
+  >Отменить</button>
 
 </div>

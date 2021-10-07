@@ -30,6 +30,7 @@
     "angular-in-memory-web-api": "0.5.4",
     "angular2-flash-messages": "^3.0.1",
     "angular2-text-mask": "^9.0.0",
+    "lodash": "^4.17.21",
     "moment": "^2.29.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",

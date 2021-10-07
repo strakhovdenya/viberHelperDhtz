@@ -2,12 +2,13 @@
   class="d-flex flex-wrap align-items-top justify-content-center justify-content-md-between p-1">
   <div class="col-md-6">
     <app-menu-item-preview-edit
-      [menu]="menu"
+      [menu]="menuForPreview"
     >
     </app-menu-item-preview-edit>
   </div>
   <div class="col-md-6">
     <app-menu-item-edit-button
+      (isCleared)="clearPreview()"
     >
     </app-menu-item-edit-button>
   </div>
