@@ -3,9 +3,9 @@ import {
   Component,
   ElementRef,
   EventEmitter,
-  Input,
+  Input, OnChanges,
   OnInit,
-  Output,
+  Output, SimpleChanges,
   ViewChild,
 } from '@angular/core';
 import {ScheduleElement} from '../table/interface/sheduleElement';
@@ -15,10 +15,11 @@ import {ScheduleElement} from '../table/interface/sheduleElement';
   templateUrl: './menu-button-property-edit.component.html',
   styleUrls: ['./menu-button-property-edit.component.css'],
 })
-export class MenuButtonPropertyEditComponent implements OnInit, AfterContentChecked {
+export class MenuButtonPropertyEditComponent implements OnInit, AfterContentChecked, OnChanges {
 
   @Input() name: string;
-  @Input() value: string | number;
+  @Input() value: string | number ='';
+  @Input() isInputDisable: boolean;
   @Output() newValue = new EventEmitter<string | number>();
   oldValue: string | number;
 
@@ -35,6 +36,9 @@ export class MenuButtonPropertyEditComponent implements OnInit, AfterContentChec
   constructor(public element: ElementRef<HTMLElement>) {
   }
 
+  ngOnChanges(changes: SimpleChanges): void {
+  }
+
   ngOnInit(): void {
     this.oldValue = this.value;
   }
@@ -45,11 +49,11 @@ export class MenuButtonPropertyEditComponent implements OnInit, AfterContentChec
 
   onElementChange(value): void {
     this.isChanged = value !== this.oldValue;
+
   }
 
   setEndOfText(event): void {
     if (event.keyCode === 13 || event.keyCode === 27) {
-      console.log('setEndOfText');
       this.isInput = false;
       this.newValue.emit(this.value);
     }
@@ -61,7 +65,9 @@ export class MenuButtonPropertyEditComponent implements OnInit, AfterContentChec
   }
 
   ngAfterContentChecked(): void {
-    this.element.nativeElement.focus();
+    // this.element.nativeElement.focus();
+    // console.log(this.name,this.value)
+    // this.oldValue = this.value;
   }
 
 }

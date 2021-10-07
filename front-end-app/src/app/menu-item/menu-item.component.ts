@@ -37,7 +37,6 @@ export class MenuItemComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    console.log('MenuItemComponent destroy')
     this.editButtonService.changeDate([]);
     this.editButtonService.changeCurrentButtonIndex('');
   }

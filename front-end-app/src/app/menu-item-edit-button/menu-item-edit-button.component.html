@@ -6,39 +6,58 @@
 <div *ngIf="isButtonSelected"
      class="container">
   <app-menu-button-property-edit
-    [name]="'columns'"
-    [value]="columns"
+    [name]="'actionBody'"
+    [value]="actionBody"
+    [isInputDisable]="false"
+    (newValue)="onChangeProperty($event, 'ActionBody')"
   >
   </app-menu-button-property-edit>
-  <app-menu-button-property-edit
-    [name]="'rows'"
-    [value]="rows"
-  >
-  </app-menu-button-property-edit>
-  <app-menu-button-property-edit
-    [name]="'bgColor'"
-    [value]="bgColor"
-  >
-  </app-menu-button-property-edit>
+
   <app-menu-button-property-edit
     [name]="'text'"
     [value]="text"
+    [isInputDisable]="false"
+    (newValue)="onChangeProperty($event, 'Text')"
   >
   </app-menu-button-property-edit>
+
+  <app-menu-button-property-edit
+    [name]="'columns'"
+    [value]="columns"
+    [isInputDisable]="false"
+    (newValue)="onChangeProperty($event, 'Columns')"
+  >
+  </app-menu-button-property-edit>
+
+  <app-menu-button-property-edit
+    [name]="'rows'"
+    [value]="rows"
+    [isInputDisable]="false"
+    (newValue)="onChangeProperty($event, 'Rows')"
+  >
+  </app-menu-button-property-edit>
+
+  <app-menu-button-property-edit
+    [name]="'bgColor'"
+    [value]="bgColor"
+    [isInputDisable]="false"
+    (newValue)="onChangeProperty($event, 'BgColor')"
+  >
+  </app-menu-button-property-edit>
+
   <app-menu-button-property-edit
     [name]="'textSize'"
     [value]="textSize"
+    [isInputDisable]="false"
+    (newValue)="onChangeProperty($event, 'TextSize')"
   >
   </app-menu-button-property-edit>
+
   <app-menu-button-property-edit
     [name]="'actionType'"
     [value]="actionType"
-  >
-  </app-menu-button-property-edit>
-  <app-menu-button-property-edit
-    [name]="'actionBody'"
-    [value]="actionBody"
-    (newValue)="onChangeProperty($event, 'ActionBody')"
+    [isInputDisable]="false"
+    (newValue)="onChangeProperty($event, 'ActionType')"
   >
   </app-menu-button-property-edit>
 

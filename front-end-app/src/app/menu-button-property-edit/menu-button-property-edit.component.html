@@ -4,9 +4,9 @@
     (click)="setInput($event,value)"
     [ngClass]="{changed:isChanged}"
   >
-    <div *ngIf="!isInput" class="col-md-8 property">{{value}}</div>
-    <input *ngIf="isInput" class="col-md-8 property"
-           [value]="value"
+    <div *ngIf="!isInput || isInputDisable" class="col-md-8 property">{{value}}</div>
+    <input *ngIf="isInput && !isInputDisable" class="col-md-8 property"
+
            [(ngModel)]="value"
            (ngModelChange)="onElementChange(value)"
            (keydown)="setEndOfText($event)"

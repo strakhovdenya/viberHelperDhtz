@@ -23,19 +23,18 @@ export class MenuItemEditButtonComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.editButtonService.currentButtonIndex.subscribe((value: number | string) => {
-      console.log('butt index',value);
+
       if (value !== '') {
         const oneButton = this.editButtonService.data.value[value];
-        console.log('oneButton',oneButton);
-        this.isButtonSelected = true;
-        this.columns = oneButton.old.button.Columns;
-        this.rows = oneButton.old.button.Rows;
-        this.bgColor = oneButton.old.button.BgColor;
-        this.text = oneButton.old.button.Text;
-        this.textSize = oneButton.old.button.TextSize;
-        this.actionType = oneButton.old.button.ActionType;
-        this.actionBody = oneButton.new.button.ActionBody === '' ? oneButton.old.button.ActionBody : oneButton.new.button.ActionBody;
 
+        this.isButtonSelected = true;
+        this.columns = oneButton.new.button.Columns === 0 ? oneButton.old.button.Columns : oneButton.new.button.Columns;
+        this.rows = oneButton.new.button.Rows === 0 ? oneButton.old.button.Rows : oneButton.new.button.Rows;
+        this.bgColor = oneButton.new.button.BgColor === '' ? oneButton.old.button.BgColor : oneButton.new.button.BgColor;
+        this.text = oneButton.new.button.Text === '' ? oneButton.old.button.Text : oneButton.new.button.Text;
+        this.textSize = oneButton.new.button.TextSize === '' ? oneButton.old.button.TextSize : oneButton.new.button.TextSize;
+        this.actionType = oneButton.new.button.ActionType === '' ? oneButton.old.button.ActionType : oneButton.new.button.ActionType;
+        this.actionBody = oneButton.new.button.ActionBody === '' ? oneButton.old.button.ActionBody : oneButton.new.button.ActionBody;
       }
     });
   }
@@ -44,9 +43,11 @@ export class MenuItemEditButtonComponent implements OnInit, OnDestroy {
     // this.editButtonService.changeDate(this.editButtonService.startValue);
   }
 
-  onChangeProperty(data, type): void {
+  onChangeProperty(data, type: string): void {
     const currIndexButton = this.editButtonService.currentButtonIndex.value;
     this.editButtonService.data.value[currIndexButton].new.button[type] = data;
+    const propType = type.charAt(0).toLowerCase() + type.slice(1);
+    this[propType] = data;
   }
 
 }

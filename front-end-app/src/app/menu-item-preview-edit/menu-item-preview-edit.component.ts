@@ -52,7 +52,7 @@ export class MenuItemPreviewEditComponent implements OnInit, OnChanges {
       existData[indexInMenu].old.buttonIndex = indexInMenu;
     }
 
-    this.editButtonService.changeDate(existData);
     this.editButtonService.changeCurrentButtonIndex(indexInMenu);
+    this.editButtonService.changeDate(existData);
   }
 }
