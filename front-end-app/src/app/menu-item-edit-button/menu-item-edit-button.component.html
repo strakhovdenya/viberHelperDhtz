@@ -69,10 +69,16 @@
   </app-menu-button-property-edit>
 
 
-  <button class="col-md-6 btn btn-primary mt-2">Сохранить</button>
+  <button
+    class="col-md-6 btn btn-primary mt-2"
+    (click)="saveMenuChanges()"
+  >
+    Сохранить
+  </button>
   <button
     class="col-md-6 btn btn-warning mt-2"
     (click)="clearMenuChanges()"
-  >Отменить</button>
+  >Отменить
+  </button>
 
 </div>

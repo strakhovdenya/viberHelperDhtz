@@ -1084,8 +1084,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const _c0 = function (a0) { return { disableTd: a0 }; };
-const _c1 = function (a0) { return { "background-color": a0 }; };
+const _c0 = function (a0) { return { activeButton: a0 }; };
+const _c1 = function (a0) { return { disableTd: a0 }; };
+const _c2 = function (a0) { return { "background-color": a0 }; };
 function MenuItemPreviewEditComponent_tr_5_td_1_Template(rf, ctx) { if (rf & 1) {
     const _r5 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "td", 5);
@@ -1094,15 +1095,16 @@ function MenuItemPreviewEditComponent_tr_5_td_1_Template(rf, ctx) { if (rf & 1) 
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const col_r3 = ctx.$implicit;
+    const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵstyleProp"]("height", col_r3.row * 30, "px");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction1"](7, _c0, col_r3.rez !== 0))("ngStyle", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction1"](9, _c1, col_r3.bgColor));
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction1"](8, _c0, col_r3.indexInMenu === ctx_r2.currentButtonIndex))("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction1"](10, _c1, col_r3.rez !== 0))("ngStyle", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction1"](12, _c2, col_r3.bgColor));
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("rowspan", col_r3.row)("colspan", col_r3.col);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", col_r3.text, " ");
 } }
 function MenuItemPreviewEditComponent_tr_5_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "tr");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, MenuItemPreviewEditComponent_tr_5_td_1_Template, 2, 11, "td", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, MenuItemPreviewEditComponent_tr_5_td_1_Template, 2, 14, "td", 4);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const row_r1 = ctx.$implicit;
@@ -1146,6 +1148,7 @@ class MenuItemPreviewEditComponent {
         }
     }
     setButtonForEdit(indexInMenu) {
+        this.currentButtonIndex = indexInMenu;
         const existData = this.editButtonService.data.value;
         if (existData[indexInMenu] === undefined) {
             existData[indexInMenu] = this.editButtonService.getStartValue();
@@ -1179,7 +1182,7 @@ MenuItemPreviewEditComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__[
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("\u041C\u0435\u043D\u044E: ", ctx.activeMenu.level, "");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.tablePreview);
-    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_4__["NgForOf"], _angular_common__WEBPACK_IMPORTED_MODULE_4__["NgClass"], _angular_common__WEBPACK_IMPORTED_MODULE_4__["NgStyle"]], styles: [".disableTd[_ngcontent-%COMP%]{\r\n  display: none;\r\n}\r\n\r\ntable[_ngcontent-%COMP%] {\r\n  width: 100%;\r\n  border-collapse:separate;\r\n  border-spacing:5px 5px;\r\n}\r\n\r\n.border_hover[_ngcontent-%COMP%]:hover {\r\n  opacity:.8;\r\n  cursor: pointer;\r\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1lbnUtaXRlbS1wcmV2aWV3LWVkaXQuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGFBQWE7QUFDZjs7QUFFQTtFQUNFLFdBQVc7RUFDWCx3QkFBd0I7RUFDeEIsc0JBQXNCO0FBQ3hCOztBQUVBO0VBQ0UsVUFBVTtFQUNWLGVBQWU7QUFDakIiLCJmaWxlIjoibWVudS1pdGVtLXByZXZpZXctZWRpdC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmRpc2FibGVUZHtcclxuICBkaXNwbGF5OiBub25lO1xyXG59XHJcblxyXG50YWJsZSB7XHJcbiAgd2lkdGg6IDEwMCU7XHJcbiAgYm9yZGVyLWNvbGxhcHNlOnNlcGFyYXRlO1xyXG4gIGJvcmRlci1zcGFjaW5nOjVweCA1cHg7XHJcbn1cclxuXHJcbi5ib3JkZXJfaG92ZXI6aG92ZXIge1xyXG4gIG9wYWNpdHk6Ljg7XHJcbiAgY3Vyc29yOiBwb2ludGVyO1xyXG59XHJcbiJdfQ== */"] });
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_4__["NgForOf"], _angular_common__WEBPACK_IMPORTED_MODULE_4__["NgClass"], _angular_common__WEBPACK_IMPORTED_MODULE_4__["NgStyle"]], styles: [".disableTd[_ngcontent-%COMP%] {\r\n  display: none;\r\n}\r\n\r\ntable[_ngcontent-%COMP%] {\r\n  width: 100%;\r\n  border-collapse: separate;\r\n  border-spacing: 5px 5px;\r\n}\r\n\r\n.border_hover[_ngcontent-%COMP%]:hover {\r\n  opacity: .8;\r\n  cursor: pointer;\r\n}\r\n\r\n.activeButton[_ngcontent-%COMP%] {\r\n  border: 2px solid #46a35e;\r\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1lbnUtaXRlbS1wcmV2aWV3LWVkaXQuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGFBQWE7QUFDZjs7QUFFQTtFQUNFLFdBQVc7RUFDWCx5QkFBeUI7RUFDekIsdUJBQXVCO0FBQ3pCOztBQUVBO0VBQ0UsV0FBVztFQUNYLGVBQWU7QUFDakI7O0FBRUE7RUFDRSx5QkFBeUI7QUFDM0IiLCJmaWxlIjoibWVudS1pdGVtLXByZXZpZXctZWRpdC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmRpc2FibGVUZCB7XHJcbiAgZGlzcGxheTogbm9uZTtcclxufVxyXG5cclxudGFibGUge1xyXG4gIHdpZHRoOiAxMDAlO1xyXG4gIGJvcmRlci1jb2xsYXBzZTogc2VwYXJhdGU7XHJcbiAgYm9yZGVyLXNwYWNpbmc6IDVweCA1cHg7XHJcbn1cclxuXHJcbi5ib3JkZXJfaG92ZXI6aG92ZXIge1xyXG4gIG9wYWNpdHk6IC44O1xyXG4gIGN1cnNvcjogcG9pbnRlcjtcclxufVxyXG5cclxuLmFjdGl2ZUJ1dHRvbiB7XHJcbiAgYm9yZGVyOiAycHggc29saWQgIzQ2YTM1ZTtcclxufVxyXG4iXX0= */"] });
 
 
 /***/ }),
@@ -1409,7 +1412,6 @@ class MenuItemComponent {
         });
         this.editButtonService.changeDate(newDate);
         this.menuForPreview = JSON.parse(JSON.stringify(this.menuService.data.value.find((el) => el.level === this.level)));
-        // this.editButtonService.changeCurrentButtonIndex('');
     }
 }
 MenuItemComponent.ɵfac = function MenuItemComponent_Factory(t) { return new (t || MenuItemComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_services_edit_button_service__WEBPACK_IMPORTED_MODULE_3__["EditButtonService"]), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_4__["ActivatedRoute"]), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_services_menu_service__WEBPACK_IMPORTED_MODULE_5__["MenuService"])); };
@@ -1805,11 +1807,12 @@ function MenuItemEditButtonComponent_div_1_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("newValue", function MenuItemEditButtonComponent_div_1_Template_app_menu_button_property_edit_newValue_7_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r3); const ctx_r9 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r9.onChangeProperty($event, "ActionBody"); });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "button", 5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9, "\u0421\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function MenuItemEditButtonComponent_div_1_Template_button_click_8_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r3); const ctx_r10 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r10.saveMenuChanges(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9, " \u0421\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "button", 6);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function MenuItemEditButtonComponent_div_1_Template_button_click_10_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r3); const ctx_r10 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r10.clearMenuChanges(); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11, "\u041E\u0442\u043C\u0435\u043D\u0438\u0442\u044C");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function MenuItemEditButtonComponent_div_1_Template_button_click_10_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r3); const ctx_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r11.clearMenuChanges(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11, "\u041E\u0442\u043C\u0435\u043D\u0438\u0442\u044C ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
@@ -1907,9 +1910,13 @@ class MenuItemEditButtonComponent {
         this.actionBodyOld = oneButton.old.button.ActionBody;
         this.isCleared.emit(true);
     }
+    saveMenuChanges() {
+        console.log('clearMenuChanges');
+        this.isCleared.emit(true);
+    }
 }
 MenuItemEditButtonComponent.ɵfac = function MenuItemEditButtonComponent_Factory(t) { return new (t || MenuItemEditButtonComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_edit_button_service__WEBPACK_IMPORTED_MODULE_1__["EditButtonService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_edit_button_changed_preview_service__WEBPACK_IMPORTED_MODULE_2__["EditButtonChangedPreviewService"])); };
-MenuItemEditButtonComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: MenuItemEditButtonComponent, selectors: [["app-menu-item-edit-button"]], outputs: { buttonIndex: "buttonIndex", buttonProperty: "buttonProperty", buttonPropertyValue: "buttonPropertyValue", isCleared: "isCleared" }, decls: 2, vars: 2, consts: [[4, "ngIf"], ["class", "container", 4, "ngIf"], [1, "col-md-12", "text-center"], [1, "container"], [3, "name", "value", "valueOld", "isInputDisable", "newValue"], [1, "col-md-6", "btn", "btn-primary", "mt-2"], [1, "col-md-6", "btn", "btn-warning", "mt-2", 3, "click"]], template: function MenuItemEditButtonComponent_Template(rf, ctx) { if (rf & 1) {
+MenuItemEditButtonComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: MenuItemEditButtonComponent, selectors: [["app-menu-item-edit-button"]], outputs: { buttonIndex: "buttonIndex", buttonProperty: "buttonProperty", buttonPropertyValue: "buttonPropertyValue", isCleared: "isCleared" }, decls: 2, vars: 2, consts: [[4, "ngIf"], ["class", "container", 4, "ngIf"], [1, "col-md-12", "text-center"], [1, "container"], [3, "name", "value", "valueOld", "isInputDisable", "newValue"], [1, "col-md-6", "btn", "btn-primary", "mt-2", 3, "click"], [1, "col-md-6", "btn", "btn-warning", "mt-2", 3, "click"]], template: function MenuItemEditButtonComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, MenuItemEditButtonComponent_div_0_Template, 3, 0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, MenuItemEditButtonComponent_div_1_Template, 12, 28, "div", 1);
     } if (rf & 2) {

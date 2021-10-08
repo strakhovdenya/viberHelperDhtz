@@ -101,4 +101,10 @@ export class MenuItemEditButtonComponent implements OnInit, OnDestroy {
     this.isCleared.emit(true);
   }
 
+  saveMenuChanges(): void {
+    console.log('clearMenuChanges');
+
+    this.isCleared.emit(true);
+  }
+
 }

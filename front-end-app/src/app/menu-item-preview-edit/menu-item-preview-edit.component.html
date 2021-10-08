@@ -6,6 +6,7 @@
       <tr *ngFor="let row of tablePreview">
         <td
           class="text-center border_hover"
+          [ngClass]="{activeButton:col.indexInMenu ===currentButtonIndex}"
           *ngFor="let col of row"
           [ngClass]="{disableTd:col.rez!==0}"
           [attr.rowspan]="col.row"

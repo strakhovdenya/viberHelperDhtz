@@ -22,6 +22,8 @@ export class MenuItemPreviewEditComponent implements OnInit, OnChanges, OnDestro
     Revision: 0,
   };
 
+
+
   currentButtonIndex: number | string;
 
 
@@ -63,6 +65,7 @@ export class MenuItemPreviewEditComponent implements OnInit, OnChanges, OnDestro
   }
 
   setButtonForEdit(indexInMenu): void {
+    this.currentButtonIndex = indexInMenu;
     const existData = this.editButtonService.data.value;
     if (existData[indexInMenu] === undefined) {
 
