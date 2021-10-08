@@ -1,0 +1,12 @@
+.changed {
+  background-color: #46a35e;
+}
+
+.property:hover {
+  background-color: #6e6e6e;
+}
+
+input {
+  min-width: 100%;
+  max-width: 100%;
+}

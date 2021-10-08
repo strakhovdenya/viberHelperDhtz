@@ -22,6 +22,9 @@ export class MenuItemPreviewComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.hasOwnProperty('menu')) {
+      console.log('ngOnChanges preview');
+      console.log(changes.menu.currentValue);
+
       this.tablePreview = this.previewMenuService.getDataForPreviewTable(changes.menu.currentValue);
     }
   }

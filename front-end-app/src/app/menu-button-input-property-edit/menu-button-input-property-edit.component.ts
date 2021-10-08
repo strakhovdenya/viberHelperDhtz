@@ -9,11 +9,11 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'app-menu-button-property-edit',
-  templateUrl: './menu-button-property-edit.component.html',
-  styleUrls: ['./menu-button-property-edit.component.css'],
+  selector: 'app-menu-button-input-property-edit',
+  templateUrl: './menu-button-input-property-edit.component.html',
+  styleUrls: ['./menu-button-input-property-edit.component.css'],
 })
-export class MenuButtonPropertyEditComponent implements OnInit, OnChanges {
+export class MenuButtonInputPropertyEditComponent implements OnInit, OnChanges {
 
   @Input() name: string;
   @Input() value: string | number ='';
@@ -67,5 +67,7 @@ export class MenuButtonPropertyEditComponent implements OnInit, OnChanges {
     this.isInput = false;
     this.newValue.emit(this.value);
   }
+
+
 
 }

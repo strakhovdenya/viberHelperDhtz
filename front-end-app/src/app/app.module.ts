@@ -48,9 +48,10 @@ import {MenuItemPreviewEditComponent} from './menu-item-preview-edit/menu-item-p
 import {MenuPreviewService} from './services/menu-preview.service';
 import {MenuItemEditButtonComponent} from './menu-item-edit-button/menu-item-edit-button.component';
 import {MenuEditButtonService} from './services/menu-edit-button.service';
-import {MenuButtonPropertyEditComponent} from './menu-button-property-edit/menu-button-property-edit.component';
+import {MenuButtonInputPropertyEditComponent} from './menu-button-input-property-edit/menu-button-input-property-edit.component';
 import {MenuEditButtonChangedPreviewService} from "./services/menu-edit-button-changed-preview.service";
 import {MenuDataService} from "./services/menu-data.service";
+import { MenuButtonSelectPropertyEditComponent } from './menu-button-select-property-edit/menu-button-select-property-edit.component';
 
 
 
@@ -106,7 +107,8 @@ const appRoute: Routes = [
     MenuItemPreviewComponent,
     MenuItemPreviewEditComponent,
     MenuItemEditButtonComponent,
-    MenuButtonPropertyEditComponent,
+    MenuButtonInputPropertyEditComponent,
+    MenuButtonSelectPropertyEditComponent,
   ],
   imports: [
     BrowserModule,

@@ -50,6 +50,8 @@ export class MenuItemPreviewEditComponent implements OnInit, OnChanges, OnDestro
           }
         });
         this.menu = JSON.parse(JSON.stringify(this.activeMenu));
+        console.log('editButtonChangedPreviewService preview main');
+        console.log(this.activeMenu);
         this.tablePreview = this.previewMenuService.getDataForPreviewTable(this.activeMenu);
       }
     })
@@ -59,6 +61,8 @@ export class MenuItemPreviewEditComponent implements OnInit, OnChanges, OnDestro
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.hasOwnProperty('menu') && changes.menu.currentValue) {
       this.activeMenu = JSON.parse(JSON.stringify(changes.menu.currentValue));
+      console.log('ngOnChanges preview main');
+      console.log(changes.menu.currentValue);
       this.tablePreview = this.previewMenuService.getDataForPreviewTable(this.activeMenu);
     }
   }

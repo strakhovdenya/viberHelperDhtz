@@ -6,13 +6,12 @@
       <tr *ngFor="let row of tablePreview">
         <td
           class="text-center border_hover"
-          [ngClass]="{activeButton:col.indexInMenu ===currentButtonIndex}"
+          [ngClass]="{disableTd:col.rez>0, activeButton:col.indexInMenu ===currentButtonIndex}"
           *ngFor="let col of row"
-          [ngClass]="{disableTd:col.rez!==0}"
           [attr.rowspan]="col.row"
           [attr.colspan]="col.col"
           [style.height.px]="col.row*30"
-          [ngStyle] = "{'background-color': col.bgColor}"
+          [ngStyle]="{'background-color': col.bgColor}"
           (click)="setButtonForEdit(col.indexInMenu)"
         >
           {{col.text}}
@@ -23,3 +22,4 @@
 
 
 </div>
+

@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">{{name}}</div>
+    <div
+      class="col-md-8 property"
+      (click)="setInput($event,value)"
+      [ngClass]="{changed:isChanged}"
+    >
+      <ng-container *ngIf="!isInput || isInputDisable">
+        <div>{{value}}</div>
+      </ng-container>
+      <ng-container *ngIf="isInput && !isInputDisable">
+        <mat-form-field
+          class="no-paddings"
+          floatLabel="never"
+        >
+          <mat-select
+            [value]="value"
+            [(ngModel)]="value"
+            (ngModelChange)="onElementChange(value)"
+            (openedChange)="changeWindowWithOptions($event)"
+          >
+            <mat-option *ngFor="let select of selectList" [value]="select">{{select}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </ng-container>
+    </div>
+  </div>
+</div>

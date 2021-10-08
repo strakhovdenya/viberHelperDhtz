@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">{{name}}</div>
+    <div
+      class="col-md-8 property"
+      (click)="setInput($event,value)"
+      [ngClass]="{changed:isChanged}"
+    >
+      <ng-container *ngIf="!isInput || isInputDisable">
+        <div>{{value}}</div>
+      </ng-container>
+      <ng-container *ngIf="isInput && !isInputDisable">
+        <input
+          [(ngModel)]="value"
+          (ngModelChange)="onElementChange(value)"
+          (keydown)="setEndOfText($event)"
+          (blur)="blur($event)"
+          (focusout)="blur($event)"
+          #input
+        >
+      </ng-container>
+    </div>
+  </div>
+</div>

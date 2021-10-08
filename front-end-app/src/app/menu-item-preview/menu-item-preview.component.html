@@ -7,7 +7,7 @@
         <td
           class="text-center"
           *ngFor="let col of row"
-            [ngClass]="{disableTd:col.rez!==0}"
+            [ngClass]="{disableTd:col.rez!=0}"
             [attr.rowspan]="col.row"
             [attr.colspan]="col.col"
             [style.height.px]="col.row*30"

@@ -1,0 +1,7 @@
+.changed {
+  background-color: #46a35e;
+}
+
+.property:hover {
+  background-color: #6e6e6e;
+}
