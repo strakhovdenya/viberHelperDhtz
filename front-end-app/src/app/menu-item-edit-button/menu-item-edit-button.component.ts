@@ -1,7 +1,7 @@
 import {Component, EventEmitter, OnDestroy, OnInit, Output} from '@angular/core';
-import {EditButtonService} from '../services/edit-button.service';
+import {MenuEditButtonService} from '../services/menu-edit-button.service';
 import {IDtoForEditButton} from '../services/interfaces/IMenu';
-import {EditButtonChangedPreviewService} from "../services/edit-button-changed-preview.service";
+import {MenuEditButtonChangedPreviewService} from "../services/menu-edit-button-changed-preview.service";
 
 @Component({
   selector: 'app-menu-item-edit-button',
@@ -32,16 +32,16 @@ export class MenuItemEditButtonComponent implements OnInit, OnDestroy {
   @Output() buttonProperty = new EventEmitter<string>();
   @Output() buttonPropertyValue = new EventEmitter<string>();
   @Output() isCleared = new EventEmitter<boolean>();
+  @Output() isSaved = new EventEmitter<boolean>();
 
   constructor(
-    private editButtonService: EditButtonService,
-    private editButtonChangedPreviewService: EditButtonChangedPreviewService
+    private editButtonService: MenuEditButtonService,
+    private editButtonChangedPreviewService: MenuEditButtonChangedPreviewService
   ) {
   }
 
   ngOnInit(): void {
     this.editButtonService.currentButtonIndex.subscribe((value: number | string) => {
-
       if (value !== '') {
         const oneButton = this.editButtonService.data.value[value];
 
@@ -102,9 +102,24 @@ export class MenuItemEditButtonComponent implements OnInit, OnDestroy {
   }
 
   saveMenuChanges(): void {
-    console.log('clearMenuChanges');
+    const oneButton = this.editButtonService.data.value[this.buttonIndexCurrent];
+    this.columns = oneButton.new.button.Columns === 0 ? oneButton.old.button.Columns : oneButton.new.button.Columns;
+    this.rows = oneButton.new.button.Rows === 0 ? oneButton.old.button.Rows : oneButton.new.button.Rows;
+    this.bgColor = oneButton.new.button.BgColor === '' ? oneButton.old.button.BgColor : oneButton.new.button.BgColor;
+    this.text = oneButton.new.button.Text === '' ? oneButton.old.button.Text : oneButton.new.button.Text;
+    this.textSize = oneButton.new.button.TextSize === '' ? oneButton.old.button.TextSize : oneButton.new.button.TextSize;
+    this.actionType = oneButton.new.button.ActionType === '' ? oneButton.old.button.ActionType : oneButton.new.button.ActionType;
+    this.actionBody = oneButton.new.button.ActionBody === '' ? oneButton.old.button.ActionBody : oneButton.new.button.ActionBody;
 
-    this.isCleared.emit(true);
+    this.columnsOld = oneButton.new.button.Columns === 0 ? oneButton.old.button.Columns : oneButton.new.button.Columns;
+    this.rowsOld = oneButton.new.button.Rows === 0 ? oneButton.old.button.Rows : oneButton.new.button.Rows;
+    this.bgColorOld = oneButton.new.button.BgColor === '' ? oneButton.old.button.BgColor : oneButton.new.button.BgColor;
+    this.textOld = oneButton.new.button.Text === '' ? oneButton.old.button.Text : oneButton.new.button.Text;
+    this.textSizeOld = oneButton.new.button.TextSize === '' ? oneButton.old.button.TextSize : oneButton.new.button.TextSize;
+    this.actionTypeOld = oneButton.new.button.ActionType === '' ? oneButton.old.button.ActionType : oneButton.new.button.ActionType;
+    this.actionBodyOld = oneButton.new.button.ActionBody === '' ? oneButton.old.button.ActionBody : oneButton.new.button.ActionBody;
+
+    this.isSaved.emit(true);
   }
 
 }

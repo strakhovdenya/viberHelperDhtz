@@ -1,9 +1,9 @@
 import {Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges} from '@angular/core';
-import {PreviewMenuService} from '../services/preview-menu.service';
+import {MenuPreviewService} from '../services/menu-preview.service';
 import {IButton, IMenu} from '../services/interfaces/IMenu';
 import {TableTR} from '../services/interfaces/IPreviewTable';
-import {EditButtonService} from '../services/edit-button.service';
-import {EditButtonChangedPreviewService} from "../services/edit-button-changed-preview.service";
+import {MenuEditButtonService} from '../services/menu-edit-button.service';
+import {MenuEditButtonChangedPreviewService} from "../services/menu-edit-button-changed-preview.service";
 import lodash from "lodash"
 
 
@@ -30,14 +30,13 @@ export class MenuItemPreviewEditComponent implements OnInit, OnChanges, OnDestro
   tablePreview: TableTR[] = [];
 
   constructor(
-    private previewMenuService: PreviewMenuService,
-    private editButtonService: EditButtonService,
-    private editButtonChangedPreviewService: EditButtonChangedPreviewService,
+    private previewMenuService: MenuPreviewService,
+    private editButtonService: MenuEditButtonService,
+    private editButtonChangedPreviewService: MenuEditButtonChangedPreviewService,
   ) {
   }
 
   ngOnInit(): void {
-    console.log('MenuItemPreviewEdit');
     this.editButtonChangedPreviewService.buttonIndex.subscribe(indexBut => {
       if (indexBut !== '') {
         const buttonProperty = this.editButtonChangedPreviewService.buttonProperty.value;

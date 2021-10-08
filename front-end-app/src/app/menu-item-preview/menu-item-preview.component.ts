@@ -1,6 +1,6 @@
 import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {IMenu} from "../services/interfaces/IMenu";
-import {PreviewMenuService} from '../services/preview-menu.service';
+import {MenuPreviewService} from '../services/menu-preview.service';
 import {TableTR} from '../services/interfaces/IPreviewTable';
 
 @Component({
@@ -14,7 +14,7 @@ export class MenuItemPreviewComponent implements OnInit, OnChanges {
 
   tablePreview: TableTR[] = [];
 
-  constructor(private previewMenuService: PreviewMenuService) {
+  constructor(private previewMenuService: MenuPreviewService) {
   }
 
   ngOnInit(): void {

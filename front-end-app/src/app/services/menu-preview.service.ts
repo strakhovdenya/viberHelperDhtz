@@ -6,7 +6,7 @@ import {ITableTD, TableTR} from './interfaces/IPreviewTable';
   providedIn: 'root',
 })
 
-export class PreviewMenuService {
+export class MenuPreviewService {
 
   constructor() {
   }

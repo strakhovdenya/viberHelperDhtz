@@ -11,7 +11,7 @@ import {IMenu} from "./interfaces/IMenu";
 })
 
 export class MenuService {
-  public data: BehaviorSubject<any>;
+  public data: BehaviorSubject<IMenu[]>;
 
   constructor(
     private httpClient: HttpClient,

@@ -45,11 +45,12 @@ import {MenuItemComponent} from './menu-item/menu-item.component';
 import {MenuService} from "./services/menu.service";
 import {MenuItemPreviewComponent} from './menu-item-preview/menu-item-preview.component';
 import {MenuItemPreviewEditComponent} from './menu-item-preview-edit/menu-item-preview-edit.component';
-import {PreviewMenuService} from './services/preview-menu.service';
+import {MenuPreviewService} from './services/menu-preview.service';
 import {MenuItemEditButtonComponent} from './menu-item-edit-button/menu-item-edit-button.component';
-import {EditButtonService} from './services/edit-button.service';
+import {MenuEditButtonService} from './services/menu-edit-button.service';
 import {MenuButtonPropertyEditComponent} from './menu-button-property-edit/menu-button-property-edit.component';
-import {EditButtonChangedPreviewService} from "./services/edit-button-changed-preview.service";
+import {MenuEditButtonChangedPreviewService} from "./services/menu-edit-button-changed-preview.service";
+import {MenuDataService} from "./services/menu-data.service";
 
 
 
@@ -133,9 +134,10 @@ const appRoute: Routes = [
     JwtHelperService,
     ConfirmationDialogService,
     ImportToSiteService,
-    PreviewMenuService,
-    EditButtonService,
-    EditButtonChangedPreviewService,
+    MenuPreviewService,
+    MenuEditButtonService,
+    MenuEditButtonChangedPreviewService,
+    MenuDataService
   ],
   exports: [],
   bootstrap: [AppComponent],

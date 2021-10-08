@@ -6,7 +6,7 @@ import {IDtoForEditButton} from './interfaces/IMenu';
   providedIn: 'root',
 })
 
-export class EditButtonService {
+export class MenuEditButtonService {
   public data: BehaviorSubject<Array<IDtoForEditButton>> = new BehaviorSubject<Array<IDtoForEditButton>>([]);
   public currentButtonIndex: BehaviorSubject<number | string> = new BehaviorSubject<number | string>('');
 

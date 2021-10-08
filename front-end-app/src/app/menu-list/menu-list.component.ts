@@ -25,7 +25,7 @@ export class MenuListComponent implements OnInit {
 
 
   ngOnInit(): void {
-    if (this.menuService.data) {
+    if (this.menuService.data && this.menuService.data.value !== null) {
       this.menus = this.menuService.data.value;
       this.activeMenu = this.menus[0];
     } else {

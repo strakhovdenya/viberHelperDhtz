@@ -166,7 +166,7 @@ class MenuListComponent {
         };
     }
     ngOnInit() {
-        if (this.menuService.data) {
+        if (this.menuService.data && this.menuService.data.value !== null) {
             this.menus = this.menuService.data.value;
             this.activeMenu = this.menus[0];
         }
@@ -973,6 +973,42 @@ const environment = {
 
 /***/ }),
 
+/***/ "BPvw":
+/*!**********************************************************************!*\
+  !*** ./src/app/services/menu-edit-button-changed-preview.service.ts ***!
+  \**********************************************************************/
+/*! exports provided: MenuEditButtonChangedPreviewService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MenuEditButtonChangedPreviewService", function() { return MenuEditButtonChangedPreviewService; });
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! rxjs */ "qCKp");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
+
+
+class MenuEditButtonChangedPreviewService {
+    constructor() {
+        this.buttonIndex = new rxjs__WEBPACK_IMPORTED_MODULE_0__["BehaviorSubject"]('');
+        this.buttonProperty = new rxjs__WEBPACK_IMPORTED_MODULE_0__["BehaviorSubject"]('');
+        this.buttonPropertyValue = new rxjs__WEBPACK_IMPORTED_MODULE_0__["BehaviorSubject"]('');
+    }
+    changeButtonIndex(date) {
+        this.buttonIndex.next(date);
+    }
+    changeButtonProperty(date) {
+        this.buttonProperty.next(date);
+    }
+    changeButtonPropertyValue(date) {
+        this.buttonPropertyValue.next(date);
+    }
+}
+MenuEditButtonChangedPreviewService.ɵfac = function MenuEditButtonChangedPreviewService_Factory(t) { return new (t || MenuEditButtonChangedPreviewService)(); };
+MenuEditButtonChangedPreviewService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({ token: MenuEditButtonChangedPreviewService, factory: MenuEditButtonChangedPreviewService.ɵfac, providedIn: 'root' });
+
+
+/***/ }),
+
 /***/ "C2DL":
 /*!************************************************!*\
   !*** ./src/app/services/check-form.service.ts ***!
@@ -1075,9 +1111,9 @@ MonthDataService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefine
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MenuItemPreviewEditComponent", function() { return MenuItemPreviewEditComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var _services_preview_menu_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/preview-menu.service */ "RJXX");
-/* harmony import */ var _services_edit_button_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/edit-button.service */ "Ew5n");
-/* harmony import */ var _services_edit_button_changed_preview_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/edit-button-changed-preview.service */ "vJ0p");
+/* harmony import */ var _services_menu_preview_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/menu-preview.service */ "lm62");
+/* harmony import */ var _services_menu_edit_button_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/menu-edit-button.service */ "r/6i");
+/* harmony import */ var _services_menu_edit_button_changed_preview_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/menu-edit-button-changed-preview.service */ "BPvw");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ "ofXK");
 
 
@@ -1125,7 +1161,6 @@ class MenuItemPreviewEditComponent {
         this.tablePreview = [];
     }
     ngOnInit() {
-        console.log('MenuItemPreviewEdit');
         this.editButtonChangedPreviewService.buttonIndex.subscribe(indexBut => {
             if (indexBut !== '') {
                 const buttonProperty = this.editButtonChangedPreviewService.buttonProperty.value;
@@ -1165,7 +1200,7 @@ class MenuItemPreviewEditComponent {
         this.editButtonChangedPreviewService.changeButtonPropertyValue('');
     }
 }
-MenuItemPreviewEditComponent.ɵfac = function MenuItemPreviewEditComponent_Factory(t) { return new (t || MenuItemPreviewEditComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_preview_menu_service__WEBPACK_IMPORTED_MODULE_1__["PreviewMenuService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_edit_button_service__WEBPACK_IMPORTED_MODULE_2__["EditButtonService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_edit_button_changed_preview_service__WEBPACK_IMPORTED_MODULE_3__["EditButtonChangedPreviewService"])); };
+MenuItemPreviewEditComponent.ɵfac = function MenuItemPreviewEditComponent_Factory(t) { return new (t || MenuItemPreviewEditComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_menu_preview_service__WEBPACK_IMPORTED_MODULE_1__["MenuPreviewService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_menu_edit_button_service__WEBPACK_IMPORTED_MODULE_2__["MenuEditButtonService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_menu_edit_button_changed_preview_service__WEBPACK_IMPORTED_MODULE_3__["MenuEditButtonChangedPreviewService"])); };
 MenuItemPreviewEditComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: MenuItemPreviewEditComponent, selectors: [["app-menu-item-preview-edit"]], inputs: { menu: "menu" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵNgOnChangesFeature"]], decls: 6, vars: 2, consts: [[1, "d-flex", "flex-wrap", "align-items-top", "justify-content-center", "justify-content-md-between", "p-1"], [1, "col-md-12", "text-center"], [1, "col-md-12"], [4, "ngFor", "ngForOf"], ["class", "text-center border_hover", 3, "ngClass", "height", "ngStyle", "click", 4, "ngFor", "ngForOf"], [1, "text-center", "border_hover", 3, "ngClass", "ngStyle", "click"]], template: function MenuItemPreviewEditComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
@@ -1361,11 +1396,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ "qCKp");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var _services_edit_button_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/edit-button.service */ "Ew5n");
+/* harmony import */ var _services_menu_edit_button_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/menu-edit-button.service */ "r/6i");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "tyNb");
 /* harmony import */ var _services_menu_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../services/menu.service */ "Gi7S");
-/* harmony import */ var _menu_item_preview_edit_menu_item_preview_edit_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../menu-item-preview-edit/menu-item-preview-edit.component */ "Dwpx");
-/* harmony import */ var _menu_item_edit_button_menu_item_edit_button_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../menu-item-edit-button/menu-item-edit-button.component */ "NBDr");
+/* harmony import */ var _services_menu_data_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../services/menu-data.service */ "xvzn");
+/* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! angular2-flash-messages */ "sriv");
+/* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(angular2_flash_messages__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _menu_item_preview_edit_menu_item_preview_edit_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../menu-item-preview-edit/menu-item-preview-edit.component */ "Dwpx");
+/* harmony import */ var _menu_item_edit_button_menu_item_edit_button_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../menu-item-edit-button/menu-item-edit-button.component */ "NBDr");
+
+
 
 
 
@@ -1376,10 +1416,13 @@ __webpack_require__.r(__webpack_exports__);
 
 const _c0 = function () { return ["/dashboard/menu_settings"]; };
 class MenuItemComponent {
-    constructor(editButtonService, route, menuService) {
+    constructor(editButtonService, route, router, menuService, menuDataService, flashMessages) {
         this.editButtonService = editButtonService;
         this.route = route;
+        this.router = router;
         this.menuService = menuService;
+        this.menuDataService = menuDataService;
+        this.flashMessages = flashMessages;
     }
     ngOnInit() {
         this.route.params.subscribe((params) => Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
@@ -1413,16 +1456,57 @@ class MenuItemComponent {
         this.editButtonService.changeDate(newDate);
         this.menuForPreview = JSON.parse(JSON.stringify(this.menuService.data.value.find((el) => el.level === this.level)));
     }
+    savePreview() {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            let currentMenuForSave = JSON.parse(JSON.stringify(this.menuService.data.value.find((el) => el.level === this.level)));
+            this.editButtonService.data.value.forEach((el, indexButton) => {
+                for (let key in el.new.button) {
+                    if (el.new.button[key] === '' || el.new.button[key] === 0) {
+                        continue;
+                    }
+                    currentMenuForSave.Buttons[indexButton][key] = JSON.parse(JSON.stringify(el.new.button[key]));
+                }
+            });
+            this.menuDataService.saveMenuData(currentMenuForSave).subscribe(({ msg, success }) => {
+                if (!success) {
+                    this.flashMessages.show(msg, {
+                        cssClass: 'alert-danger',
+                        timeout: 2000
+                    });
+                }
+                else {
+                    this.flashMessages.show(msg, {
+                        cssClass: 'custom-success',
+                        timeout: 2000
+                    });
+                    const newDate = JSON.parse(JSON.stringify(this.editButtonService.data.value));
+                    newDate.forEach(el => {
+                        el.old.button.Columns = el.new.button.Columns === 0 ? el.old.button.Columns : el.new.button.Columns;
+                        el.old.button.Rows = el.new.button.Rows === 0 ? el.old.button.Rows : el.new.button.Rows;
+                        el.old.button.Text = el.new.button.Text == '' ? el.old.button.Text : el.new.button.Text;
+                        el.old.button.TextSize = el.new.button.TextSize == '' ? el.old.button.TextSize : el.new.button.TextSize;
+                        el.old.button.ActionBody = el.new.button.ActionBody == '' ? el.old.button.ActionBody : el.new.button.ActionBody;
+                        el.old.button.ActionType = el.new.button.ActionType == '' ? el.old.button.ActionType : el.new.button.ActionType;
+                        el.old.button.BgColor = el.new.button.BgColor == '' ? el.old.button.BgColor : el.new.button.BgColor;
+                    });
+                    this.editButtonService.changeDate(newDate);
+                    this.menuService.changeDate(null);
+                    this.router.navigate(['dashboard/menu_settings']);
+                }
+            });
+            return false;
+        });
+    }
 }
-MenuItemComponent.ɵfac = function MenuItemComponent_Factory(t) { return new (t || MenuItemComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_services_edit_button_service__WEBPACK_IMPORTED_MODULE_3__["EditButtonService"]), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_4__["ActivatedRoute"]), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_services_menu_service__WEBPACK_IMPORTED_MODULE_5__["MenuService"])); };
-MenuItemComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({ type: MenuItemComponent, selectors: [["app-menu-item"]], decls: 7, vars: 3, consts: [[1, "d-flex", "flex-wrap", "align-items-top", "justify-content-center", "justify-content-md-between", "p-1"], [1, "col-md-6"], [3, "menu"], [3, "isCleared"], [1, "btn", "btn-primary", 3, "routerLink"]], template: function MenuItemComponent_Template(rf, ctx) { if (rf & 1) {
+MenuItemComponent.ɵfac = function MenuItemComponent_Factory(t) { return new (t || MenuItemComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_services_menu_edit_button_service__WEBPACK_IMPORTED_MODULE_3__["MenuEditButtonService"]), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_4__["ActivatedRoute"]), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_services_menu_service__WEBPACK_IMPORTED_MODULE_5__["MenuService"]), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_services_menu_data_service__WEBPACK_IMPORTED_MODULE_6__["MenuDataService"]), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](angular2_flash_messages__WEBPACK_IMPORTED_MODULE_7__["FlashMessagesService"])); };
+MenuItemComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({ type: MenuItemComponent, selectors: [["app-menu-item"]], decls: 7, vars: 3, consts: [[1, "d-flex", "flex-wrap", "align-items-top", "justify-content-center", "justify-content-md-between", "p-1"], [1, "col-md-6"], [3, "menu"], [3, "isCleared", "isSaved"], [1, "btn", "btn-primary", 3, "routerLink"]], template: function MenuItemComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](2, "app-menu-item-preview-edit", 2);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](3, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](4, "app-menu-item-edit-button", 3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("isCleared", function MenuItemComponent_Template_app_menu_item_edit_button_isCleared_4_listener() { return ctx.clearPreview(); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("isCleared", function MenuItemComponent_Template_app_menu_item_edit_button_isCleared_4_listener() { return ctx.clearPreview(); })("isSaved", function MenuItemComponent_Template_app_menu_item_edit_button_isSaved_4_listener() { return ctx.savePreview(); });
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
@@ -1434,68 +1518,7 @@ MenuItemComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefine
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("menu", ctx.menuForPreview);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](3);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpureFunction0"](2, _c0));
-    } }, directives: [_menu_item_preview_edit_menu_item_preview_edit_component__WEBPACK_IMPORTED_MODULE_6__["MenuItemPreviewEditComponent"], _menu_item_edit_button_menu_item_edit_button_component__WEBPACK_IMPORTED_MODULE_7__["MenuItemEditButtonComponent"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterLink"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJtZW51LWl0ZW0uY29tcG9uZW50LmNzcyJ9 */"] });
-
-
-/***/ }),
-
-/***/ "Ew5n":
-/*!*************************************************!*\
-  !*** ./src/app/services/edit-button.service.ts ***!
-  \*************************************************/
-/*! exports provided: EditButtonService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EditButtonService", function() { return EditButtonService; });
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! rxjs */ "qCKp");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
-
-
-class EditButtonService {
-    constructor() {
-        this.data = new rxjs__WEBPACK_IMPORTED_MODULE_0__["BehaviorSubject"]([]);
-        this.currentButtonIndex = new rxjs__WEBPACK_IMPORTED_MODULE_0__["BehaviorSubject"]('');
-    }
-    changeDate(date) {
-        this.data.next(date);
-    }
-    changeCurrentButtonIndex(date) {
-        this.currentButtonIndex.next(date);
-    }
-    getStartValue() {
-        return {
-            level: '',
-            old: {
-                button: {
-                    Columns: 0,
-                    Rows: 0,
-                    BgColor: '',
-                    Text: '',
-                    TextSize: '',
-                    ActionType: '',
-                    ActionBody: '',
-                },
-                buttonIndex: 0,
-            },
-            new: {
-                button: {
-                    Columns: 0,
-                    Rows: 0,
-                    BgColor: '',
-                    Text: '',
-                    TextSize: '',
-                    ActionType: '',
-                    ActionBody: '',
-                },
-                buttonIndex: 0,
-            },
-        };
-    }
-}
-EditButtonService.ɵfac = function EditButtonService_Factory(t) { return new (t || EditButtonService)(); };
-EditButtonService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({ token: EditButtonService, factory: EditButtonService.ɵfac, providedIn: 'root' });
+    } }, directives: [_menu_item_preview_edit_menu_item_preview_edit_component__WEBPACK_IMPORTED_MODULE_8__["MenuItemPreviewEditComponent"], _menu_item_edit_button_menu_item_edit_button_component__WEBPACK_IMPORTED_MODULE_9__["MenuItemEditButtonComponent"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterLink"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJtZW51LWl0ZW0uY29tcG9uZW50LmNzcyJ9 */"] });
 
 
 /***/ }),
@@ -1765,8 +1788,8 @@ AuthComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComp
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MenuItemEditButtonComponent", function() { return MenuItemEditButtonComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var _services_edit_button_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/edit-button.service */ "Ew5n");
-/* harmony import */ var _services_edit_button_changed_preview_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/edit-button-changed-preview.service */ "vJ0p");
+/* harmony import */ var _services_menu_edit_button_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/menu-edit-button.service */ "r/6i");
+/* harmony import */ var _services_menu_edit_button_changed_preview_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/menu-edit-button-changed-preview.service */ "BPvw");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "ofXK");
 /* harmony import */ var _menu_button_property_edit_menu_button_property_edit_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../menu-button-property-edit/menu-button-property-edit.component */ "50UV");
 
@@ -1855,6 +1878,7 @@ class MenuItemEditButtonComponent {
         this.buttonProperty = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
         this.buttonPropertyValue = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
         this.isCleared = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        this.isSaved = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
     }
     ngOnInit() {
         this.editButtonService.currentButtonIndex.subscribe((value) => {
@@ -1911,12 +1935,26 @@ class MenuItemEditButtonComponent {
         this.isCleared.emit(true);
     }
     saveMenuChanges() {
-        console.log('clearMenuChanges');
-        this.isCleared.emit(true);
+        const oneButton = this.editButtonService.data.value[this.buttonIndexCurrent];
+        this.columns = oneButton.new.button.Columns === 0 ? oneButton.old.button.Columns : oneButton.new.button.Columns;
+        this.rows = oneButton.new.button.Rows === 0 ? oneButton.old.button.Rows : oneButton.new.button.Rows;
+        this.bgColor = oneButton.new.button.BgColor === '' ? oneButton.old.button.BgColor : oneButton.new.button.BgColor;
+        this.text = oneButton.new.button.Text === '' ? oneButton.old.button.Text : oneButton.new.button.Text;
+        this.textSize = oneButton.new.button.TextSize === '' ? oneButton.old.button.TextSize : oneButton.new.button.TextSize;
+        this.actionType = oneButton.new.button.ActionType === '' ? oneButton.old.button.ActionType : oneButton.new.button.ActionType;
+        this.actionBody = oneButton.new.button.ActionBody === '' ? oneButton.old.button.ActionBody : oneButton.new.button.ActionBody;
+        this.columnsOld = oneButton.new.button.Columns === 0 ? oneButton.old.button.Columns : oneButton.new.button.Columns;
+        this.rowsOld = oneButton.new.button.Rows === 0 ? oneButton.old.button.Rows : oneButton.new.button.Rows;
+        this.bgColorOld = oneButton.new.button.BgColor === '' ? oneButton.old.button.BgColor : oneButton.new.button.BgColor;
+        this.textOld = oneButton.new.button.Text === '' ? oneButton.old.button.Text : oneButton.new.button.Text;
+        this.textSizeOld = oneButton.new.button.TextSize === '' ? oneButton.old.button.TextSize : oneButton.new.button.TextSize;
+        this.actionTypeOld = oneButton.new.button.ActionType === '' ? oneButton.old.button.ActionType : oneButton.new.button.ActionType;
+        this.actionBodyOld = oneButton.new.button.ActionBody === '' ? oneButton.old.button.ActionBody : oneButton.new.button.ActionBody;
+        this.isSaved.emit(true);
     }
 }
-MenuItemEditButtonComponent.ɵfac = function MenuItemEditButtonComponent_Factory(t) { return new (t || MenuItemEditButtonComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_edit_button_service__WEBPACK_IMPORTED_MODULE_1__["EditButtonService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_edit_button_changed_preview_service__WEBPACK_IMPORTED_MODULE_2__["EditButtonChangedPreviewService"])); };
-MenuItemEditButtonComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: MenuItemEditButtonComponent, selectors: [["app-menu-item-edit-button"]], outputs: { buttonIndex: "buttonIndex", buttonProperty: "buttonProperty", buttonPropertyValue: "buttonPropertyValue", isCleared: "isCleared" }, decls: 2, vars: 2, consts: [[4, "ngIf"], ["class", "container", 4, "ngIf"], [1, "col-md-12", "text-center"], [1, "container"], [3, "name", "value", "valueOld", "isInputDisable", "newValue"], [1, "col-md-6", "btn", "btn-primary", "mt-2", 3, "click"], [1, "col-md-6", "btn", "btn-warning", "mt-2", 3, "click"]], template: function MenuItemEditButtonComponent_Template(rf, ctx) { if (rf & 1) {
+MenuItemEditButtonComponent.ɵfac = function MenuItemEditButtonComponent_Factory(t) { return new (t || MenuItemEditButtonComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_menu_edit_button_service__WEBPACK_IMPORTED_MODULE_1__["MenuEditButtonService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_menu_edit_button_changed_preview_service__WEBPACK_IMPORTED_MODULE_2__["MenuEditButtonChangedPreviewService"])); };
+MenuItemEditButtonComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: MenuItemEditButtonComponent, selectors: [["app-menu-item-edit-button"]], outputs: { buttonIndex: "buttonIndex", buttonProperty: "buttonProperty", buttonPropertyValue: "buttonPropertyValue", isCleared: "isCleared", isSaved: "isSaved" }, decls: 2, vars: 2, consts: [[4, "ngIf"], ["class", "container", 4, "ngIf"], [1, "col-md-12", "text-center"], [1, "container"], [3, "name", "value", "valueOld", "isInputDisable", "newValue"], [1, "col-md-6", "btn", "btn-primary", "mt-2", 3, "click"], [1, "col-md-6", "btn", "btn-warning", "mt-2", 3, "click"]], template: function MenuItemEditButtonComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, MenuItemEditButtonComponent_div_0_Template, 3, 0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, MenuItemEditButtonComponent_div_1_Template, 12, 28, "div", 1);
     } if (rf & 2) {
@@ -2222,71 +2260,6 @@ DashboardComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefin
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](37, _c6));
     } }, directives: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterLinkActive"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterLink"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterOutlet"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJkYXNoYm9hcmQuY29tcG9uZW50LmNzcyJ9 */"] });
-
-
-/***/ }),
-
-/***/ "RJXX":
-/*!**************************************************!*\
-  !*** ./src/app/services/preview-menu.service.ts ***!
-  \**************************************************/
-/*! exports provided: PreviewMenuService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PreviewMenuService", function() { return PreviewMenuService; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
-
-class PreviewMenuService {
-    constructor() {
-    }
-    getRowLessMax(table) {
-        let result = 0;
-        for (const rowIndex in table) {
-            let sumCol = 0;
-            for (const column of table[rowIndex]) {
-                const col = column;
-                sumCol += (col.col + col.rez);
-            }
-            if (sumCol < 6) {
-                return Number(rowIndex);
-            }
-            else {
-                result = Number(rowIndex) + 1;
-            }
-        }
-        return result;
-    }
-    getDataForPreviewTable(menu) {
-        const table = [];
-        for (const buttonIndex in menu.Buttons) {
-            const currentButton = menu.Buttons[buttonIndex];
-            const rowForAdd = this.getRowLessMax(table);
-            for (let i = 0; i < currentButton.Rows; i++) {
-                if (!Array.isArray(table[rowForAdd + i])) {
-                    table[rowForAdd + i] = [];
-                }
-                if (i === 0) {
-                    table[rowForAdd + i].push({
-                        col: currentButton.Columns,
-                        row: currentButton.Rows,
-                        rez: 0,
-                        text: currentButton.Text,
-                        bgColor: currentButton.BgColor,
-                        indexInMenu: buttonIndex,
-                    });
-                }
-                else {
-                    table[rowForAdd + i].push({ rez: currentButton.Columns, col: 0 });
-                }
-            }
-        }
-        return table;
-    }
-}
-PreviewMenuService.ɵfac = function PreviewMenuService_Factory(t) { return new (t || PreviewMenuService)(); };
-PreviewMenuService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: PreviewMenuService, factory: PreviewMenuService.ɵfac, providedIn: 'root' });
 
 
 /***/ }),
@@ -2604,7 +2577,7 @@ webpackContext.id = "RnhZ";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MenuItemPreviewComponent", function() { return MenuItemPreviewComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var _services_preview_menu_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/preview-menu.service */ "RJXX");
+/* harmony import */ var _services_menu_preview_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/menu-preview.service */ "lm62");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "ofXK");
 
 
@@ -2645,7 +2618,7 @@ class MenuItemPreviewComponent {
         }
     }
 }
-MenuItemPreviewComponent.ɵfac = function MenuItemPreviewComponent_Factory(t) { return new (t || MenuItemPreviewComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_preview_menu_service__WEBPACK_IMPORTED_MODULE_1__["PreviewMenuService"])); };
+MenuItemPreviewComponent.ɵfac = function MenuItemPreviewComponent_Factory(t) { return new (t || MenuItemPreviewComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_menu_preview_service__WEBPACK_IMPORTED_MODULE_1__["MenuPreviewService"])); };
 MenuItemPreviewComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: MenuItemPreviewComponent, selectors: [["app-menu-item-preview"]], inputs: { menu: "menu" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵNgOnChangesFeature"]], decls: 6, vars: 2, consts: [[1, "d-flex", "flex-wrap", "align-items-top", "justify-content-center", "justify-content-md-between", "p-1"], [1, "col-md-12", "text-center"], [1, "col-md-12"], [4, "ngFor", "ngForOf"], ["class", "text-center", 3, "ngClass", "height", "ngStyle", 4, "ngFor", "ngForOf"], [1, "text-center", 3, "ngClass", "ngStyle"]], template: function MenuItemPreviewComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
@@ -2873,15 +2846,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_menu_service__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./services/menu.service */ "Gi7S");
 /* harmony import */ var _menu_item_preview_menu_item_preview_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./menu-item-preview/menu-item-preview.component */ "SBG4");
 /* harmony import */ var _menu_item_preview_edit_menu_item_preview_edit_component__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./menu-item-preview-edit/menu-item-preview-edit.component */ "Dwpx");
-/* harmony import */ var _services_preview_menu_service__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./services/preview-menu.service */ "RJXX");
+/* harmony import */ var _services_menu_preview_service__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./services/menu-preview.service */ "lm62");
 /* harmony import */ var _menu_item_edit_button_menu_item_edit_button_component__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./menu-item-edit-button/menu-item-edit-button.component */ "NBDr");
-/* harmony import */ var _services_edit_button_service__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./services/edit-button.service */ "Ew5n");
+/* harmony import */ var _services_menu_edit_button_service__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./services/menu-edit-button.service */ "r/6i");
 /* harmony import */ var _menu_button_property_edit_menu_button_property_edit_component__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ./menu-button-property-edit/menu-button-property-edit.component */ "50UV");
-/* harmony import */ var _services_edit_button_changed_preview_service__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ./services/edit-button-changed-preview.service */ "vJ0p");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _services_menu_edit_button_changed_preview_service__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ./services/menu-edit-button-changed-preview.service */ "BPvw");
+/* harmony import */ var _services_menu_data_service__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ./services/menu-data.service */ "xvzn");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! @angular/core */ "fXoL");
 
 
 // import { TextMaskModule } from 'angular2-text-mask';
+
 
 
 
@@ -2958,8 +2933,8 @@ const appRoute = [
 class AppModule {
 }
 AppModule.ɵfac = function AppModule_Factory(t) { return new (t || AppModule)(); };
-AppModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_43__["ɵɵdefineNgModule"]({ type: AppModule, bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]] });
-AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_43__["ɵɵdefineInjector"]({ providers: [
+AppModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_44__["ɵɵdefineNgModule"]({ type: AppModule, bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]] });
+AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_44__["ɵɵdefineInjector"]({ providers: [
         _services_date_service__WEBPACK_IMPORTED_MODULE_25__["DateService"],
         _services_menu_service__WEBPACK_IMPORTED_MODULE_35__["MenuService"],
         _services_is_saved_checker_service__WEBPACK_IMPORTED_MODULE_16__["IsSavedCheckerService"],
@@ -2971,9 +2946,10 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_43__["ɵɵdefineInjecto
         _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_19__["JwtHelperService"],
         _confirmation_dialog_confirmation_dialog_service__WEBPACK_IMPORTED_MODULE_30__["ConfirmationDialogService"],
         _services_import_to_site_service__WEBPACK_IMPORTED_MODULE_32__["ImportToSiteService"],
-        _services_preview_menu_service__WEBPACK_IMPORTED_MODULE_38__["PreviewMenuService"],
-        _services_edit_button_service__WEBPACK_IMPORTED_MODULE_40__["EditButtonService"],
-        _services_edit_button_changed_preview_service__WEBPACK_IMPORTED_MODULE_42__["EditButtonChangedPreviewService"],
+        _services_menu_preview_service__WEBPACK_IMPORTED_MODULE_38__["MenuPreviewService"],
+        _services_menu_edit_button_service__WEBPACK_IMPORTED_MODULE_40__["MenuEditButtonService"],
+        _services_menu_edit_button_changed_preview_service__WEBPACK_IMPORTED_MODULE_42__["MenuEditButtonChangedPreviewService"],
+        _services_menu_data_service__WEBPACK_IMPORTED_MODULE_43__["MenuDataService"]
     ], imports: [[
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
             _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"],
@@ -2987,7 +2963,7 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_43__["ɵɵdefineInjecto
             _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_23__["BrowserAnimationsModule"],
             _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_29__["NgbModule"],
         ]] });
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_43__["ɵɵsetNgModuleScope"](AppModule, { declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"],
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_44__["ɵɵsetNgModuleScope"](AppModule, { declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"],
         _header_header_component__WEBPACK_IMPORTED_MODULE_4__["HeaderComponent"],
         _reg_reg_component__WEBPACK_IMPORTED_MODULE_5__["RegComponent"],
         _auth_auth_component__WEBPACK_IMPORTED_MODULE_6__["AuthComponent"],
@@ -3660,6 +3636,71 @@ AuthService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjec
 
 /***/ }),
 
+/***/ "lm62":
+/*!**************************************************!*\
+  !*** ./src/app/services/menu-preview.service.ts ***!
+  \**************************************************/
+/*! exports provided: MenuPreviewService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MenuPreviewService", function() { return MenuPreviewService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+
+class MenuPreviewService {
+    constructor() {
+    }
+    getRowLessMax(table) {
+        let result = 0;
+        for (const rowIndex in table) {
+            let sumCol = 0;
+            for (const column of table[rowIndex]) {
+                const col = column;
+                sumCol += (col.col + col.rez);
+            }
+            if (sumCol < 6) {
+                return Number(rowIndex);
+            }
+            else {
+                result = Number(rowIndex) + 1;
+            }
+        }
+        return result;
+    }
+    getDataForPreviewTable(menu) {
+        const table = [];
+        for (const buttonIndex in menu.Buttons) {
+            const currentButton = menu.Buttons[buttonIndex];
+            const rowForAdd = this.getRowLessMax(table);
+            for (let i = 0; i < currentButton.Rows; i++) {
+                if (!Array.isArray(table[rowForAdd + i])) {
+                    table[rowForAdd + i] = [];
+                }
+                if (i === 0) {
+                    table[rowForAdd + i].push({
+                        col: currentButton.Columns,
+                        row: currentButton.Rows,
+                        rez: 0,
+                        text: currentButton.Text,
+                        bgColor: currentButton.BgColor,
+                        indexInMenu: buttonIndex,
+                    });
+                }
+                else {
+                    table[rowForAdd + i].push({ rez: currentButton.Columns, col: 0 });
+                }
+            }
+        }
+        return table;
+    }
+}
+MenuPreviewService.ɵfac = function MenuPreviewService_Factory(t) { return new (t || MenuPreviewService)(); };
+MenuPreviewService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: MenuPreviewService, factory: MenuPreviewService.ɵfac, providedIn: 'root' });
+
+
+/***/ }),
+
 /***/ "mYp4":
 /*!****************************************************************!*\
   !*** ./src/app/table/services/table-data-generator.service.ts ***!
@@ -3879,6 +3920,67 @@ RegComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCompo
 
 /***/ }),
 
+/***/ "r/6i":
+/*!******************************************************!*\
+  !*** ./src/app/services/menu-edit-button.service.ts ***!
+  \******************************************************/
+/*! exports provided: MenuEditButtonService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MenuEditButtonService", function() { return MenuEditButtonService; });
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! rxjs */ "qCKp");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
+
+
+class MenuEditButtonService {
+    constructor() {
+        this.data = new rxjs__WEBPACK_IMPORTED_MODULE_0__["BehaviorSubject"]([]);
+        this.currentButtonIndex = new rxjs__WEBPACK_IMPORTED_MODULE_0__["BehaviorSubject"]('');
+    }
+    changeDate(date) {
+        this.data.next(date);
+    }
+    changeCurrentButtonIndex(date) {
+        this.currentButtonIndex.next(date);
+    }
+    getStartValue() {
+        return {
+            level: '',
+            old: {
+                button: {
+                    Columns: 0,
+                    Rows: 0,
+                    BgColor: '',
+                    Text: '',
+                    TextSize: '',
+                    ActionType: '',
+                    ActionBody: '',
+                },
+                buttonIndex: 0,
+            },
+            new: {
+                button: {
+                    Columns: 0,
+                    Rows: 0,
+                    BgColor: '',
+                    Text: '',
+                    TextSize: '',
+                    ActionType: '',
+                    ActionBody: '',
+                },
+                buttonIndex: 0,
+            },
+        };
+    }
+}
+MenuEditButtonService.ɵfac = function MenuEditButtonService_Factory(t) { return new (t || MenuEditButtonService)(); };
+MenuEditButtonService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({ token: MenuEditButtonService, factory: MenuEditButtonService.ɵfac, providedIn: 'root' });
+
+
+/***/ }),
+
 /***/ "sUq/":
 /*!*****************************************************!*\
   !*** ./src/app/sheduleYanger/schedule.component.ts ***!
@@ -4039,42 +4141,6 @@ TableModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdefineInjec
 
 /***/ }),
 
-/***/ "vJ0p":
-/*!*****************************************************************!*\
-  !*** ./src/app/services/edit-button-changed-preview.service.ts ***!
-  \*****************************************************************/
-/*! exports provided: EditButtonChangedPreviewService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EditButtonChangedPreviewService", function() { return EditButtonChangedPreviewService; });
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! rxjs */ "qCKp");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
-
-
-class EditButtonChangedPreviewService {
-    constructor() {
-        this.buttonIndex = new rxjs__WEBPACK_IMPORTED_MODULE_0__["BehaviorSubject"]('');
-        this.buttonProperty = new rxjs__WEBPACK_IMPORTED_MODULE_0__["BehaviorSubject"]('');
-        this.buttonPropertyValue = new rxjs__WEBPACK_IMPORTED_MODULE_0__["BehaviorSubject"]('');
-    }
-    changeButtonIndex(date) {
-        this.buttonIndex.next(date);
-    }
-    changeButtonProperty(date) {
-        this.buttonProperty.next(date);
-    }
-    changeButtonPropertyValue(date) {
-        this.buttonPropertyValue.next(date);
-    }
-}
-EditButtonChangedPreviewService.ɵfac = function EditButtonChangedPreviewService_Factory(t) { return new (t || EditButtonChangedPreviewService)(); };
-EditButtonChangedPreviewService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({ token: EditButtonChangedPreviewService, factory: EditButtonChangedPreviewService.ɵfac, providedIn: 'root' });
-
-
-/***/ }),
-
 /***/ "vY5A":
 /*!***************************************!*\
   !*** ./src/app/app-routing.module.ts ***!
@@ -4166,6 +4232,45 @@ ListMonthesComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdef
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.months);
     } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_3__["NgForOf"], _month_month_component__WEBPACK_IMPORTED_MODULE_4__["MonthComponent"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJsaXN0LW1vbnRoZXMuY29tcG9uZW50LmNzcyJ9 */"] });
+
+
+/***/ }),
+
+/***/ "xvzn":
+/*!***********************************************!*\
+  !*** ./src/app/services/menu-data.service.ts ***!
+  \***********************************************/
+/*! exports provided: MenuDataService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MenuDataService", function() { return MenuDataService; });
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/common/http */ "tk/3");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs/operators */ "kU1M");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./auth.service */ "lGQG");
+
+
+
+
+
+class MenuDataService {
+    constructor(httpClient, authService) {
+        this.httpClient = httpClient;
+        this.authService = authService;
+    }
+    saveMenuData(data, url = 'api/menus/') {
+        const token = this.authService.getToken();
+        let headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpHeaders"]().set('Content-Type', 'application/json').set('Authorization', 'Bearer ' + token);
+        return this.httpClient.post(url, data, {
+            headers: headers,
+            params: {}
+        }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((res) => res), this.authService.getUnauthorizedCatcher());
+    }
+}
+MenuDataService.ɵfac = function MenuDataService_Factory(t) { return new (t || MenuDataService)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpClient"]), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinject"](_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"])); };
+MenuDataService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjectable"]({ token: MenuDataService, factory: MenuDataService.ɵfac, providedIn: 'root' });
 
 
 /***/ }),

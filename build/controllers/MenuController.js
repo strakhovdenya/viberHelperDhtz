@@ -54,9 +54,47 @@ var menu_1 = require("../models/menu");
 var MenuController = /** @class */ (function () {
     function MenuController() {
     }
+    MenuController.prototype.updateMenu = function (req, res) {
+        return __awaiter(this, void 0, void 0, function () {
+            var ops, item, result, e_1;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        ops = [];
+                        item = req.body;
+                        // res.json({success: false, msg: 'test fail save!!!!!!!!!!!!'});
+                        // return;
+                        ops.push({
+                            replaceOne: {
+                                filter: { level: item.level },
+                                replacement: item,
+                                upsert: true
+                            }
+                        });
+                        _a.label = 1;
+                    case 1:
+                        _a.trys.push([1, 3, , 4]);
+                        return [4 /*yield*/, menu_1.MenuModel.bulkWrite(ops, { ordered: false })];
+                    case 2:
+                        result = _a.sent();
+                        if (result.result.ok === 1) {
+                            res.json({ success: true, msg: "\u0421\u043E\u0445\u0440\u0430\u043D\u0435\u043D\u043E \u043C\u0435\u043D\u044E: " + item.level });
+                            return [2 /*return*/];
+                        }
+                        return [3 /*break*/, 4];
+                    case 3:
+                        e_1 = _a.sent();
+                        console.log(e_1);
+                        res.json({ success: false, msg: e_1 });
+                        return [2 /*return*/];
+                    case 4: return [2 /*return*/];
+                }
+            });
+        });
+    };
     MenuController.prototype.getMonths = function (req, res) {
         return __awaiter(this, void 0, void 0, function () {
-            var result, e_1;
+            var result, e_2;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
@@ -67,15 +105,22 @@ var MenuController = /** @class */ (function () {
                         res.json(result);
                         return [3 /*break*/, 3];
                     case 2:
-                        e_1 = _a.sent();
-                        console.log(e_1);
-                        res.json({ data: e_1 });
+                        e_2 = _a.sent();
+                        console.log(e_2);
+                        res.json({ data: e_2 });
                         return [2 /*return*/];
                     case 3: return [2 /*return*/];
                 }
             });
         });
     };
+    __decorate([
+        decorators_1.post('/menus'),
+        decorators_1.use(passport_1.default.authenticate('jwt', { session: false })),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [Object, Object]),
+        __metadata("design:returntype", Promise)
+    ], MenuController.prototype, "updateMenu", null);
     __decorate([
         decorators_1.get('/menus'),
         decorators_1.use(passport_1.default.authenticate('jwt', { session: false })),

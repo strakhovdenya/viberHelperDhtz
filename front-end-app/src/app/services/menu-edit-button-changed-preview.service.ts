@@ -6,7 +6,7 @@ import {IDtoForEditButton} from './interfaces/IMenu';
   providedIn: 'root',
 })
 
-export class EditButtonChangedPreviewService {
+export class MenuEditButtonChangedPreviewService {
 
   public buttonIndex: BehaviorSubject<number | string> = new BehaviorSubject<number | string>('');
   public buttonProperty: BehaviorSubject<string> = new BehaviorSubject<string>('');
